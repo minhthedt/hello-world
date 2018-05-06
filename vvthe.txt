@@ -1,3 +1,13 @@
+git init
+git status -s
+git log
+git reset --hard abcdef
+git commit -m "message"
+git branch new_branch
+git checkout new_branch
+git clean -fd : remove all files, directories untracked
+git pull
+git push
 chao buoi sang
 
 ccccc
@@ -6,3 +16,11 @@ bbbbb
 ubuntu commit
 
 commit 0000
+
+commit 1111
+
+commit 3333
+
+commit 4444
+
+commit 5555
