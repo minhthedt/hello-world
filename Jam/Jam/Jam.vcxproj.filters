@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src\Jam2018">
+      <UniqueIdentifier>{970b335b-7756-4ef6-9674-9fd42f491143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Jam2017">
+      <UniqueIdentifier>{fdead710-955b-480d-b391-ff0d7bfd3bdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Jam2018\Problem1_1.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2018\Problem1_2.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2018\Problem1_3.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2018\Problem1_4.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2018\Problem1_5.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem1_1.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem1_2.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem1_3.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem1_4.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem1_5.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem2_1.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem2_2.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem2_3.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem2_4.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2017\Problem2_5.cpp">
+      <Filter>src\Jam2017</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Common.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Utils.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
