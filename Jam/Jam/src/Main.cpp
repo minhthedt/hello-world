@@ -11,7 +11,8 @@ namespace Jam2018
 
 int main(int argn, char* argv[])
 {
-    Jam2018::Problem1_1();
+    //Jam2018::Problem1_1();
+    Jam2018::Problem1_2();
     getchar();
     return 0;
 }

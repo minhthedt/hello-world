@@ -10,3 +10,12 @@
 #define DATA_PROBLEM_2018_1_113 "D:\\Training\\github\\data\\2018\\1st_ProblemA_subtask1\\data-13.in"
 #define DATA_PROBLEM_2018_1_114 "D:\\Training\\github\\data\\2018\\1st_ProblemA_subtask1\\data-14.in"
 #define DATA_PROBLEM_2018_1_115 "D:\\Training\\github\\data\\2018\\1st_ProblemA_subtask1\\data-15.in"
+
+#define DATA_PROBLEM_2018_1_201 "D:\\Training\\github\\data\\2018\\1st_ProblemB_subtask1\\data-1.in"
+#define DATA_PROBLEM_2018_1_210 "D:\\Training\\github\\data\\2018\\1st_ProblemB_subtask1\\data-10.in"
+#define DATA_PROBLEM_2018_1_211 "D:\\Training\\github\\data\\2018\\1st_ProblemB_subtask1\\data-11.in"
+#define DATA_PROBLEM_2018_1_212 "D:\\Training\\github\\data\\2018\\1st_ProblemB_subtask1\\data-12.in"
+#define DATA_PROBLEM_2018_1_213 "D:\\Training\\github\\data\\2018\\1st_ProblemB_subtask1\\data-13.in"
+#define DATA_PROBLEM_2018_1_214 "D:\\Training\\github\\data\\2018\\1st_ProblemB_subtask1\\data-14.in"
+#define DATA_PROBLEM_2018_1_215 "D:\\Training\\github\\data\\2018\\1st_ProblemB_subtask1\\data-15.in"
+#define DATA_PROBLEM_2018_1_2100 "D:\\Training\\github\\data\\2018\\1st_ProblemB_subtask1\\data-100.in"

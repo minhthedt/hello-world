@@ -1,0 +1,174 @@
+/* header notice */
+
+#LGE_topnav_noticeBar{
+	cursor: pointer;
+	background-color: #FFFFDD;
+	height: 20px; position: static; float: left; width: 100%;
+	display: none;  
+}
+#LGE_topnav_notice{
+	position: static; 
+	float: left; 
+	height: 0px; 
+	width: 90%;
+	background-color: #FFFFDD;
+	
+	line-height: 20px; height: 20px; margin-left: 5px;
+}
+
+.ellipsis{
+	color: black;
+	white-space:nowrap;
+	text-overflow:ellipsis;     /* IE, Safari */
+	-o-text-overflow:ellipsis;      /* Opera under 10.7 */
+	overflow:hidden;            /* "overflow" value must be different from "visible" */
+} 
+
+#LGE_topnav_noticeTitle{
+	margin-left: 10px;
+	line-height: 19px;
+	height: 20px; position: static; float: left;
+	background: none repeat scroll 0% 0% rgb(255, 255, 221);
+	color: black;
+}
+
+/* layerpopup notice*/
+
+#layerpopup-wrap {
+    display: none;
+    outline: medium none;
+    padding: 20px;
+    position: absolute;
+    z-index: 1101;
+    
+    width: 430px; height: auto; top: 2%; left: 2%;
+}
+#layerpopup-outer {
+    background: none repeat scroll 0 0 rgb(255, 255, 221);
+    background-color:#b2b2b2;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    border:1px solid #545454;
+}
+#layerpopup-bg-n {
+    background-image: url('../images/layerpopup-x.png');
+    left: 0;
+    top: -20px;
+    width: 100%;
+}
+#layerpopup-bg-ne {
+    background-image: url('../images/layerpopup.png');
+    background-position: -40px -162px;
+    right: -20px;
+    top: -20px;
+}
+#layerpopup-bg-e {
+    background-image: url('../images/layerpopup-y.png');
+    background-position: -20px 0;
+    height: 100%;
+    right: -20px;
+    top: 0;
+}
+#layerpopup-bg-se {
+    background-image: url('../images/layerpopup.png');
+    background-position: -40px -182px;
+    bottom: -20px;
+    right: -20px;
+}
+#layerpopup-bg-s {
+    background-image: url('../images/layerpopup-x.png');
+    background-position: 0 -20px;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+}
+#layerpopup-bg-sw {
+    background-image: url('../images/layerpopup.png');
+    background-position: -40px -142px;
+    bottom: -20px;
+    left: -20px;
+}
+#layerpopup-bg-w {
+    	background-image: url('../images/layerpopup-y.png');
+    height: 100%;
+    left: -20px;
+    top: 0;
+}
+#layerpopup-bg-nw {
+    background-image: url('../images/layerpopup.png');
+    background-position: -40px -122px;
+    left: -20px;
+    top: -20px;
+}
+.layerpopup-bg {
+    border: 0 none;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 20px;
+    z-index: 1001;
+}
+#layerpopup-content {
+	/*  width = #layerpopup-wrap 의 width - #layerpopup-content의 border*2 */
+	/*
+    width: 566px;
+    border: 2px solid white;
+    */ 
+    width: 424px;
+    border: 3px solid white;  /* #4E4E4E */
+    height: auto;
+    outline: medium none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 1102;
+}
+#layerpopup-content-innerLayer{
+	border: 8px solid transparent;
+}
+#layerpopup-content-innerLayer-title{
+	color: black;
+	font-size: 23px;
+	line-height: 27px;
+	text-align: left;
+	padding: 5px 0;
+	
+	width: 100%; height: auto;
+	overflow: auto; position: relative;
+}
+
+#layerpopup-content-hr{
+	color: #92002D;
+	width: 100%;
+}
+
+#layerpopup-content-innerLayer-body{
+	color: black;
+	line-height: 20px;
+	text-align: left;
+	
+	background-color: white;
+	width: 100%; max-height: 370px;
+	overflow: auto; position: relative;
+}
+#layerpopup-content-innerLayer-bottom{
+	color: black;
+	text-align: left;
+	padding-top: 10px;
+	
+	width: 100%; height: auto;
+	overflow: auto; position: relative;
+}
+#layerpopup-close {
+    background: transparent url('../images/layerpopup.png') -40px 0px;
+    cursor: pointer;
+    display: none;
+    height: 30px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+    z-index: 1103;
+}

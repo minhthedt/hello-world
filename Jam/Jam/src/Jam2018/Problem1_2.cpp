@@ -36,6 +36,6 @@ namespace Jam2018
 
     void Problem1_2()
     {
-
+        Run_Problem1_2(DATA_PROBLEM_2018_1_201);
     }
 }
