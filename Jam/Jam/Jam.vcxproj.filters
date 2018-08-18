@@ -19,6 +19,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="src\Algothirm">
+      <UniqueIdentifier>{ed722230-a5c4-40d9-a418-f9e172fbb508}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jam2018\Problem1_1.cpp">
@@ -68,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="src\Main.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Algothirm\dijkstra.cpp">
+      <Filter>src\Algothirm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
