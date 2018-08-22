@@ -5,6 +5,7 @@
 #include <string>
 #include <chrono>
 #include<iostream>
+#include <algorithm>
 using namespace std;
 
 namespace Jam2018
@@ -133,6 +134,8 @@ namespace Jam2018
         printf("Problem 4: %s\n", inputPath);
         auto begin = chrono::high_resolution_clock::now();
 
+        int minC = 0;
+        int maxT = 0;
         int N, M, K;
         int currentLine = 0;
         Vertice** G = nullptr;
@@ -178,6 +181,8 @@ namespace Jam2018
                         int C = atoi(words[2].c_str());
                         int T = atoi(words[3].c_str());
 
+                        if (minC == 0 || minC > C) minC = C;
+                        if (maxT < T) maxT = T;
                         //luu vao matrix
                         G[A - 1][B - 1].set(A,B,C,T);
                         if (currentLine - 1 == M) break;
@@ -195,15 +200,31 @@ namespace Jam2018
         }
 
         //checkPass(N, M, K, G, 10);
-        int num = 0;
-        for (int k = 1; k < 1000000; k++)
+        int max_participants = std::sqrt(K/(minC*minC)) + maxT;
+        int min_participants = 0;
+        while (min_participants < max_participants - 1)
+        {
+            int number = (max_participants + min_participants) / 2;
+            if (!checkPass(N, M, K, G, number))
+            {
+                max_participants = number;
+            }
+            else
+            {
+                min_participants = number;
+            }
+        }
+
+        int num = min_participants;
+ /*       for (int k = 1; k < max_participants; k++)
         {
             if (!checkPass(N, M, K, G, k))
             {
-                num = k-1;
+                num = k - 1;
                 break;
             }
-        }
+        }*/
+
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
@@ -220,5 +241,6 @@ namespace Jam2018
         Run_Problem1_4(DATA_PROBLEM_2018_1_411);
         Run_Problem1_4(DATA_PROBLEM_2018_1_412);
         Run_Problem1_4(DATA_PROBLEM_2018_1_413);
+
     }
 }

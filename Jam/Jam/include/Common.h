@@ -35,5 +35,11 @@
 #define DATA_PROBLEM_2018_1_412 "D:\\Training\\github\\data\\2018\\1st_ProblemD_subtask1\\data-12.in"
 #define DATA_PROBLEM_2018_1_413 "D:\\Training\\github\\data\\2018\\1st_ProblemD_subtask1\\data-13.in"
 
+#define DATA_PROBLEM_2018_1_501 "D:\\Training\\github\\data\\2018\\1st_ProblemE_subtask1\\data-1.in"
+#define DATA_PROBLEM_2018_1_510 "D:\\Training\\github\\data\\2018\\1st_ProblemE_subtask1\\data-10.in"
+#define DATA_PROBLEM_2018_1_511 "D:\\Training\\github\\data\\2018\\1st_ProblemE_subtask1\\data-11.in"
+#define DATA_PROBLEM_2018_1_512 "D:\\Training\\github\\data\\2018\\1st_ProblemE_subtask1\\data-12.in"
+#define DATA_PROBLEM_2018_1_513 "D:\\Training\\github\\data\\2018\\1st_ProblemE_subtask1\\data-13.in"
+
 
 #define DATA_ALGOTHIRM_DIJKSTRAR "D:\\Training\\github\\hello-world\\reference\\algothirm\\dijkstra\\input_0.txt"

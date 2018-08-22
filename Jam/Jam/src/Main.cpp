@@ -19,7 +19,8 @@ int main(int argn, char* argv[])
     //Jam2018::Problem1_1();
     //Jam2018::Problem1_2();
     //Jam2018::Problem1_3();
-    Jam2018::Problem1_4();
+    //Jam2018::Problem1_4();
+    Jam2018::Problem1_5();
     //Algothirm::Test_Dijkstra();
     getchar();
     return 0;
