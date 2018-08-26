@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Algothirm\dijkstra.cpp" />
+    <ClCompile Include="src\Algothirm\Euler.cpp" />
     <ClCompile Include="src\Jam2017\Problem1_1.cpp" />
     <ClCompile Include="src\Jam2017\Problem1_2.cpp" />
     <ClCompile Include="src\Jam2017\Problem1_3.cpp" />
