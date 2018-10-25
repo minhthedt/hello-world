@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\src">
+      <UniqueIdentifier>{dde57751-0364-4370-8932-5a7db9722fe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\Clibrary">
+      <UniqueIdentifier>{18e7331e-51b4-4bd8-933c-6a7c9a26f414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\Containers">
+      <UniqueIdentifier>{d5a9f703-0edd-4db2-a8c6-7d888593539a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\Multi-theading">
+      <UniqueIdentifier>{1515ce8b-38ec-4927-b673-db6ef709a801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\Other">
+      <UniqueIdentifier>{ae54eb09-7548-49b7-9280-33c87afa13f6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Clibrary\test_cfenv.cpp">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Clibrary\test_cinttypes.cpp">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Clibrary\test_cstdbool.cpp">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Clibrary\test_cstdint.cpp">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Clibrary\test_ctgmath.cpp">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Clibrary\test_cuchar.cpp">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Containers\test_array.cpp">
+      <Filter>Source Files\src\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Containers\test_forward_list.cpp">
+      <Filter>Source Files\src\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Containers\test_unordered_map.cpp">
+      <Filter>Source Files\src\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Containers\test_unordered_set.cpp">
+      <Filter>Source Files\src\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Multi-theading\test_automic.cpp">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Multi-theading\test_condition_variable.cpp">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Multi-theading\test_future.cpp">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Multi-theading\test_mutex.cpp">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Multi-theading\test_thread.cpp">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_chrono.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_codecvt.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_initializer_list.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_random.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_ratio.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_regex.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_system_error.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_tuple.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_type_traits.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Other\test_typeindex.cpp">
+      <Filter>Source Files\src\Other</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Clibrary\test_cfenv.h">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Clibrary\test_cinttypes.h">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Clibrary\test_cstdbool.h">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Clibrary\test_cstdint.h">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Clibrary\test_ctgmath.h">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Clibrary\test_cuchar.h">
+      <Filter>Source Files\src\Clibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Containers\test_array.h">
+      <Filter>Source Files\src\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Containers\test_forward_list.h">
+      <Filter>Source Files\src\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Containers\test_unordered_map.h">
+      <Filter>Source Files\src\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Containers\test_unordered_set.h">
+      <Filter>Source Files\src\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Multi-theading\test_automic.h">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Multi-theading\test_condition_variable.h">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Multi-theading\test_future.h">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Multi-theading\test_mutex.h">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Multi-theading\test_thread.h">
+      <Filter>Source Files\src\Multi-theading</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_chrono.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_codecvt.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_initializer_list.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_random.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_ratio.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_regex.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_system_error.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_tuple.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_type_traits.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Other\test_typeindex.h">
+      <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
