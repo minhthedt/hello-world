@@ -2,7 +2,7 @@
 #include "test_cfenv.h"
 #include <stdio.h>      /* printf */
 #include <math.h>       /* sqrt */
-#include <fenv.h>       /* feclearexcept, fetestexcept, FE_ALL_EXCEPT, FE_INVALID */
+#include <fenv.h>       /* feclearexcept, fetestexcept, FE_ALL_EXCEPT, FE_INVALID */ //(fenv.h) C++11
 #pragma STDC FENV_ACCESS on
 
 double fn(double x) {  /* some function for which zero is a domain error */
