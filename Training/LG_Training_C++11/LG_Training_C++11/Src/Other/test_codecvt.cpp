@@ -11,6 +11,7 @@
 
 void test_codecvt()
 {
+#if (!_DLL) && (_MSC_VER >= 1900 /* VS 2015*/) && (_MSC_VER <= 1911 /* VS 2017 */)
     std::u32string str(U"\U00004f60\U0000597d");  // ni hao (你好)
 
     std::locale loc(std::locale(), new std::codecvt_utf8<char32_t>);
@@ -20,4 +21,5 @@ void test_codecvt()
     std::cout << "Writing to file (UTF-8)... ";
     ofs << str;
     std::cout << "done!\n";
+#endif
 }
