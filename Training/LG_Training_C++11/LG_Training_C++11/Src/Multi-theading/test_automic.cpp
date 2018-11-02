@@ -27,24 +27,51 @@
 //atomic_flag_test_and_set :Test and set atomic flag
 //atomic_flag_clear        :Clear atomic flag
 
-std::atomic<bool> ready(false);
+//std::atomic<bool> ready(false);
+bool ready = false;
 std::atomic_flag winner = ATOMIC_FLAG_INIT;
+bool global = false;
+
 
 void count1m(int id) {
     while (!ready) 
     { 
         std::this_thread::yield(); 
     }      // wait for the ready signal
-    for (volatile int i = 0; i<1000000; ++i) {}          // go!, count to 1 million
-    if (!winner.test_and_set()) { std::cout << "thread #" << id << " won!\n"; }
+    for (volatile int i = 0; i<100; ++i) 
+    {
+        std::cout << "thread #" << id << "i =" << i << std::endl;
+    }          // go!, count to 1 million
+    if (!winner.test_and_set()) 
+    { 
+        std::cout << "thread #" << id << " won!\n"; 
+    }
+    //if (!global)
+    //{
+    //    global = true;
+    //     std::cout << "thread #" << id << " won!\n"; 
+    //}
 };
 
+unsigned long long foo = 0;
+void set_foo(int id) {
+    printf("thread %d:\n", id);
+    foo++;
+    unsigned long long x = foo;
+    printf("thread %d: x = %lld\n", id,x);
+}
+
+void print_foo() 
+{
+    int t = foo;
+   
+}
 
 void test_automic()
 {
     std::vector<std::thread> threads;
     std::cout << "spawning 10 threads that count to 1 million...\n";
-    for (int i = 1; i <= 10; ++i) threads.push_back(std::thread(count1m, i));
+    for (int i = 1; i <= 1000; ++i) threads.push_back(std::thread(set_foo,i));
     ready = true;
     for (auto& th : threads) th.join();
 
