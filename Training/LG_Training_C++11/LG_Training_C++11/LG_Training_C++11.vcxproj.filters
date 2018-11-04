@@ -28,6 +28,9 @@
     <Filter Include="Source Files\src\Other">
       <UniqueIdentifier>{ae54eb09-7548-49b7-9280-33c87afa13f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\src\NewSyntax">
+      <UniqueIdentifier>{36c037ed-cddd-4d9d-8291-0cae6e9dde95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -108,6 +111,15 @@
     <ClCompile Include="Src\Other\test_typeindex.cpp">
       <Filter>Source Files\src\Other</Filter>
     </ClCompile>
+    <ClCompile Include="Src\NewSyntax\test_lambda.cpp">
+      <Filter>Source Files\src\NewSyntax</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\NewSyntax\test_others.cpp">
+      <Filter>Source Files\src\NewSyntax</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\NewSyntax\test_Rvalue.cpp">
+      <Filter>Source Files\src\NewSyntax</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Clibrary\test_cfenv.h">
@@ -184,6 +196,15 @@
     </ClInclude>
     <ClInclude Include="Src\Other\test_typeindex.h">
       <Filter>Source Files\src\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\NewSyntax\test_lambda.h">
+      <Filter>Source Files\src\NewSyntax</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\NewSyntax\test_others.h">
+      <Filter>Source Files\src\NewSyntax</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\NewSyntax\test_Rvalue.h">
+      <Filter>Source Files\src\NewSyntax</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

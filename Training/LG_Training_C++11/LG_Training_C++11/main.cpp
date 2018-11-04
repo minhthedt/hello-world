@@ -16,7 +16,14 @@ extern void test_tuple();
 extern void test_typeindex();
 extern void test_type_traits();
 
+extern void test_thread();
 extern void test_automic();
+extern void test_automic_flag();
+extern void test_mutex();
+extern void test_future();
+extern void test_condition_variable();
+
+//extern void test_others();
 
 int main(char argn, char** argv)
 {
@@ -35,8 +42,14 @@ int main(char argn, char** argv)
     //test_typeindex();
     //test_type_traits();
 
-    test_automic();
+    //test_thread();
+    //test_automic();
+    //test_automic_flag();
+    //test_mutex();
+    //test_future();
+    //test_condition_variable();
 
+    //test_others();
 
     getchar();
     return 0;

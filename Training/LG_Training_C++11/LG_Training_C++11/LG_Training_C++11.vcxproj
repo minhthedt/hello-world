@@ -85,7 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ENABLE_ATOMIC_ALIGNMENT_FIX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -110,6 +110,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ENABLE_ATOMIC_ALIGNMENT_FIX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -133,6 +134,9 @@
     <ClCompile Include="Src\Multi-theading\test_future.cpp" />
     <ClCompile Include="Src\Multi-theading\test_mutex.cpp" />
     <ClCompile Include="Src\Multi-theading\test_thread.cpp" />
+    <ClCompile Include="Src\NewSyntax\test_lambda.cpp" />
+    <ClCompile Include="Src\NewSyntax\test_others.cpp" />
+    <ClCompile Include="Src\NewSyntax\test_Rvalue.cpp" />
     <ClCompile Include="Src\Other\test_chrono.cpp" />
     <ClCompile Include="Src\Other\test_codecvt.cpp" />
     <ClCompile Include="Src\Other\test_initializer_list.cpp" />
@@ -160,6 +164,9 @@
     <ClInclude Include="Src\Multi-theading\test_future.h" />
     <ClInclude Include="Src\Multi-theading\test_mutex.h" />
     <ClInclude Include="Src\Multi-theading\test_thread.h" />
+    <ClInclude Include="Src\NewSyntax\test_lambda.h" />
+    <ClInclude Include="Src\NewSyntax\test_others.h" />
+    <ClInclude Include="Src\NewSyntax\test_Rvalue.h" />
     <ClInclude Include="Src\Other\test_chrono.h" />
     <ClInclude Include="Src\Other\test_codecvt.h" />
     <ClInclude Include="Src\Other\test_initializer_list.h" />
