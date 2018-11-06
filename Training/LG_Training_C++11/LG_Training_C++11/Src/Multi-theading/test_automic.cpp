@@ -30,7 +30,7 @@
 
 namespace test_automic_
 {
-    #define USE_AUTOMIC 1
+    #define USE_AUTOMIC 0
 
     #if USE_AUTOMIC
     std::atomic<signed long long>  x = 0;
@@ -92,13 +92,8 @@ namespace test_automic_
         for (int i = 0; i < 10; i++)
         {
             theads.push_back(std::thread(add));
-        }
-
-        for (int i = 0; i < 10; i++)
-        {
             theads.push_back(std::thread(sub));
         }
-
 
         for (int i = 0; i < theads.size(); i++)
         {

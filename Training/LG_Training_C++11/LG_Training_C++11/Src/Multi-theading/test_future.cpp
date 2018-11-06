@@ -13,35 +13,46 @@ namespace test_future_
 
     // a non-optimized way of checking for prime numbers:
     bool is_prime(int x) {
-        for(int i =0; i < 10;i++)
         std::cout << "Calculating. Please, wait...\n";
         for (int i = 2; i<x; ++i) if (x%i == 0) return false;
         return true;
     }
+
+    void check(int id, std::future<bool>& fut)
+    {
+        bool ret = fut.get();
+        printf("thread %d ret = %d\n",id,ret);
+    }
+
     //create std::future from std::async()
     void test_async()
     {
         // call is_prime(313222313) asynchronously:
-        std::future<bool> fut = std::async(std::launch::async , is_prime, 313222313);//create new thread to run is_prime
-        //std::future<bool> fut = std::async(std::launch::deferred, is_prime, 313222313);//delay call is_prime until "get,wait" was called
-        //std::future<bool> fut = std::async(std::launch::async | std::launch::deferred,is_prime, 313222313);
+        std::future<bool> fut = std::async(is_prime, 313222313);
 
-        for (int i = 0; i < 10; i++)
-            std::cout << "Checking whether 313222313 is prime.\n";
-        // ...
-        std::cout << "checking...\n";
-        fut.wait();//Waits for the shared state to be ready.
+        std::vector<std::thread> threads;
+        for (int i = 0; i < 1; i++)
+        {
+            threads.push_back(std::thread(check, i, std::ref(fut)));
+        }
 
-        std::cout << "wait finish\n";
-       
-        bool ret = fut.get();      // waits for is_prime to return
 
-        if (ret) std::cout << "It is prime!\n";
-        else std::cout << "It is not prime.\n";
+        for (int i = 0; i < 1; i++)
+        {
+            threads[i].join();
+        }
+        //    std::cout << "Checking whether 313222313 is prime.\n";
+        //    // ...
+
+        //    bool ret = fut.get();      // waits for is_prime to return
+
+        //    if (ret) std::cout << "It is prime!\n";
+        //    else std::cout << "It is not prime.\n";
+        //}
     }
 
-
-    void print_int(std::future<int>& fut) {
+    void print_int(std::future<int>& fut) 
+    {
         int x = fut.get();
         std::cout << "value: " << x << '\n';
     }
@@ -57,12 +68,14 @@ namespace test_future_
         std::shared_future<int> shfut = fut.share();
 
         std::thread th1(print_int, std::ref(fut));  // send future to new thread
+        std::thread th2(print_int, std::ref(fut));  // send future to new thread
 
-        
         std::cout << "set_value: " <<'\n';
         prom.set_value(10);                         // fulfill promise //it unblocks and returns val of future::get
                                                     // (synchronizes with getting the future)
+        prom.set_value(5);
         th1.join();
+        th2.join();
     }
 
 }
