@@ -116,9 +116,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\newlanguage\test_binary_literal.cpp" />
+    <ClCompile Include="src\newlanguage\test_decltype_auto.cpp" />
+    <ClCompile Include="src\newlanguage\test_generic_lambda.cpp" />
+    <ClCompile Include="src\newlanguage\test_lambda_capture.cpp" />
+    <ClCompile Include="src\newlanguage\test_relaxingconstraint_constexprfucntion.cpp" />
+    <ClCompile Include="src\newlanguage\test_return_type_deduction.cpp" />
+    <ClCompile Include="src\newlanguage\test_variable_template.cpp" />
     <ClCompile Include="src\others\test_constexp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\newlanguage\test_binary_literal.h" />
+    <ClInclude Include="src\newlanguage\test_decltype_auto.h" />
+    <ClInclude Include="src\newlanguage\test_generic_lambda.h" />
+    <ClInclude Include="src\newlanguage\test_lambda_capture.h" />
+    <ClInclude Include="src\newlanguage\test_relaxingconstraint_constexprfucntion.h" />
+    <ClInclude Include="src\newlanguage\test_return_type_deduction.h" />
+    <ClInclude Include="src\newlanguage\test_variable_template.h" />
     <ClInclude Include="src\others\test_constexp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

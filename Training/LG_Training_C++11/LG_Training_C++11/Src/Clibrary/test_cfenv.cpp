@@ -1,7 +1,11 @@
 /* feclearexcept, fetestexcept example */
 #include "test_cfenv.h"
 #include <stdio.h>      /* printf */
+#if _MSC_VER > 1800
 #include <math.h>       /* sqrt */
+#else
+#include <cmath>       /* sqrt */
+#endif
 #include <fenv.h>       /* feclearexcept, fetestexcept, FE_ALL_EXCEPT, FE_INVALID */ //(fenv.h) C++11
 #pragma STDC FENV_ACCESS on
 

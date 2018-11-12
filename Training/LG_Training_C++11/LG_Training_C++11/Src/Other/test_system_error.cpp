@@ -61,7 +61,11 @@ namespace test_error_category
             return *this == code.category() &&
                 static_cast<int>(default_error_condition(code.value()).value()) == condition;
         }
+#if _MSC_VER > 1800
         virtual _NODISCARD std::string message(int ev) const override
+#else
+		virtual  std::string message(int ev) const override
+#endif
         {
             switch (ev) {
             case 200: return "OK";

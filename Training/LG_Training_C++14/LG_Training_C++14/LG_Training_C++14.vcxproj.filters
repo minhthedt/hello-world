@@ -33,10 +33,52 @@
     <ClCompile Include="src\others\test_constexp.cpp">
       <Filter>Source Files\src\others</Filter>
     </ClCompile>
+    <ClCompile Include="src\newlanguage\test_binary_literal.cpp">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\newlanguage\test_decltype_auto.cpp">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\newlanguage\test_generic_lambda.cpp">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\newlanguage\test_lambda_capture.cpp">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\newlanguage\test_relaxingconstraint_constexprfucntion.cpp">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\newlanguage\test_return_type_deduction.cpp">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\newlanguage\test_variable_template.cpp">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\others\test_constexp.h">
       <Filter>Source Files\src\others</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlanguage\test_binary_literal.h">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlanguage\test_decltype_auto.h">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlanguage\test_generic_lambda.h">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlanguage\test_lambda_capture.h">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlanguage\test_relaxingconstraint_constexprfucntion.h">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlanguage\test_return_type_deduction.h">
+      <Filter>Source Files\src\newlanguage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlanguage\test_variable_template.h">
+      <Filter>Source Files\src\newlanguage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

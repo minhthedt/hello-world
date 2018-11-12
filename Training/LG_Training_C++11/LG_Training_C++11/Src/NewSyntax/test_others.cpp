@@ -12,8 +12,14 @@
 ///////////////////////////////////////////////////////Automatic Type Deduction and decltype////////////////////////////////////////////////////////
 namespace test_auto_decltype_
 {
+#if _MSC_VER > 1800
+	//this code can build on VS 2017
+	template<class T, class U>
+	auto add(T t, U u)  { return t + u; } // the return type is the type of operator+(T, U)
+#else
     template<class T, class U>
-    auto add(T t, U u) { return t + u; } // the return type is the type of operator+(T, U)
+    auto add(T t, U u) -> decltype(t+u) { return t + u; } // the return type is the type of operator+(T, U)
+#endif
 
 
     void main()
@@ -28,7 +34,10 @@ namespace test_auto_decltype_
         //Inspects the declared type of an entity or the type and value category of an expression.
         int i = 33;
         decltype(i) j = i * 2;
-        decltype(auto) k = i * 2;
+#if _MSC_VER > 1800
+		//this code can build on VS 2017
+        decltype(auto) k = i * 2;//error in visual 2013 but OK in 2017
+#endif
 
         decltype(1.2f) a = add(1,2.1f);
         printf("a = %f",a);
@@ -213,30 +222,7 @@ namespace test_override_final_
 
 }
 
-//test lambda
-namespace test_lambda_
-{
 
-    void main()
-    {
-        int a = 2, b = 3;
-        bool status = false;
-        auto add = [&status](int a, int b) -> int
-        {
-            status = true;
-            return a + b;
-        };
-        int sum = add(a, b);
-        //sum = 5, status = true
-
-        int sum2 = [&status](int a_, int b_)
-        {
-            status = true;
-            return a_ + b_;
-        }(a,b);
-        //sum2 = 5, status = true
-    }
-}
 //test share_ptr
 
 namespace test_smart_pointer_
@@ -268,15 +254,18 @@ namespace test_smart_pointer_
         }
 
         {
-            std::shared_ptr<A[]> p(new A[2]{ 1,2 }, [](A* arr)
+#if _MSC_VER > 1800
+		    //this code can build on VS 2017
+            std::shared_ptr<A> p(new A[2]{ 1,2 }, [](A* arr)
             {
                 delete[] arr;
             }
             );
 
-            p[0].print();//A::printf a = 1
-            p[1].print();//A::printf a = 2
-
+            A* ptr = p.get();
+            ptr[0].print();//A::printf a = 1 
+            ptr[1].print();//A::printf a = 2 
+#endif
         }
     }
 

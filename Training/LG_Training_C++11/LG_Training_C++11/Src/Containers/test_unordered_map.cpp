@@ -25,10 +25,13 @@ void test_unordered_map()
         const std::pair<std::string, int>& element = *it;
         std::cout << "{" << element.first << "," << element.second << "}" << std::endl;
     }
-
+#if _MSC_VER > 1800
+	//build OK on VS 2017
     std::unordered_map<std::string, std::string> mymap;
     mymap = { { "Australia","Canberra" },{ "U.S.","Washington" },{ "France","Paris" },{ "Australia","Canberra_1" } };
-
+#else
+	std::unordered_map<std::string, std::string> mymap = { { "Australia", "Canberra" }, { "U.S.", "Washington" }, { "France", "Paris" }, { "Australia", "Canberra_1" } };
+#endif
     std::cout << "mymap contains:";
     for (auto it = mymap.begin(); it != mymap.end(); ++it)
         std::cout << " " << it->first << ":" << it->second;

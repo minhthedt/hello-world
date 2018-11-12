@@ -1,8 +1,10 @@
 #include "test_cuchar.h"
 #include <wchar.h>
-#include <uchar.h>
 #include <stdio.h>
 #include <stdlib.h>
+#if _MSC_VER > 1800 //OK on visual 2017
+#include <cuchar>
+#endif
 
 #ifdef MB_CUR_MAX
 #undef MB_CUR_MAX
@@ -14,6 +16,8 @@
 
 void test_cuchar()
 {
+
+#if _MSC_VER > 1800 //OK on visual 2017
     const char16_t* pt = u"Juan Souli\u00e9";
     char buffer[MB_CUR_MAX];
     int i;
@@ -28,4 +32,6 @@ void test_cuchar()
         for (i = 0; i<length; ++i) putchar(buffer[i]);
         ++pt;
     }
+#endif
+
 }
