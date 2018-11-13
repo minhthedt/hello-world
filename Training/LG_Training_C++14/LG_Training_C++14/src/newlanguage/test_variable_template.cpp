@@ -1,5 +1,6 @@
 #include "test_variable_template.h"
-
+#include <iostream>
+#include <string>
 
 namespace  test_variable_template_
 {
@@ -14,7 +15,9 @@ namespace  test_variable_template_
 
     void main()
     {
-
+        auto val1 = circular_area<float>(3.5f);//38.4845
+        auto val2 = circular_area<int>(3.5f);//27
+        std::cout << "val1 = " << val1 << "\nval2 = " << val2 << std::endl;
     }
 }
 

@@ -54,6 +54,12 @@
     <ClCompile Include="src\newlanguage\test_variable_template.cpp">
       <Filter>Source Files\src\newlanguage</Filter>
     </ClCompile>
+    <ClCompile Include="src\newlibrary\test_user_defined_literal.cpp">
+      <Filter>Source Files\src\newlibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="src\newlibrary\test_compile_time_integer_sequence.cpp">
+      <Filter>Source Files\src\newlibrary</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\others\test_constexp.h">
@@ -79,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="src\newlanguage\test_variable_template.h">
       <Filter>Source Files\src\newlanguage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlibrary\test_user_defined_literal.h">
+      <Filter>Source Files\src\newlibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlibrary\test_compile_time_integer_sequence.h">
+      <Filter>Source Files\src\newlibrary</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

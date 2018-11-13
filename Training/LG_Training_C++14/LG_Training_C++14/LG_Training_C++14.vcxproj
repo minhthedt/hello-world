@@ -123,6 +123,8 @@
     <ClCompile Include="src\newlanguage\test_relaxingconstraint_constexprfucntion.cpp" />
     <ClCompile Include="src\newlanguage\test_return_type_deduction.cpp" />
     <ClCompile Include="src\newlanguage\test_variable_template.cpp" />
+    <ClCompile Include="src\newlibrary\test_compile_time_integer_sequence.cpp" />
+    <ClCompile Include="src\newlibrary\test_user_defined_literal.cpp" />
     <ClCompile Include="src\others\test_constexp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +135,8 @@
     <ClInclude Include="src\newlanguage\test_relaxingconstraint_constexprfucntion.h" />
     <ClInclude Include="src\newlanguage\test_return_type_deduction.h" />
     <ClInclude Include="src\newlanguage\test_variable_template.h" />
+    <ClInclude Include="src\newlibrary\test_compile_time_integer_sequence.h" />
+    <ClInclude Include="src\newlibrary\test_user_defined_literal.h" />
     <ClInclude Include="src\others\test_constexp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
