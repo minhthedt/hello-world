@@ -24,7 +24,7 @@ namespace test_lambda_capture_
     void test2()
     {
         auto x = 1;
-        auto f = [&r = x, x = x * 10]{
+        auto f = [&r = x, x = x * 10](){
             ++r;
         return r + x;
         };
@@ -35,9 +35,9 @@ namespace test_lambda_capture_
     int factory(int i) { return i * 10; }
     void main()
     {
-        auto f = [x = factory(2)]{ return x; }; // returns 20
+        auto f = [x = factory(2)](void) { return x; }; // returns 20
 
-        auto lambda = [x = f()]{ return x; };
+        auto lambda = [x = f()](){ return x; };
 
         auto generator = [x = 0]() mutable {
             // this would not compile without 'mutable' as we are modifying x on each call

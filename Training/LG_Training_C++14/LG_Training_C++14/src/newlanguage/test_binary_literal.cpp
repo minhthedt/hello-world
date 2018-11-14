@@ -17,7 +17,8 @@ void test_binary_literal()
     //[11] This can make it easier for human readers to parse large numbers through subitizing.
     unsigned long long  l2 = 18'446'744'073'709'550'592llu; // C++14 //it easier for human readers 
     int bb = 0b1010'1000'1000'1000'1000'1000'1000'1000;
-    float f = 0.10123f;
+    float f = 0.123'456f;
+    int a = 1'200'300;
     int ff = 0xabcd'12 + 112;
     printf("bb = %b\n", bb);
     printf("o = %d\n", o);

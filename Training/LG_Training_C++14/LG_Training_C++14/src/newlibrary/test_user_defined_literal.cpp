@@ -59,7 +59,7 @@ namespace test_user_defined_literal_
         double time = 1.0_days + 1.0_hours + 1.0_minutes + 1.0_seconds;
         std::cout << "time = " <<time <<  " seconds" << '\n';//86400
 
-        auto st = 3_st;
+        Student st = 3_st;
         st.display();
     }
 
@@ -68,7 +68,9 @@ namespace test_user_defined_literal_
         test();
         //C++14 user-defined literals for standard library types (chrono and basic_string)
         using namespace std::chrono_literals;
-        auto day = 24h;
+
+        //auto day = std::chrono::hours(24);//c++11
+        auto day = 24h;//c++14
         day.count(); // == 24
         std::chrono::duration_cast<std::chrono::minutes>(day).count(); // == 1440
     }

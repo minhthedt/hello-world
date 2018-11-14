@@ -5,15 +5,19 @@
 
 namespace test_return_type_deduction_
 {
-    // Deduce return type as `int`.
-    //auto f(int i) {
+    //auto f(int i) -> decltype(i)
+    //{
     //    return i;
     //}
 
+
+
     template <typename T>
-    auto& f(T& t) {
+    auto& f(T& t)  {
         return t;
     }
+
+
 
 
     void main()

@@ -28,26 +28,27 @@ void test_generic_lambda()
 
     //C++11
     std::function<int(int,int)> lambda1 = [](int a, int b) -> int
-    { return a * b; };
+    { return a + b; };
 
     //C++11
-    auto lambda2 = [](int a, int b) -> decltype(a*b)
-    { return a * b; };
+    auto lambda2 = [](int a, int b) -> decltype(a+b)
+    { return a + b; };
 
     //C++14
-    auto lambda3 = [](auto a, auto b) -> int
-    { return a * b; };
+    auto lambda3 = [](auto a, auto b) -> decltype(a + b)
+    { return a + b; };
 
     //C++14
     auto lambda4 = [](auto a, auto b) -> auto
-    { return a * b; };
+    { return a + b; };
 
     //C++14
     auto lambda5 = [](auto a, auto b) 
-    { return a * b; };
+    { return a + b; };
 
+    std::string str1 = "vu";
 
     std::cout << "lambda1 = " << lambda1(1, 3) << " lambda1 = " << lambda1(1.1, 3.3) << std::endl;
     std::cout << "lambda3 = " << lambda3(1, 3) << " lambda3 = " << lambda3(1.1, 3.3) << std::endl;
-    std::cout << "lambda5 = " << lambda5(1, 3) << " lambda5 = " << lambda5(1.1, 3.3) << std::endl;
+    std::cout << "lambda5 = " << lambda5(1, 3) << " lambda5 = " << lambda5(std::string("a"), std::string("a")) << std::endl;
 }

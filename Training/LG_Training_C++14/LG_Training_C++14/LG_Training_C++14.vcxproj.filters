@@ -60,6 +60,9 @@
     <ClCompile Include="src\newlibrary\test_compile_time_integer_sequence.cpp">
       <Filter>Source Files\src\newlibrary</Filter>
     </ClCompile>
+    <ClCompile Include="src\newlibrary\test_make_unique_ptr.cpp">
+      <Filter>Source Files\src\newlibrary</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\others\test_constexp.h">
@@ -90,6 +93,9 @@
       <Filter>Source Files\src\newlibrary</Filter>
     </ClInclude>
     <ClInclude Include="src\newlibrary\test_compile_time_integer_sequence.h">
+      <Filter>Source Files\src\newlibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="src\newlibrary\test_make_unique_ptr.h">
       <Filter>Source Files\src\newlibrary</Filter>
     </ClInclude>
   </ItemGroup>

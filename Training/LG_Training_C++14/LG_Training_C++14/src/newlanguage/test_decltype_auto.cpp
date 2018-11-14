@@ -24,6 +24,7 @@ namespace test_decltype_auto_
     {
         const int x = 0;
         auto x1 = x; // int
+        decltype(x) x5 = x;
         decltype(auto) x2 = x; // const int
 
         int y = 0;
