@@ -20,13 +20,13 @@ void main(int argn, char** argv)
     //test_constexp();
     //test_binary_literal();
     //test_generic_lambda();
-    test_lambda_capture();
+    //test_lambda_capture();
     //test_decltype_auto();
     //test_decltype_auto();
     //test_variable_template();
 
     //test_user_defined_literal();
-    //test_compile_time_integer_sequence();
+    test_compile_time_integer_sequence();
     //test_make_unque_ptr();
 
     getchar();

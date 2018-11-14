@@ -21,7 +21,7 @@ namespace test_user_defined_literal_
         }
     };
     // used as conversion
-    constexpr long double operator"" _deg(long double deg)
+    long double operator"" _deg(long double deg)
     {
         return deg * 3.141592 / 180;
     }
@@ -66,13 +66,14 @@ namespace test_user_defined_literal_
     void main()
     {
         test();
+        auto x = 90.0_deg;
         //C++14 user-defined literals for standard library types (chrono and basic_string)
         using namespace std::chrono_literals;
 
         //auto day = std::chrono::hours(24);//c++11
         auto day = 24h;//c++14
         day.count(); // == 24
-        std::chrono::duration_cast<std::chrono::minutes>(day).count(); // == 1440
+       int time =  std::chrono::duration_cast<std::chrono::minutes>(day).count(); // == 1440
     }
 }
 

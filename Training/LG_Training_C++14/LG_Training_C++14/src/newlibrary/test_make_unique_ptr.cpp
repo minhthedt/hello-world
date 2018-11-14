@@ -1,10 +1,17 @@
 #include "test_make_unique_ptr.h"
 #include <iostream>
 #include <memory>
-
+#include <vector>
 
 namespace test_make_unque_ptr_
 {
+
+    struct Vec3
+    {
+        int x, y, z;
+        Vec3(int x, int y, int z) :x(x), y(y), z(z) { }
+    };
+
     struct Vec3
     {
         int x, y, z;
@@ -20,6 +27,12 @@ namespace test_make_unque_ptr_
 
     void main()
     {
+        std::default_delete<int> d;
+        std::unique_ptr<int> u4(new int, d);
+        std::unique_ptr<Vec3> u5(new Vec3{1,2,3});
+        std::unique_ptr<int> u3 = std::make_unique<int>(d);
+
+        //std::unique_ptr<int> v1 = std::make_unique<Vec3>();
         // Use the default constructor.
         std::unique_ptr<Vec3> v1 = std::make_unique<Vec3>();
         // Use the constructor that matches these arguments
