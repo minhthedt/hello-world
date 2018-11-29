@@ -23,7 +23,8 @@ extern void test_mutex();
 extern void test_future();
 extern void test_condition_variable();
 
-//extern void test_others();
+extern void test_others();
+extern void test_exception();
 extern void test_smart_pointer();
 
 extern void test_static_assert();
@@ -46,14 +47,15 @@ int main(char argn, char** argv)
     //test_type_traits();
 
     //test_thread();
-    //test_automic();
+    test_automic();
     //test_automic_flag();
     //test_mutex();
     //test_future();
     //test_condition_variable();
 
     //test_others();
-    test_smart_pointer();
+    //test_exception();
+    //test_smart_pointer();
 
     //test_static_assert();
 

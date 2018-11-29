@@ -30,7 +30,9 @@
 
 namespace test_automic_
 {
-    #define USE_AUTOMIC 0
+
+
+    #define USE_AUTOMIC 1
 
     #if USE_AUTOMIC
     std::atomic<signed long long>  x = 0;
@@ -45,7 +47,7 @@ namespace test_automic_
         for (int i = 0; i < NUMBER_LOOP; i++)
         {
             //std::atomic::operator++
-            x++;
+            //x++;
             //int m = x.fetch_add(1);
             //std::atomic_fetch_add(&x,1);//C-style
         };
@@ -65,13 +67,20 @@ namespace test_automic_
     class A
     {
     public:
-        int m,n;
-        
-        void display() 
+        int m : 2;
+        int n : 2;
+        //A() {};
+        void display()
         {
-             printf("m = %d n = %d\n", m,n);
+            printf("m = %d n = %d\n", m, n);
         }
 
+        A& operator+(A& b)
+        {
+            this->m += b.m;
+            this->n += b.n;
+            return *this;
+        }
     };
 
     class B 
@@ -81,12 +90,16 @@ namespace test_automic_
         B(int m_, int n_)  {};//not trivially copyable
         virtual void display() //not trivially copyable
         {
-            printf("a = d\n", a);
+            printf("a = %d\n", a);
         }
     };
 
     void main()
     {
+        A mmm;
+        A ccc;
+        A e = mmm + ccc;
+        mmm.display();
         std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
         std::vector<std::thread> theads;
         for (int i = 0; i < 10; i++)
@@ -114,6 +127,7 @@ namespace test_automic_
     #endif
 
         std::atomic<A> aa;// chưa tìm thấy trường hợp nào dùng atomic kiểu class ???
+        //std::atomic<A> aa();
         //https://en.cppreference.com/w/cpp/types/is_trivially_copyable
         //std::atomic<B> bb;//compile Error	C2338	atomic<T> requires T to be trivially copyable
         printf("aa.is_lock_free() = %s\n", aa.is_lock_free() ? "true" : "false");//true
@@ -162,6 +176,7 @@ namespace test_automic_flag_
 
     void main()
     {
+       
         std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
         std::vector<std::thread> theads;
         for (int i = 0; i < 10; i++)

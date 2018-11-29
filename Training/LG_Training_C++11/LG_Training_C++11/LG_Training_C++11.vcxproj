@@ -135,6 +135,7 @@
     <ClCompile Include="Src\Multi-theading\test_mutex.cpp" />
     <ClCompile Include="Src\Multi-theading\test_thread.cpp" />
     <ClCompile Include="Src\NewSyntax\test_constexp.cpp" />
+    <ClCompile Include="Src\NewSyntax\test_exception.cpp" />
     <ClCompile Include="Src\NewSyntax\test_lambda.cpp" />
     <ClCompile Include="Src\NewSyntax\test_others.cpp" />
     <ClCompile Include="Src\NewSyntax\test_Rvalue.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Src\Multi-theading\test_mutex.h" />
     <ClInclude Include="Src\Multi-theading\test_thread.h" />
     <ClInclude Include="Src\NewSyntax\test_constexp.h" />
+    <ClInclude Include="Src\NewSyntax\test_exception.h" />
     <ClInclude Include="Src\NewSyntax\test_lambda.h" />
     <ClInclude Include="Src\NewSyntax\test_others.h" />
     <ClInclude Include="Src\NewSyntax\test_Rvalue.h" />

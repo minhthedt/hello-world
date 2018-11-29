@@ -123,6 +123,9 @@
     <ClCompile Include="Src\NewSyntax\test_constexp.cpp">
       <Filter>Source Files\src\NewSyntax</Filter>
     </ClCompile>
+    <ClCompile Include="Src\NewSyntax\test_exception.cpp">
+      <Filter>Source Files\src\NewSyntax</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Clibrary\test_cfenv.h">
@@ -210,6 +213,9 @@
       <Filter>Source Files\src\NewSyntax</Filter>
     </ClInclude>
     <ClInclude Include="Src\NewSyntax\test_constexp.h">
+      <Filter>Source Files\src\NewSyntax</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\NewSyntax\test_exception.h">
       <Filter>Source Files\src\NewSyntax</Filter>
     </ClInclude>
   </ItemGroup>

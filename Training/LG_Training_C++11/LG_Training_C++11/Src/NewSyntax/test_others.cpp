@@ -273,11 +273,11 @@ namespace test_smart_pointer_
     {
         auto sp = std::make_shared<A>(42);
         std::weak_ptr<A> wp = sp;
-        int count = wp.use_count();
+        int count = wp.use_count();//count = 1
         std::shared_ptr<A> bb = wp.lock();
-        printf("wp.use_count() = %d \n", wp.use_count());
+        printf("wp.use_count() = %d \n", wp.use_count());//wp.use_count() = 2
         sp.reset();
-        printf("After sp.reset() wp.use_count() = %d \n", wp.use_count());
+        printf("After sp.reset() wp.use_count() = %d \n", wp.use_count());//After sp.reset() wp.use_count() = 1
     }
 
     std::unique_ptr<A> pass_through(std::unique_ptr<A> p)
@@ -288,27 +288,35 @@ namespace test_smart_pointer_
 
     void test_unique_ptr()
     {
-        //std::unique_ptr<A> up = std::make_unique<A>();
+        //std::unique_ptr<A> up = std::make_unique<A>(12);
         std::unique_ptr<A> up (new A(12));
+        //up.use_count() dont exist
         up->print();
-        //std::unique_ptr<A> b = up;//ERROR
+        //std::unique_ptr<A> b = up;//ERROR can not copy
         std::unique_ptr<A> b = std::move(up);//OK
         std::unique_ptr<A> c = pass_through(std::move(b));
-        std::shared_ptr<A> sp(c.release());
+        A* ptr = c.release();
+        std::shared_ptr<A> sp(ptr);
         sp->print();
-        if (!b) printf("b == nullptr\n");
-        if (!c) printf("c == nullptr\n");
+        if (!b) printf("b == nullptr\n");//b == nullptr
+        if (!c) printf("c == nullptr\n");//c == nullptr
     }
  
     void main()
     {
-        test_shared_ptr();
+        //test_shared_ptr();
         //test_weak_ptr();
-        //test_unique_ptr();
+        test_unique_ptr();
        
     }
 }
 
+double division(int a, int b) {
+    if (b == 0) {
+        throw "Division by zero condition!";
+    }
+    return (a / b);
+}
 
 void test_smart_pointer()
 {
