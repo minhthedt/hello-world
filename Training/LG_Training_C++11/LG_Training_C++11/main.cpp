@@ -29,8 +29,36 @@ extern void test_smart_pointer();
 
 extern void test_static_assert();
 
+#include <map>
+#include <functional>
+#include <iostream>
+#include <string>
+using namespace std;
+struct ByLength : public std::binary_function<string, string, bool>
+{
+    bool operator()(const string& lhs, const string& rhs) const
+{
+    return lhs.length() < rhs.length();
+}
+};
+
+void Amain()
+{
+    typedef map<string, string, ByLength> lenmap;
+    lenmap mymap;
+
+    mymap["one"] = "one";
+    mymap["a"] = "a";
+    mymap["fewbahr"] = "foobar";
+
+    for (lenmap::const_iterator it = mymap.begin(), end = mymap.end(); it != end; ++it)
+        cout << it->first << "\n";
+}
+
+
 int main(char argn, char** argv)
 {
+    
     //test_cfenv();
     //test_cstdint();
     //test_ctgmath();
@@ -47,11 +75,11 @@ int main(char argn, char** argv)
     //test_type_traits();
 
     //test_thread();
-    test_automic();
+    //test_automic();
     //test_automic_flag();
     //test_mutex();
     //test_future();
-    //test_condition_variable();
+    test_condition_variable();
 
     //test_others();
     //test_exception();

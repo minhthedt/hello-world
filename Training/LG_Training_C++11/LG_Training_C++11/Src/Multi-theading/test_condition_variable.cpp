@@ -3,7 +3,7 @@
 #include <condition_variable>
 #include <thread>
 #include <mutex>
-
+//http://www.cplusplus.com/reference/mutex/lock_guard/
 
 namespace test_condition_variable_
 {
@@ -14,9 +14,20 @@ namespace test_condition_variable_
 
     void print_id(int id) {
         std::unique_lock<std::mutex> lck(mtx);
-        while (!ready) cv.wait(lck);
+        //bool check0 = lck.owns_lock();//check0 = true
+        while (!ready)
+        {
+            std::cout << "\nthread " << id << " start waiting" << '\n';
+            cv.wait(lck);
+        }
         // ...
-        std::cout << "thread " << id << '\n';
+        //bool check1 = mtx.try_lock();//check1 = false -->  can not lock because mtx was locked before
+        //bool check2 = lck.owns_lock();//check2 = true  --> This is true if the managed mutex object was locked 
+        for (int i = 0; i < 2; i++)
+        {
+            std::cout << "thread " << id << '\n';
+        }
+       
     }
 
     void go() {
@@ -26,6 +37,7 @@ namespace test_condition_variable_
         //for (int i = 0; i < 10; i++)
         //{
         //    cv.notify_one();
+
         //}
     }
 
@@ -36,8 +48,8 @@ namespace test_condition_variable_
         for (int i = 0; i<10; ++i)
             threads[i] = std::thread(print_id, i);
 
-        std::cout << "10 threads ready to race...\n";
-        printf("press any key to notify_all threads ");
+        std::cout << "\n10 threads ready to race...\n";
+        printf("\npress any key to notify_all threads ");
         getchar();
 
         go();                       // go!

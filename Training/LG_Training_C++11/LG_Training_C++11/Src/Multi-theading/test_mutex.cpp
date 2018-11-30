@@ -42,7 +42,7 @@ namespace test_mutex_
 
     void main()
     {
-        std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+        auto t1 = std::chrono::high_resolution_clock::now();
         std::vector<std::thread> theads;
         for (int i = 0; i < 10; i++)
         {
@@ -57,15 +57,10 @@ namespace test_mutex_
         }
 
         signed long long a = x;
-        std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1);
-    #if USE_MUTEX
-        printf("USE_MUTEX: x = %lld\n", a);
+        auto t2 = std::chrono::high_resolution_clock::now();
+        auto time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1);
+        printf("a = %lld\n", a);
         std::cout << "elapsed time " << time_span.count() << " seconds." << std::endl;
-    #else
-        printf("don't USE_MUTEX: x = %lld\n", a);
-        std::cout << "elapsed time " << time_span.count() << " seconds." << std::endl;
-    #endif
     }
 
 }
