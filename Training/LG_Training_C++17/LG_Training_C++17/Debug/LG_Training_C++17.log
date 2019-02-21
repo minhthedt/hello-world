@@ -1,0 +1,4 @@
+﻿  main.cpp
+d:\training\github\hello-world\training\lg_training_c++17\lg_training_c++17\main.cpp(40): warning C4326: return type of 'main' should be 'int' instead of 'void'
+d:\training\github\hello-world\training\lg_training_c++17\lg_training_c++17\main.cpp(49): warning C4309: '=': truncation of constant value
+  LG_Training_C++17.vcxproj -> D:\Training\github\hello-world\Training\LG_Training_C++17\Debug\LG_Training_C++17.exe
