@@ -8,7 +8,18 @@
 using namespace std;
 /*
 [2018.08.25] created
+https://www.geeksforgeeks.org/eulerian-path-undirected-graph/
+https://www.geeksforgeeks.org/eulerian-path-and-circuit/
+https://www.geeksforgeeks.org/euler-circuit-directed-graph/
 http://simplecodecjava.blogspot.com/2015/09/thuat-toan-tim-uong-i-va-chu-trinh-euler.html
+http://dulieu.tailieuhoctap.vn/books/giao-duc-dai-cuong/toan-roi-rac/file_goc_772267.pdf
+https://www.geeksforgeeks.org/bfs-vs-dfs-binary-tree/
+https://www.geeksforgeeks.org/strongly-connected-components/
+https://www.geeksforgeeks.org/connectivity-in-a-directed-graph/
+Breadth-first search (BFS)
+Depth-first search (DFS)
+Strongly Connected Components (SSC) là đồ thị mà luôn tồn tại đường đến và đi từ 2 điểm bất kì, đối với đồ thì vô hướng
+thì chỉ cần BFS,DFS để check, đối với có hướng thì phải DFS 2 lần, lần 2 là cho reverse graph
 */
 
 namespace Algothirm
@@ -52,6 +63,7 @@ namespace Algothirm
             }
         }
     }
+
     int Euler::count_even_degree_vertex()
     {
         int total = 0;
@@ -60,14 +72,17 @@ namespace Algothirm
             int count_neighbour = 0;
             for (int j = 0; j < vertices; j++)
             {
+            	//tính bậc của đỉnh i, tìm số đỉnh liền kề
                 if (graph[i][j] == 1) ++count_neighbour;
             }
             // Nếu có đỉnh lân cận
             // Thêm trường hợp count_neighbour > 0 để loại trừ đỉnh cô lập
             if (count_neighbour % 2 == 0 && count_neighbour > 0) ++total;
         }
+        //trả về số đỉnh có bậc chẵn
         return total;
     }
+
     int Euler::count_odd_degree_vertex()
     {
         int total = 0;
@@ -80,6 +95,7 @@ namespace Algothirm
             }
             if (count_neighbour % 2 == 1) ++total;
         }
+        //trả về số đỉnh có bậc lẻ
         return total;
     }
 
@@ -88,6 +104,9 @@ namespace Algothirm
         int even = count_even_degree_vertex();
         int odd = count_odd_degree_vertex();
         // Đỉnh bậc chẵn + bậc lẻ = tổng số đỉnh => Không có đỉnh cô lập
+        //even == vertices => có chu trình Euler
+        //odd <= 2 và ko có đỉnh cô lập => đồ thị nửa Euler
+        //odd == 2 và ko có đỉnh cô lập => đường đi Euler
         if (even + odd == vertices && (even == vertices || odd == 2))
         {
             // Tìm đỉnh bắt đầu
@@ -101,6 +120,7 @@ namespace Algothirm
                 }
                 if (count_degree % 2 == 1)
                 {
+                	//tìm đỉnh bậc lẻ
                     start_vertex = i;
                     break;
                 }

@@ -20,15 +20,15 @@ namespace Jam2018
         bool isValid;
         Vertice():isValid(false)
         {
-        }
+        };
 
-        void set(int _A, int _B, int _C, int _T)
+        void set(int a, int b, int c, int t)
         {
             isValid = true;
-            this->A = _A;
-            this->B = _B;
-            this->C = _C;
-            this->T = _T;
+            this->A = a;
+            this->B = b;
+            this->C = c;
+            this->T = t;
         }
         unsigned int cost(int num)
         {
@@ -179,12 +179,12 @@ namespace Jam2018
                         int A = atoi(words[0].c_str());
                         int B = atoi(words[1].c_str());
                         int C = atoi(words[2].c_str());
-                        int T = atoi(words[3].c_str());
+                        int TT = atoi(words[3].c_str());
 
                         if (minC == 0 || minC > C) minC = C;
-                        if (maxT < T) maxT = T;
+                        if (maxT < TT) maxT = TT;
                         //luu vao matrix
-                        G[A - 1][B - 1].set(A,B,C,T);
+                        G[A - 1][B - 1].set(A,B,C,TT);
                         if (currentLine - 1 == M) break;
                     }
                     else
