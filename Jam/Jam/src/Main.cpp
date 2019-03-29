@@ -72,6 +72,10 @@ int main(int argn, char* argv[])
     //Algothirm::Test_Dijkstra();
     //Algothirm::Test_Euler();
     getchar();
+    while (true)
+    {
+
+    }
     return 0;
 }
 
