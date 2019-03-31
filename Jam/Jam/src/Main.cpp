@@ -30,6 +30,7 @@ namespace Algothirm
 {
     extern void Test_Dijkstra();
     extern void Test_Euler();
+    extern void Test_FordFulkerson();
 }
 
 #define uint64 unsigned long long 
@@ -65,12 +66,13 @@ int main(int argn, char* argv[])
     //Jam2018::Problem2_1();
     //Jam2018::Problem2_2();
     //Jam2018::Problem2_3();
-	Jam2018::Problem2_4();
+	//Jam2018::Problem2_4();
     //Jam2018::Problem2_5();
 
 
     //Algothirm::Test_Dijkstra();
     //Algothirm::Test_Euler();
+    Algothirm::Test_FordFulkerson();
     getchar();
     while (true)
     {

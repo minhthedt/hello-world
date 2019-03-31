@@ -180,7 +180,10 @@ namespace Jam2018
         }
     }
 	
+    namespace HopcroftKarp
+    {
 
+    }
 
     void Problem2_4()
     {
