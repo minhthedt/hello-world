@@ -2,6 +2,7 @@
 #include <iostream>
 #include <queue>
 #include <map>
+#include <algorithm>    // std::find
 using namespace std;
 
 namespace Jam2017
