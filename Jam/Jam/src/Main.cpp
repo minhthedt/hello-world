@@ -1,6 +1,6 @@
 #include "Common.h"
 #include <iostream>
-#include <math.h>       /* round, floor, ceil, trunc */  
+#include <math.h>       /* round, floor, ceil, trunc */
 
 using namespace std;
 namespace Jam2018
@@ -34,7 +34,7 @@ namespace Algothirm
     extern void Test_MaximumBipartiteMatching();
 }
 
-#define uint64 unsigned long long 
+#define uint64 unsigned long long
 uint64 Fn(uint64 n)
 {
     uint64 t0 = 0, t1 = 1;
@@ -67,8 +67,8 @@ int main(int argn, char* argv[])
     //Jam2018::Problem2_1();
     //Jam2018::Problem2_2();
     //Jam2018::Problem2_3();
-	Jam2018::Problem2_4();
-    //Jam2018::Problem2_5();
+	//Jam2018::Problem2_4();
+    Jam2018::Problem2_5();
 
 
     //Algothirm::Test_Dijkstra();
