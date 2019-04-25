@@ -35,7 +35,7 @@ namespace Jam2018
             return (stat (filepath.c_str(), &buffer) == 0);
         };
 
-        void list_dir(const std::string&  path,std::vector<std::string>& output)
+        void GetFilePaths(const std::string&  path,std::vector<std::string>& output,std::vector<std::string> ext = std::vector<std::string>())
         {
            struct dirent *entry;
            DIR *dir = opendir(path.c_str());
@@ -54,7 +54,7 @@ namespace Jam2018
                    if(str.compare(".") != 0 && str.compare(".."))
                    {
                        //cout << entry->d_name << endl;
-                       list_dir(filepath,output);
+                       GetFilePaths(filepath,output);
                    }
 
                }
@@ -66,11 +66,24 @@ namespace Jam2018
                    {
                        extension = str.substr(str.length()-3,str.length());
                    }
+                    if(ext.size() == 0)
+                    {
+                       if (extension.compare(".in") == 0)
+                       {
+                         output.push_back(filepath);
+                       }
+                    }else
+                    {
+                        for(int k =0; k < ext.size();k++)
+                        {
+                            std::string ex = ext.at(k);
+                            if (extension.compare(ex) == 0)
+                            {
+                               output.push_back(filepath);
+                            }
+                        }
+                    }
 
-                   if (extension.compare(".in") == 0)
-                   {
-                     output.push_back(filepath);
-                   }
                }
            }
         };
@@ -500,7 +513,7 @@ namespace Jam2018
     {
         std::string folder = "D:\\Training\\github\\data\\2018_round2\\E";
         std::vector<std::string> output;
-        list_dir(folder,output);
+        GetFilePaths(folder,output);
         printf("number of samples = %d\n",output.size());
         //for(int i =0; i< output.size();i++)
         {

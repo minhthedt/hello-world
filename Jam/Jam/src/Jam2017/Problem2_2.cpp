@@ -2,93 +2,140 @@
 #include <iostream>
 #include <queue>
 #include <map>
+#include <chrono>
 using namespace std;
 
 namespace Jam2017
 {
+    #define int32 signed long long
+    #define uint32 unsigned long long
 
+    extern void GetFilePaths(const std::string&  path,std::vector<std::string>& output,std::vector<std::string> ext = std::vector<std::string>());
+
+    struct TestCase
+    {
+        int N;
+        std::vector<std::array<int,2>> points;
+        TestCase():N(0){};
+    };
+
+    std::vector<int32> GetResult(const char* path,int num)
+    {
+        std::vector<int32> result;
+        FILE *fi = fopen(path, "r");
+        if(!fi)
+        {
+            printf("ERROR : %s",path);
+            return result;
+        }
+        for(int i =0; i < num;i++)
+        {
+            uint32 out;
+            fscanf(fi, "%llu", &out);
+            result.push_back(out);
+        }
+        fclose(fi);
+
+        return result;
+    }
+    //Greedy Algorithm ?? Không hiểu lời giải nên ko implement
+    //Brute Force
+    uint32 RunTestCase(const TestCase& tc)
+    {
+        double thiness = 1;
+        uint32 ii;
+        uint32 jj;
+        uint32 perimeter;
+        for(uint32 i =0; i < tc.N - 1;i++)
+        {
+            for(uint32 j = i+1; j < tc.N;j++)
+            {
+                auto& point1 = tc.points[i];
+                auto& point2 = tc.points[j];
+                uint32 width = abs(point1[0] - point2[0]);
+                uint32 heigh = abs(point1[1] - point2[1]);
+                //printf("width = %lld heigh = %lld\n",width,heigh);
+                if(width < heigh)
+                {
+                    if(thiness >= (double)width/heigh)
+                    {
+                        thiness = (double)width/heigh;
+                        ii = i;
+                        jj = j;
+                        perimeter = 2 * (width + heigh);
+                    }
+
+                }
+                else
+                {
+                    if(thiness >= (double)heigh/width)
+                    {
+                        thiness = (double)heigh/width;
+                        ii = i;
+                        jj = j;
+                        perimeter = 2 * (width + heigh);
+                    }
+               }
+            }
+        }
+        //printf("perimeter = %lld\n",perimeter);
+        return perimeter;
+    }
 
     void Run_Problem2_2(const char* inputPath)
     {
-        printf("Problem 2: %s\n", inputPath);
-        int n,q,m;
-        char method;
-        FILE *fi = fopen(inputPath, "r");
-       
-        fscanf(fi, "%d", &n);
-        fscanf(fi, "%d", &q);
-        fscanf(fi, "%d", &m);
-
-        char* arr_q =  new char[q];//contain array of operator // =0 (reverse) =1 (add)
-        int* arr_i = new int[q]; //contain i number of reverse operartion
-        int* arr_j = new int[q]; //contain j number of reverse operartion
-
-        for (int h = 0; h < q; h++)
+        uint32 T,N;//T = number of test case, N is number of points in one test case
+        int32 a,b; //a,b is coordinate of each point
+        FILE* file = freopen(inputPath, "r", stdin);
+        TestCase* tests = nullptr;
+        std::vector<int32> out;
+        if(file)
         {
-            method = '0';
-            while (method != 'a' && method != 'r')
+            cin >> T;
+            //printf("%lld\n",T);
+            tests =  new TestCase[T];
+            for(int i =0 ; i < T;i++)
             {
-                fscanf(fi, "%c", &method);
-            }
-           
-            if (method == 'a')
-            {
-                arr_q[h] = 'a';
-            }
-            else if (method == 'r')
-            {
-                arr_q[h] = 'r';
-
-                int i, j;
-                fscanf(fi, "%d", &i);
-                fscanf(fi, "%d", &j);
-                arr_i[h] = i;
-                arr_j[h] = j;
-            }
-            else
-            {
-                printf("error format input line = %d\n",h);
+                cin >> N;
+                //printf("%lld\n",N);
+                tests[i].N = N;
+                for(int j =0; j < N; j++)
+                {
+                    cin >> a;
+                    cin >> b;
+                    //printf("%lld %lld\n",a,b);
+                    tests[i].points.push_back(std::array<int,2>{a,b});
+                }
+                out.push_back(RunTestCase(tests[i]));
             }
         }
 
-        for (int h = 0; h < m; h++)
+        std::string outpath = inputPath;
+        outpath = outpath.substr(0,outpath.length()-3);
+        outpath += ".out";
+        std::vector<int32> result = GetResult(outpath.c_str(),T);
+        bool pass = true;
+        for(int i =0; i < T;i++)
         {
-            int indices;
-            fscanf(fi, "%d", &indices);
-            unsigned long long sum = 0;
-            for (int k = q - 1; k >= 0; k--)
+            //printf("%lld ----> %lld\n",out[i],result[i]);
+            if(out[i] != result[i])
             {
-                if (arr_q[k] == 'a') //add
-                {
-                    sum += indices;
-                }
-                else if (arr_q[k] == 'r') //reverse
-                {
-                    if (indices >= arr_i[k] && indices <= arr_j[k])
-                    {
-                        indices = arr_j[k] - (indices - arr_i[k]);
-                    }
-                }
+                pass = false;
+                break;
             }
-            
-            printf("%d \n", sum);
         }
-
-
-        fclose(fi);
-
-        delete[] arr_q;
-        delete[] arr_i;
-        delete[] arr_j;
+        printf("%s \n",pass ? "PASS" : "FAIL");
     }
 
     void Problem2_2()
     {
-        Run_Problem2_2(DATA_PROBLEM_2018_2_201);
-        Run_Problem2_2(DATA_PROBLEM_2018_2_210);
-        Run_Problem2_2(DATA_PROBLEM_2018_2_211);
-        Run_Problem2_2(DATA_PROBLEM_2018_2_212);
-        Run_Problem2_2(DATA_PROBLEM_2018_2_213);
+        auto begin = chrono::high_resolution_clock::now();
 
+        Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Exam\\2017\\sample\\Round2_Problem2_Set1\\002.in");
+
+        auto end = chrono::high_resolution_clock::now();
+        auto dur = end - begin;
+        auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        cout <<"\n"<< ms << " ms" << endl;//2 ms
     }
 }

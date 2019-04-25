@@ -1,6 +1,8 @@
 #pragma once
-#include <stdio.h>
-#include <string>
+#include <stdio.h>      /* printf */
+#include <stdlib.h>//atoi
+#include <math.h>       /* sqrt */
+#include <string.h>
 #include "Utils.h"
 
 #define DATA_PROBLEM_2018_1_101 "D:\\Training\\github\\data\\2018\\1st_ProblemA_subtask1\\data-1.in"
