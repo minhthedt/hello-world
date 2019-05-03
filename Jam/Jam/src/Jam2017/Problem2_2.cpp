@@ -3,6 +3,7 @@
 #include <queue>
 #include <map>
 #include <chrono>
+#include <array>
 using namespace std;
 
 namespace Jam2017
@@ -42,42 +43,42 @@ namespace Jam2017
     //Brute Force
     uint32 RunTestCase(const TestCase& tc)
     {
-        double thiness = 1;
-        uint32 ii;
-        uint32 jj;
-        uint32 perimeter;
-        for(uint32 i =0; i < tc.N - 1;i++)
-        {
-            for(uint32 j = i+1; j < tc.N;j++)
-            {
-                auto& point1 = tc.points[i];
-                auto& point2 = tc.points[j];
-                uint32 width = abs(point1[0] - point2[0]);
-                uint32 heigh = abs(point1[1] - point2[1]);
-                //printf("width = %lld heigh = %lld\n",width,heigh);
-                if(width < heigh)
-                {
-                    if(thiness >= (double)width/heigh)
-                    {
-                        thiness = (double)width/heigh;
-                        ii = i;
-                        jj = j;
-                        perimeter = 2 * (width + heigh);
-                    }
+        //double thiness = 1;
+        //uint32 ii;
+        //uint32 jj;
+        uint32 perimeter = 0;
+        //for(uint32 i =0; i < tc.N - 1;i++)
+        //{
+        //    for(uint32 j = i+1; j < tc.N;j++)
+        //    {
+        //        auto& point1 = tc.points[i];
+        //        auto& point2 = tc.points[j];
+        //        uint32 width = abs(point1[0] - point2[0]);
+        //        uint32 heigh = abs(point1[1] - point2[1]);
+        //        //printf("width = %lld heigh = %lld\n",width,heigh);
+        //        if(width < heigh)
+        //        {
+        //            if(thiness >= (double)width/heigh)
+        //            {
+        //                thiness = (double)width/heigh;
+        //                ii = i;
+        //                jj = j;
+        //                perimeter = 2 * (width + heigh);
+        //            }
 
-                }
-                else
-                {
-                    if(thiness >= (double)heigh/width)
-                    {
-                        thiness = (double)heigh/width;
-                        ii = i;
-                        jj = j;
-                        perimeter = 2 * (width + heigh);
-                    }
-               }
-            }
-        }
+        //        }
+        //        else
+        //        {
+        //            if(thiness >= (double)heigh/width)
+        //            {
+        //                thiness = (double)heigh/width;
+        //                ii = i;
+        //                jj = j;
+        //                perimeter = 2 * (width + heigh);
+        //            }
+        //       }
+        //    }
+        //}
         //printf("perimeter = %lld\n",perimeter);
         return perimeter;
     }
@@ -104,7 +105,7 @@ namespace Jam2017
                     cin >> a;
                     cin >> b;
                     //printf("%lld %lld\n",a,b);
-                    tests[i].points.push_back(std::array<int,2>{a,b});
+                    //tests[i].points.push_back(std::array<int,2>{a,b});
                 }
                 out.push_back(RunTestCase(tests[i]));
             }

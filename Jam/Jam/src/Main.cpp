@@ -3,6 +3,15 @@
 #include <math.h>       /* round, floor, ceil, trunc */
 
 using namespace std;
+namespace Jam2019
+{
+    extern void Problem1_1();
+    extern void Problem1_2();
+    extern void Problem1_3();
+    extern void Problem1_4();
+    extern void Problem1_5();
+    extern void Problem1_6();
+};
 namespace Jam2018
 {
     extern void Problem1_1();
@@ -33,6 +42,7 @@ namespace Algothirm
     extern void Test_Euler();
     extern void Test_FordFulkerson();
     extern void Test_MaximumBipartiteMatching();
+    extern void Test_Hamilton_Cycle();
 }
 
 #define uint64 unsigned long long
@@ -60,7 +70,7 @@ int main(int argn, char* argv[])
     //cout << result << endl;
 
     //Jam2017::Problem2_2();
-    Jam2017::Problem2_4();
+    //Jam2017::Problem2_4();
 
     //Jam2018::Problem1_1();
     //Jam2018::Problem1_2();
@@ -73,10 +83,17 @@ int main(int argn, char* argv[])
 	//Jam2018::Problem2_4();
     //Jam2018::Problem2_5();
 
+    //Jam2019::Problem1_1();
+    //Jam2019::Problem1_2();
+    //Jam2019::Problem1_3();
+    //Jam2019::Problem1_4();
+    Jam2019::Problem1_5();
+    //Jam2019::Problem1_6();
 
     //Algothirm::Test_Dijkstra();
     //Algothirm::Test_Euler();
     //Algothirm::Test_FordFulkerson();
+    //Algothirm::Test_Hamilton_Cycle();
     getchar();
     while (true)
     {

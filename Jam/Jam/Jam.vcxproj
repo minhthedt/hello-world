@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClCompile Include="src\Algothirm\dijkstra.cpp" />
     <ClCompile Include="src\Algothirm\Euler.cpp" />
+    <ClCompile Include="src\Algothirm\ford-fulkerson.cpp" />
+    <ClCompile Include="src\Algothirm\hamiltonian.cpp" />
     <ClCompile Include="src\Jam2017\Problem1_1.cpp" />
     <ClCompile Include="src\Jam2017\Problem1_2.cpp" />
     <ClCompile Include="src\Jam2017\Problem1_3.cpp" />
@@ -36,6 +38,17 @@
     <ClCompile Include="src\Jam2018\Problem1_3.cpp" />
     <ClCompile Include="src\Jam2018\Problem1_4.cpp" />
     <ClCompile Include="src\Jam2018\Problem1_5.cpp" />
+    <ClCompile Include="src\Jam2018\Problem2_1.cpp" />
+    <ClCompile Include="src\Jam2018\Problem2_2.cpp" />
+    <ClCompile Include="src\Jam2018\Problem2_3.cpp" />
+    <ClCompile Include="src\Jam2018\Problem2_4.cpp" />
+    <ClCompile Include="src\Jam2018\Problem2_5.cpp" />
+    <ClCompile Include="src\Jam2019\Problem1_1.cpp" />
+    <ClCompile Include="src\Jam2019\Problem1_2.cpp" />
+    <ClCompile Include="src\Jam2019\Problem1_3.cpp" />
+    <ClCompile Include="src\Jam2019\Problem1_4.cpp" />
+    <ClCompile Include="src\Jam2019\Problem1_5.cpp" />
+    <ClCompile Include="src\Jam2019\Problem1_6.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>

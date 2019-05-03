@@ -22,6 +22,9 @@
     <Filter Include="src\Algothirm">
       <UniqueIdentifier>{ed722230-a5c4-40d9-a418-f9e172fbb508}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Jam2019">
+      <UniqueIdentifier>{03d9256a-23cd-431f-ae07-bde24b088309}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jam2018\Problem1_1.cpp">
@@ -76,6 +79,45 @@
       <Filter>src\Algothirm</Filter>
     </ClCompile>
     <ClCompile Include="src\Algothirm\Euler.cpp">
+      <Filter>src\Algothirm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2018\Problem2_1.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2018\Problem2_2.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2018\Problem2_3.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2018\Problem2_4.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2018\Problem2_5.cpp">
+      <Filter>src\Jam2018</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem1_1.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem1_2.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem1_3.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem1_4.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem1_5.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Algothirm\ford-fulkerson.cpp">
+      <Filter>src\Algothirm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem1_6.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Algothirm\hamiltonian.cpp">
       <Filter>src\Algothirm</Filter>
     </ClCompile>
   </ItemGroup>
