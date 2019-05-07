@@ -167,7 +167,7 @@ struct Handler
         INT32 index = GetIndexFromKey(key);
         arr[index] += value;
         sum += value;
-        cout << sum << " ";
+        //cout << sum << " ";
         //printf("%lld ",sum);
     }
 
@@ -176,7 +176,7 @@ struct Handler
         INT32 index = GetIndexFromKey(key);
         sum -= arr[index];
         arr[index] = 0;
-        cout << sum << " ";
+        //cout << sum << " ";
         //printf("%lld ",sum);
     }
 
@@ -197,7 +197,7 @@ struct Handler
         {
             tong += arr[i];
         }
-        cout << tong << " ";
+        //cout << tong << " ";
         //printf("%lld ",tong);
     }
 
@@ -215,6 +215,7 @@ struct Handler
         UINT32 n;//1 <= n <= 100,000
         Operation* list_operations = nullptr;
         char* buf_key = nullptr;
+        char* start_buf_key = nullptr;
 
         Handler handler;
         std::vector<const char*>& keys = handler.keys;
@@ -228,6 +229,7 @@ struct Handler
             handler.Init(n);
             list_operations = new Operation[n];
             buf_key = new char[n*2*100];
+            start_buf_key = buf_key;
             memset(buf_key,0,n*2*100);
             keys.reserve(n*2);
             //printf("%d\n",n);
@@ -308,7 +310,7 @@ struct Handler
 
         //free memory
         delete[] list_operations;
-        delete[] buf_key;
+        delete[] start_buf_key;
 
     };
 

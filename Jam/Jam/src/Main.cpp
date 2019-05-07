@@ -87,8 +87,8 @@ int main(int argn, char* argv[])
     //Jam2019::Problem1_2();
     //Jam2019::Problem1_3();
     //Jam2019::Problem1_4();
-    Jam2019::Problem1_5();
-    //Jam2019::Problem1_6();
+    //Jam2019::Problem1_5();
+    Jam2019::Problem1_6();
 
     //Algothirm::Test_Dijkstra();
     //Algothirm::Test_Euler();
