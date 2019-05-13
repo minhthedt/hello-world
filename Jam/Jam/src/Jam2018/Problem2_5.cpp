@@ -8,11 +8,21 @@
 #include <iterator>
 #include <chrono>
 #include <string>
+#include <dirent.h>
+#include <limits>
 
 using namespace std;
 
 namespace Jam2018
 {
+    #define MODULO 1000000007
+    #define UINT8 unsigned char
+    #define INT16 short int
+    #define UINT32 unsigned int
+    #define INT32  int
+    #define INT64 signed long long
+    #define UINT64 unsigned long long
+    #define MAX_VALUE 200000
         #define uint32 unsigned long long
         uint32 GetOutPut(const char* inputPath)
         {
@@ -37,55 +47,55 @@ namespace Jam2018
 
         void GetFilePaths(const std::string&  path,std::vector<std::string>& output,std::vector<std::string> ext = std::vector<std::string>())
         {
-           //struct dirent *entry;
-           //DIR *dir = opendir(path.c_str());
+           struct dirent *entry;
+           DIR *dir = opendir(path.c_str());
 
-           //if (dir == NULL) {
-           //   printf("ERROR: %s",path.c_str());
-           //   return;
-           //}
+           if (dir == NULL) {
+              printf("ERROR: %s",path.c_str());
+              return;
+           }
 
-           //while ((entry = readdir(dir)) != NULL)
-           //{
-           //   std::string str = (const char*)entry->d_name;
-           //   std::string filepath =path + "\\" + str;
-           //    if(entry->d_type == DT_DIR)
-           //    {
-           //        if(str.compare(".") != 0 && str.compare(".."))
-           //        {
-           //            //cout << entry->d_name << endl;
-           //            GetFilePaths(filepath,output);
-           //        }
+           while ((entry = readdir(dir)) != NULL)
+           {
+              std::string str = (const char*)entry->d_name;
+              std::string filepath =path + "\\" + str;
+               if(entry->d_type == DT_DIR)
+               {
+                   if(str.compare(".") != 0 && str.compare(".."))
+                   {
+                       //cout << entry->d_name << endl;
+                       GetFilePaths(filepath,output);
+                   }
 
-           //    }
-           //    else if(CheckExistedFile(filepath))
-           //    {
-           //         //printf("%s\n",filepath.c_str());
-           //        std::string extension = "";
-           //        if(str.length() > 3)
-           //        {
-           //            extension = str.substr(str.length()-3,str.length());
-           //        }
-           //         if(ext.size() == 0)
-           //         {
-           //            if (extension.compare(".in") == 0)
-           //            {
-           //              output.push_back(filepath);
-           //            }
-           //         }else
-           //         {
-           //             for(int k =0; k < ext.size();k++)
-           //             {
-           //                 std::string ex = ext.at(k);
-           //                 if (extension.compare(ex) == 0)
-           //                 {
-           //                    output.push_back(filepath);
-           //                 }
-           //             }
-           //         }
+               }
+               else if(CheckExistedFile(filepath))
+               {
+                    //printf("%s\n",filepath.c_str());
+                   std::string extension = "";
+                   if(str.length() > 3)
+                   {
+                       extension = str.substr(str.length()-3,str.length());
+                   }
+                    if(ext.size() == 0)
+                    {
+                       if (extension.compare(".in") == 0)
+                       {
+                         output.push_back(filepath);
+                       }
+                    }else
+                    {
+                        for(int k =0; k < ext.size();k++)
+                        {
+                            std::string ex = ext.at(k);
+                            if (extension.compare(ex) == 0)
+                            {
+                               output.push_back(filepath);
+                            }
+                        }
+                    }
 
-           //    }
-           //}
+               }
+           }
         };
 
     namespace Bruteforce_Fail
@@ -468,6 +478,80 @@ namespace Jam2018
 
          }
 
+         UINT64 CollapseSource(UINT64 a, UINT64 b)
+        {
+            UINT64 sum = 0;
+            UINT64  n = max<UINT64>(a,b);
+            UINT64  m_size = 10;
+            UINT64* s = new UINT64[m_size];
+            UINT64* v = new UINT64[m_size];
+            UINT64* c = new UINT64[m_size];
+            UINT64* f = new UINT64[m_size];
+            memset(s,0,m_size*sizeof(UINT64));
+            memset(v,0,m_size*sizeof(UINT64));
+            memset(c,0,m_size*sizeof(UINT64));
+            memset(f,0,m_size*sizeof(UINT64));
+            s[1] = 0;
+            s[2] = 26 * 3;
+            v[1] = 5;
+            v[2] = 26*5;
+            v[3] = (26 * 3) * 5 + (26 * 26) * 5 - (5 * 5 * 5);
+            c[1] = 21;
+            c[2] = 26 * 21;
+            c[3] = (26 * 3) * 21 + (26 * 26) * 21 - 21;
+
+            UINT64 i =0;
+            for(UINT64 k = 1; k <= n;k++ )
+            {
+                i = k;
+                if(k > 4)
+                {
+                    i = 4;
+                    //dich chuyen sang trai
+                    s[1] = s[2];s[2] = s[3];s[3] = s[4];
+                    v[1] = v[2];v[2] = v[3];v[3] = v[4];
+                    c[1] = c[2];c[2] = c[3];c[3] = c[4];
+                    f[1] = f[2];f[2] = f[3];f[3] = f[4];
+                }
+                if(i > 2)//i not in S
+                {
+                    s[i] = f[i - 2] * 9 + f[i - 1] * 3;
+                    if(s[i] > std::numeric_limits<UINT64>::max()/2)  printf("too big 1\n");
+                }
+
+                if(i > 3)
+                {
+                    v[i] = s[i - 1] * 5 + f[i - 1] * 5 - (c[i - 3] + s[i - 3]) * 5 * 5 * 5;
+                    if(v[i] > std::numeric_limits<UINT64>::max()/2)  printf("too big 2\n");
+                }
+
+                if(i > 3)
+                {
+                    c[i] = s[i - 1] * 21 + f[i - 1] * 21 - (v[i - 3] + s[i - 3]) * 21 - c[i - 3] * 20;
+                    if(c[i] > std::numeric_limits<UINT64>::max()/2)  printf("too big 3\n");
+                }
+                printf("k = %llu: %llu - %llu - %llu\n",k,s[i],v[i] , c[i]);
+
+                s[i] = s[i] % MODULO;
+                v[i] = v[i] % MODULO;
+                c[i] = c[i] % MODULO;
+
+                f[i] = v[i] + c[i];//i =1,2
+
+                if(f[i] > std::numeric_limits<UINT64>::max()/2)  printf("too big 4\n");
+
+                f[i] = f[i] % MODULO;
+                if(k >= a && k <=b)
+                {
+                    sum += f[i];
+                    sum = sum % MODULO;
+                }
+            }
+            return sum;
+        };
+
+
+
          void Run_Problem2_5(const char* inputPath)
         {
             //const std::vector<char>& arr = allcharacters();
@@ -484,34 +568,46 @@ namespace Jam2018
             }
             fscanf(fi, "%llu", &a);
             fscanf(fi, "%llu", &b);
-            printf("%llu %llu \n",a,b);
+            //printf("%llu %llu \n",a,b);
 
 
             uint32 count = 0;
-            for ( uint32 i = a; i <= b; i++)
-            {
-                uint32 length = i;
-                char* word = new char[length + 1];
-                memset(word,0, length +1);
-                CreateWords(length,word, 0, count);
-                //generate(length,word,0,count);
-                delete[] word;
-            }
-            printf("output = %lld \n", count);
+//            for ( uint32 i = a; i <= b; i++)
+//            {
+//                uint32 length = i;
+//                char* word = new char[length + 1];
+//                memset(word,0, length +1);
+//                CreateWords(length,word, 0, count);
+//                //generate(length,word,0,count);
+//                delete[] word;
+//            }
+            count = CollapseSource(a,b);
+            //printf("output = %llu \n", count);
             fclose(fi);
 
             std::string outpath = inputPath;
             outpath = outpath.substr(0,outpath.length()-3);
             outpath += ".out";
             uint32 out = GetOutPut(outpath.c_str());
-            if(out == count) printf("PASS\n");
-            else printf("FAIL %lld %lld\n",out,count);
+            if(out == count)
+            {
+                //printf("%llu %llu \n",a,b);
+                printf("PASS\n");
+            }
+            else
+            {
+                printf("%llu %llu \n",a,b);
+                printf("FAIL %lld %lld\n",out,count);
+            }
         }
     }
 
+
+
+
     void Problem2_5()
     {
-        std::string folder = "D:\\Training\\github\\data\\2018_round2\\E";
+        std::string folder = "D:\\Training\\github\\data\\2018_round2\\E\\subtask2";
         std::vector<std::string> output;
         GetFilePaths(folder,output);
         printf("number of samples = %d\n",output.size());
@@ -521,7 +617,7 @@ namespace Jam2018
             //printf("%s\n",output[i].c_str());
              auto begin = chrono::high_resolution_clock::now();
             //Run_Problem2_5(DATA_PROBLEM_2018_2_501);
-            Bruteforce_OK::Run_Problem2_5("D:\\Training\\github\\data\\2018_round2\\E\\sample-5.in");
+            Bruteforce_OK::Run_Problem2_5("D:\\Training\\github\\data\\2018_round2\\E\\subtask2\\E-data-042.in");
             //Bruteforce_OK::Run_Problem2_5(output[i].c_str());
             //Run_Problem2_5(DATA_PROBLEM_2018_2_512);
             //Run_Problem2_5(DATA_PROBLEM_2018_2_513);
