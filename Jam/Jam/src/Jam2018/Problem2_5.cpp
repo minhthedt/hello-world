@@ -12,6 +12,7 @@
 #include <limits>
 
 using namespace std;
+//http://collab.lge.com/main/pages/viewpage.action?pageId=878214082
 
 namespace Jam2018
 {
@@ -477,20 +478,21 @@ namespace Jam2018
              }
 
          }
-
-         UINT64 CollapseSource(UINT64 a, UINT64 b)
+        //[2019.05.13] do subtask2:  //Complex O(N)
+         UINT64 CollabSource_Subtask3(INT64 a, INT64 b)
         {
-            UINT64 sum = 0;
-            UINT64  n = max<UINT64>(a,b);
-            UINT64  m_size = 10;
-            UINT64* s = new UINT64[m_size];
-            UINT64* v = new UINT64[m_size];
-            UINT64* c = new UINT64[m_size];
-            UINT64* f = new UINT64[m_size];
-            memset(s,0,m_size*sizeof(UINT64));
-            memset(v,0,m_size*sizeof(UINT64));
-            memset(c,0,m_size*sizeof(UINT64));
-            memset(f,0,m_size*sizeof(UINT64));
+            INT64 sum = 0;
+            INT64  n = max<INT64>(a,b);
+            INT64  m_size = 10;
+            //[2019.05.14] this is very important when use "INT64" instead of "UINT64"
+            INT64* s = new INT64[m_size];
+            INT64* v = new INT64[m_size];
+            INT64* c = new INT64[m_size];
+            INT64* f = new INT64[m_size];
+            memset(s,0,m_size*sizeof(INT64));
+            memset(v,0,m_size*sizeof(INT64));
+            memset(c,0,m_size*sizeof(INT64));
+            memset(f,0,m_size*sizeof(INT64));
             s[1] = 0;
             s[2] = 26 * 3;
             v[1] = 5;
@@ -500,8 +502,8 @@ namespace Jam2018
             c[2] = 26 * 21;
             c[3] = (26 * 3) * 21 + (26 * 26) * 21 - 21;
 
-            UINT64 i =0;
-            for(UINT64 k = 1; k <= n;k++ )
+            INT64 i =0;
+            for(INT64 k = 1; k <= n;k++ )
             {
                 i = k;
                 if(k > 4)
@@ -516,39 +518,207 @@ namespace Jam2018
                 if(i > 2)//i not in S
                 {
                     s[i] = f[i - 2] * 9 + f[i - 1] * 3;
-                    if(s[i] > std::numeric_limits<UINT64>::max()/2)  printf("too big 1\n");
                 }
 
                 if(i > 3)
                 {
                     v[i] = s[i - 1] * 5 + f[i - 1] * 5 - (c[i - 3] + s[i - 3]) * 5 * 5 * 5;
-                    if(v[i] > std::numeric_limits<UINT64>::max()/2)  printf("too big 2\n");
                 }
 
                 if(i > 3)
                 {
                     c[i] = s[i - 1] * 21 + f[i - 1] * 21 - (v[i - 3] + s[i - 3]) * 21 - c[i - 3] * 20;
-                    if(c[i] > std::numeric_limits<UINT64>::max()/2)  printf("too big 3\n");
                 }
-                printf("k = %llu: %llu - %llu - %llu\n",k,s[i],v[i] , c[i]);
-
-                s[i] = s[i] % MODULO;
-                v[i] = v[i] % MODULO;
-                c[i] = c[i] % MODULO;
 
                 f[i] = v[i] + c[i];//i =1,2
 
-                if(f[i] > std::numeric_limits<UINT64>::max()/2)  printf("too big 4\n");
 
-                f[i] = f[i] % MODULO;
+                f[i] %= MODULO;
+                s[i] %= MODULO;
+                v[i] %= MODULO;
+                c[i] %= MODULO;
+
                 if(k >= a && k <=b)
                 {
                     sum += f[i];
-                    sum = sum % MODULO;
+                    sum %= MODULO;
                 }
             }
+
+            if(sum < 0 ) sum =  sum + MODULO;
             return sum;
         };
+
+        //[2019.05.14] do subtask3,4
+        //typedef Maxtrix<INT64,10> Matrix10
+
+        template<typename T,INT64 N>
+        struct Maxtrix
+        {
+            T val[N][N];
+            Maxtrix()
+            {
+                for(int i =0; i < N;i++)
+                {
+                    for(int j =0; j < N; j++)
+                    {
+                        val[i][j] = 0;
+                    }
+                }
+            }
+
+            Maxtrix& setIdentity()
+            {
+                for(int i =0; i < N; i++)
+                {
+                    val[i][i] = 1;
+                }
+                return *this;
+            }
+
+            //Maxtrix&  copy(const Maxtrix<T,N>& other)
+            Maxtrix&  copy(const Maxtrix& other)
+            {
+                for(int i =0; i <N;i++)
+                {
+                    for(int j =0; j < N;j++)
+                    {
+                        val[i][j] = other.val[i][j];
+                    }
+                }
+                 return *this;
+            }
+        };
+
+        template<typename T, INT64 N>
+        Maxtrix<T,N> mutilply(const Maxtrix<T,N>& a, const Maxtrix<T,N>& b)
+        {
+            Maxtrix<T,N> temp;
+            for(int i =0; i < N;i++)
+            {
+                for(int j =0; j < N; j++)
+                {
+                    for(int k =0; k < N;k++)
+                    {
+                        temp.val[i][j] += a.val[i][k] * b.val[k][j];
+                        temp.val[i][j] %= MODULO;
+                    }
+                }
+            }
+
+            return temp;
+        }
+
+
+        template<typename T, INT64 N>
+        std::array<T,N> mat_mul(const Maxtrix<T,N> &matrix, const std::array<T,N>& arr)
+        {
+            std::array<T,N> res = {0,};
+            for(int i =0; i < N; i++)
+            {
+                for(int k =0; k < N;k++)
+                {
+                    res[i] += matrix.val[i][k] * arr[k];
+                    res[i] %= MODULO;
+                }
+            }
+
+            return res;
+        }
+
+        template<typename T, INT64 N>
+        Maxtrix<T,N> mat_pow(const Maxtrix<T,N> &M, INT64 n)
+        {
+            Maxtrix<T,N> matrix = M;
+            Maxtrix<T,N> result;
+            result.setIdentity();
+            while(n > 0)
+            {
+                if(n % 2 == 1)
+                {
+                    result = mutilply<T,N>(result,matrix);
+
+                    n = (n-1)/2;
+                }else{
+                    n = n /2;
+                }
+                //NOTICE: FAIL FAIL FAIL
+                //n = std::floor<INT64>((double)n/2.0f);//INT64 -> double: only with 15 digits can cast correct
+
+                matrix  = mutilply<T,N>(matrix,matrix);
+            }
+
+            return result;
+        }
+
+
+
+        INT64 subsum(const Maxtrix<INT64,10>& M,const std::array<INT64,10>& a3,INT64 n)
+        {
+            if(n ==0) return 0;
+            else if(n == 1) return 26;
+            else if(n == 2) return 702;
+            else if(n == 3) return 20160;
+
+            Maxtrix<INT64,10> temp = mat_pow<INT64,10>(M,n-3);
+            std::array<INT64,10> an = mat_mul<INT64,10>(temp,a3);
+            INT64 gn =  an[9]% MODULO;
+            return gn;
+        }
+        //Complex O(log(N))
+         INT64 CollabSource_Subtask4(INT64 a, INT64 b)
+         {
+             //chuyển công thức tính s(n),v(n),c(n) thành nhân ma trận
+             //a(n) = M * a(n-1)
+             //a(n) = [s(n),s(n-1),s(n-2),v(n),v(n-1),v(n-2),c(n),v(n-1),v(n-2),g(n)] //g(n) = sum of f(1->n)
+             std::array<INT64,10> a3 = {2262,78,0,3645,130,5,15813,546,21,20160};
+             Maxtrix<INT64,10> M;
+             INT64 temp[10][10] = {
+                {0, 0, 0, 3, 9, 0, 3, 9, 0, 0},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                {5, 0, -125, 5, 0, 0, 5, 0, -125, 0},
+                {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+                {21, 0, -21, 21, 0, -21, 21, 0, -20, 0},
+                {0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+                {5 + 21, 0, -125 - 21, 5 + 21, 0, -21, 5 + 21, 0, -125 - 20, 1}
+             };
+
+             for(int i = 0; i < 10; i++)
+             {
+                 for(int j =0; j < 10; j++)
+                 {
+                     M.val[i][j] = temp[i][j];
+                 }
+             }
+
+            INT64 res = subsum(M,a3,b) - subsum(M,a3,a-1);
+            if(res < 0) res += MODULO;
+
+//            Unit TEST FOR mat_mul, mat_pow
+//            std::array<INT64,3> a3 = {1,2,3};
+//            Maxtrix<INT64,3> N;
+//            INT64 temp1[3][3] = {
+//                {2,2,2},
+//                {2,2,2},
+//                {2,2,2}
+//            };
+//
+//             for(int i = 0; i < 3; i++)
+//             {
+//                 for(int j =0; j < 3; j++)
+//                 {
+//                     N.val[i][j] = temp1[i][j];
+//                 }
+//             }
+//
+//            std::array<INT64,3> tt = mat_mul<INT64,3>(N,a3);
+//            Maxtrix<INT64,3> mm =  mat_pow(N,3);
+
+            return res;
+         }
 
 
 
@@ -581,7 +751,8 @@ namespace Jam2018
 //                //generate(length,word,0,count);
 //                delete[] word;
 //            }
-            count = CollapseSource(a,b);
+            //count = CollabSource_Subtask3(a,b);
+            count = CollabSource_Subtask4(a,b);
             //printf("output = %llu \n", count);
             fclose(fi);
 
@@ -591,8 +762,8 @@ namespace Jam2018
             uint32 out = GetOutPut(outpath.c_str());
             if(out == count)
             {
-                //printf("%llu %llu \n",a,b);
-                printf("PASS\n");
+                printf("%llu %llu \n",a,b);
+                printf("PASS %lld %lld\n",out,count);
             }
             else
             {
@@ -603,30 +774,26 @@ namespace Jam2018
     }
 
 
-
-
     void Problem2_5()
     {
-        std::string folder = "D:\\Training\\github\\data\\2018_round2\\E\\subtask2";
+        std::string folder = "D:\\Training\\github\\data\\2018_round2\\E\\subtask4";
         std::vector<std::string> output;
         GetFilePaths(folder,output);
         printf("number of samples = %d\n",output.size());
-        //for(int i =0; i< output.size();i++)
+        auto begin = chrono::high_resolution_clock::now();
+        for(int i =0; i< output.size();i++)
         {
             //Bruteforce_Fail::characters.clear();
             //printf("%s\n",output[i].c_str());
-             auto begin = chrono::high_resolution_clock::now();
-            //Run_Problem2_5(DATA_PROBLEM_2018_2_501);
-            Bruteforce_OK::Run_Problem2_5("D:\\Training\\github\\data\\2018_round2\\E\\subtask2\\E-data-042.in");
-            //Bruteforce_OK::Run_Problem2_5(output[i].c_str());
-            //Run_Problem2_5(DATA_PROBLEM_2018_2_512);
-            //Run_Problem2_5(DATA_PROBLEM_2018_2_513);
 
-            auto end = chrono::high_resolution_clock::now();
-            auto dur = end - begin;
-            auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
-            cout <<"\n"<< ms << " ms" << endl;//2 ms
+            //Bruteforce_OK::Run_Problem2_5("D:\\Training\\github\\data\\2018_round2\\E\\subtask4\\E-data-086.in");
+            //Bruteforce_OK::Run_Problem2_5("D:\\Training\\github\\data\\2018_round2\\E\\sample-5.in");
+            Bruteforce_OK::Run_Problem2_5(output[i].c_str());
         }
+        auto end = chrono::high_resolution_clock::now();
+        auto dur = end - begin;
+        auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        cout <<"\n"<< ms << " ms" << endl;//2 ms
 
     }
 }
