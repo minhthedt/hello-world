@@ -78,7 +78,8 @@ int main(int argn, char* argv[])
    // uint64 result = Fn(10);
     //cout << result << endl;
 
-    Jam2016::Problem2_1();
+    //Jam2016::Problem2_1();
+    Jam2016::Problem2_2();
 
     //Jam2017::Problem2_2();
     //Jam2017::Problem2_4();

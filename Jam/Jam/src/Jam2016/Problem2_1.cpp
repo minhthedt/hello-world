@@ -19,7 +19,8 @@ namespace Jam2016
     UINT32 Cal_Problem2_1(UINT32 Ox, UINT32 Oy, UINT32 n)
     {
         double R = Oy;
-        double x = n / 2.0f;
+        double x = Ox;
+        //double x = n / 2.0f;//lúc làm thực sự không hiểu đề bài, nghĩ rằng di chuyển đường tròn sao cho dây thừng nhỏ nhất
 
         double a2 = x * x + R * R;
         double b2 = (n - x)*(n - x) + R * R;
@@ -48,7 +49,7 @@ namespace Jam2016
                 //printf("%d %d %d\n", Ox, Oy,n);
                 UINT32 res = Cal_Problem2_1(Ox, Oy, n);
                 printf("%d\n", res);//[2019.05.19] khong hieu vi sao ra ket qua ko giong Collab
-               
+
             }
             fclose(fi);
         }
@@ -58,7 +59,7 @@ namespace Jam2016
     void Problem2_1()
     {
         auto begin = chrono::high_resolution_clock::now();
-        Run_Problem2_1("D:\\Training\\github\\data\\2016\\Problem2_1\\input2.txt");
+        Run_Problem2_1("D:\\Training\\github\\data\\2016\\Round2\\Problem1\\input3.txt");
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
