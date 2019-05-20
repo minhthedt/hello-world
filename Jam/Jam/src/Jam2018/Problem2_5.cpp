@@ -8,7 +8,8 @@
 #include <iterator>
 #include <chrono>
 #include <string>
-#include <dirent.h>
+#include <array>
+//#include <dirent.h>
 #include <limits>
 
 using namespace std;
@@ -48,55 +49,55 @@ namespace Jam2018
 
         void GetFilePaths(const std::string&  path,std::vector<std::string>& output,std::vector<std::string> ext = std::vector<std::string>())
         {
-           struct dirent *entry;
-           DIR *dir = opendir(path.c_str());
+           //struct dirent *entry;
+           //DIR *dir = opendir(path.c_str());
 
-           if (dir == NULL) {
-              printf("ERROR: %s",path.c_str());
-              return;
-           }
+           //if (dir == NULL) {
+           //   printf("ERROR: %s",path.c_str());
+           //   return;
+           //}
 
-           while ((entry = readdir(dir)) != NULL)
-           {
-              std::string str = (const char*)entry->d_name;
-              std::string filepath =path + "\\" + str;
-               if(entry->d_type == DT_DIR)
-               {
-                   if(str.compare(".") != 0 && str.compare(".."))
-                   {
-                       //cout << entry->d_name << endl;
-                       GetFilePaths(filepath,output);
-                   }
+           //while ((entry = readdir(dir)) != NULL)
+           //{
+           //   std::string str = (const char*)entry->d_name;
+           //   std::string filepath =path + "\\" + str;
+           //    if(entry->d_type == DT_DIR)
+           //    {
+           //        if(str.compare(".") != 0 && str.compare(".."))
+           //        {
+           //            //cout << entry->d_name << endl;
+           //            GetFilePaths(filepath,output);
+           //        }
 
-               }
-               else if(CheckExistedFile(filepath))
-               {
-                    //printf("%s\n",filepath.c_str());
-                   std::string extension = "";
-                   if(str.length() > 3)
-                   {
-                       extension = str.substr(str.length()-3,str.length());
-                   }
-                    if(ext.size() == 0)
-                    {
-                       if (extension.compare(".in") == 0)
-                       {
-                         output.push_back(filepath);
-                       }
-                    }else
-                    {
-                        for(int k =0; k < ext.size();k++)
-                        {
-                            std::string ex = ext.at(k);
-                            if (extension.compare(ex) == 0)
-                            {
-                               output.push_back(filepath);
-                            }
-                        }
-                    }
+           //    }
+           //    else if(CheckExistedFile(filepath))
+           //    {
+           //         //printf("%s\n",filepath.c_str());
+           //        std::string extension = "";
+           //        if(str.length() > 3)
+           //        {
+           //            extension = str.substr(str.length()-3,str.length());
+           //        }
+           //         if(ext.size() == 0)
+           //         {
+           //            if (extension.compare(".in") == 0)
+           //            {
+           //              output.push_back(filepath);
+           //            }
+           //         }else
+           //         {
+           //             for(int k =0; k < ext.size();k++)
+           //             {
+           //                 std::string ex = ext.at(k);
+           //                 if (extension.compare(ex) == 0)
+           //                 {
+           //                    output.push_back(filepath);
+           //                 }
+           //             }
+           //         }
 
-               }
-           }
+           //    }
+           //}
         };
 
     namespace Bruteforce_Fail
@@ -781,14 +782,14 @@ namespace Jam2018
         GetFilePaths(folder,output);
         printf("number of samples = %d\n",output.size());
         auto begin = chrono::high_resolution_clock::now();
-        for(int i =0; i< output.size();i++)
+        //for(int i =0; i< output.size();i++)
         {
             //Bruteforce_Fail::characters.clear();
             //printf("%s\n",output[i].c_str());
 
-            //Bruteforce_OK::Run_Problem2_5("D:\\Training\\github\\data\\2018_round2\\E\\subtask4\\E-data-086.in");
+            Bruteforce_OK::Run_Problem2_5("D:\\Training\\github\\data\\2018_round2\\E\\subtask4\\E-data-086.in");
             //Bruteforce_OK::Run_Problem2_5("D:\\Training\\github\\data\\2018_round2\\E\\sample-5.in");
-            Bruteforce_OK::Run_Problem2_5(output[i].c_str());
+            //Bruteforce_OK::Run_Problem2_5(output[i].c_str());
         }
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
