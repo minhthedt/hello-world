@@ -26,78 +26,106 @@ namespace Jam2016
         UINT32* LH = nullptr;//array contain length between cities on horizon
         UINT32* LV = nullptr;//array contain length between cities on vertical
         UINT32* PV = nullptr;//array contain price of cities on horizon
-        UINT32 S =0; //price of gas in intersect city
-        UINT64 min_cost =0;//cost of trip from left to right
-        UINT64 L =0;//length from intersect to right most
-        //UINT64 SL= 0;//length from intersect to a city on vertical
-        UINT64 C =0; //cost from left to intersect on horizon
+
         if (fi)
         {
-            cin >> T;
+            //cin >> T;
+            fscanf(fi,"%d",&T);
+            //printf("%d\n",T);
             for(int i =0; i < T; i++)
             {
-                 cin >> N;
+                UINT32 price0 =0; //converted price of gas in intersect city
+                UINT64 min_cost =0;//cost of trip from left to right
+                UINT64 C =0; //cost from left to intersect on horizon
+                UINT64 cost_H = 0; //cost when only travel on horizon
+
+                 //cin >> N;
+                  fscanf(fi,"%d",&N);
+                 //printf("%d\n",N);
                  PH = new UINT32[N-1];
                  LH = new UINT32[N-1];
+
+                 //read N-1 static of cities
                  for(int j =0; j < N-1;j++)
                  {
-                    cin >> PH[j];
-                    cin >> LH[j];
-                    if(j >0)
-                    {
-                        if(PH[j] > PH[j-1]) PH[j] = PH[j-1];
-                    }
-                    min_cost += PH[j] * LH[j];//calculate when travel only on horizon
+                    //cin >> PH[j];
+                    //cin >> LH[j];
+                    fscanf(fi,"%d",&PH[j]);
+                    fscanf(fi,"%d",&LH[j]);
+                    //printf("%d %d ",PH[j],LH[j]);
                  };
 
 
-                 cin >> p;
+                 //cin >> p;
+                 fscanf(fi,"%d",&p);
+                 //printf("\n%d ",p);
+                 //
+                  UINT32 price =0;
+                  for(int j =0; j < N-1;j++)
+                  {
 
-                //calculate length from p to right most
-                L =0;
-                C =0;
-                for(int k = 0; k < N-1;k++)
-                {
-                    if( k < p-1)
+                    if(j == 0) price = PH[j];
+                    if(price > PH[j])
                     {
-                        C  += PH[k] * LH[k];
-                    }else{
-                        L  += LH[k];
+                        price = PH[j];
                     }
 
-                }
+                    if(j < p-1)  C += price * LH[j];
+                    if(j == p-1) price0 = price;
 
-                cin >> M;//number of cities on Vertical
+                    cost_H += price * LH[j];//calculate when travel only on horizon
+                  }
+
+                  min_cost = cost_H;
+
+
+                //cin >> M;//number of cities on Vertical
+                fscanf(fi,"%d",&M);
+                //printf("%d\n",M);
                 LV = new UINT32[M];
                 PV = new UINT32[M];
 
-                S = PH[p-1];
-                UINT64 cost =0;
-                UINT64 sum = 0;
-                for(int gg =0; gg < M;gg++)
+                UINT64 cost_V = 0;//cost when travel on vertical
+                UINT64 down = 0;
+                UINT64 down_length = 0;
+                UINT32 price1 = price0;
+                for(int k =0; k < M;k++)
                 {
-                    cin >> LV[gg];
-                    cin >> PV[gg];
-                    if(gg ==0)
+                    //cin >> LV[k];
+                    //cin >> PV[k];
+                    fscanf(fi,"%d",&LV[k]);
+                    fscanf(fi,"%d",&PV[k]);
+                    //printf("%d %d ",LV[k],PV[k]);
+                    down += price1 * LV[k];
+                    down_length += LV[k];
+                    if(price1 > PV[k])
                     {
-                         if(PV[g] > S) PV[g] = S;
-                    }else{
-                        if(PV[g] > S) PV[g] = PV[g-1];
+                        price1 = PV[k];
                     }
+                    //travel k + 1 element on vertical then come back
+                    if( C + down > min_cost) break;//no need to continue
+                    cost_V = C + down + price1 * down_length;
+                    //travel from intersect to right most
+                    UINT32 price2 = price1;
+                    for(int g = p -1; g < N-1;g++)
+                    {
+                        if(g == p -1)
+                        {
+                            cost_V += price2 * LH[g];
+                        }
+                        else
+                        {
+                            if(price2 > PH[g]) price2 = PH[g];
+                            cost_V += price2 * LH[g];
+                        }
+                    }
+
+                    if(min_cost > cost_V) min_cost = cost_V;
+
+
                 }
 
-                for(int g =0; g < M;g++)
-                {
-                    if(g ==0)
-                    {
-                        cost = C + S* LV[g] + PV[g]*(LV[g] + L);
-                    }else{
-                        sum += LV[g-1];
-                        cost += LV[g] * PV[g-1] + sum * (PV[g] - PV[g-1]) + PV[g] * LV[g];
-                    }
-
-                    if(cost < min_cost) min_cost = cost;
-                }
+                 //printf("\n");
 
                 printf("%lld\n",min_cost);
                 delete[] PH; PH = nullptr;
@@ -117,7 +145,7 @@ namespace Jam2016
     void Problem2_2()
     {
         auto begin = chrono::high_resolution_clock::now();
-        Run_Problem2_2("D:\\Training\\github\\data\\2016\\Round2\\Problem2\\set1\\input1.txt");
+        Run_Problem2_2("D:\\Training\\github\\data\\2016\\Round2\\Problem2\\set2\\input2.txt");
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
