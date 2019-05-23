@@ -17,6 +17,9 @@ namespace Jam2016
 
     void Run_Problem2_2(const char* inputPath)
     {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+
         FILE* fi = freopen(inputPath, "r", stdin);
         UINT32 T;//number of testcase
         UINT32 N;//number of cities on horizon
@@ -32,7 +35,7 @@ namespace Jam2016
             //cin >> T;
             fscanf(fi,"%d",&T);
             //printf("%d\n",T);
-            for(int i =0; i < T; i++)
+            for(UINT32 i =0; i < T; i++)
             {
                 UINT32 price0 =0; //converted price of gas in intersect city
                 UINT64 min_cost =0;//cost of trip from left to right
@@ -46,7 +49,7 @@ namespace Jam2016
                  LH = new UINT32[N-1];
 
                  //read N-1 static of cities
-                 for(int j =0; j < N-1;j++)
+                 for(UINT32 j =0; j < N-1;j++)
                  {
                     //cin >> PH[j];
                     //cin >> LH[j];
@@ -61,7 +64,7 @@ namespace Jam2016
                  //printf("\n%d ",p);
                  //
                   UINT32 price =0;
-                  for(int j =0; j < N-1;j++)
+                  for(UINT32 j =0; j < N-1;j++)
                   {
 
                     if(j == 0) price = PH[j];
@@ -89,12 +92,14 @@ namespace Jam2016
                 UINT64 down = 0;
                 UINT64 down_length = 0;
                 UINT32 price1 = price0;
-                for(int k =0; k < M;k++)
+                bool shoud_ignore = false;
+                for(UINT32 k =0; k < M;k++)
                 {
                     //cin >> LV[k];
                     //cin >> PV[k];
                     fscanf(fi,"%d",&LV[k]);
                     fscanf(fi,"%d",&PV[k]);
+                    if (shoud_ignore) continue;
                     //printf("%d %d ",LV[k],PV[k]);
                     down += price1 * LV[k];
                     down_length += LV[k];
@@ -103,7 +108,7 @@ namespace Jam2016
                         price1 = PV[k];
                     }
                     //travel k + 1 element on vertical then come back
-                    if( C + down > min_cost) break;//no need to continue
+                    if( C + down > min_cost) shoud_ignore =  true;//no need to continue
                     cost_V = C + down + price1 * down_length;
                     //travel from intersect to right most
                     UINT32 price2 = price1;
@@ -125,8 +130,7 @@ namespace Jam2016
 
                 }
 
-                 //printf("\n");
-
+                //printf("\n");
                 printf("%lld\n",min_cost);
                 delete[] PH; PH = nullptr;
                 delete[] LH; LH = nullptr;
@@ -145,7 +149,7 @@ namespace Jam2016
     void Problem2_2()
     {
         auto begin = chrono::high_resolution_clock::now();
-        Run_Problem2_2("D:\\Training\\github\\data\\2016\\Round2\\Problem2\\set2\\input2.txt");
+        Run_Problem2_2("D:\\Training\\github\\data\\2016\\Round2\\Problem2\\set1\\input1.txt");
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
