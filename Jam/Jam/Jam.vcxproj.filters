@@ -25,6 +25,9 @@
     <Filter Include="src\Jam2019">
       <UniqueIdentifier>{03d9256a-23cd-431f-ae07-bde24b088309}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Jam2016">
+      <UniqueIdentifier>{07038e65-4118-438c-a74c-4e6aeff53a86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jam2018\Problem1_1.cpp">
@@ -119,6 +122,21 @@
     </ClCompile>
     <ClCompile Include="src\Algothirm\hamiltonian.cpp">
       <Filter>src\Algothirm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem2_1.cpp">
+      <Filter>src\Jam2016</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem2_2.cpp">
+      <Filter>src\Jam2016</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem2_3.cpp">
+      <Filter>src\Jam2016</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem2_4.cpp">
+      <Filter>src\Jam2016</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem2_5.cpp">
+      <Filter>src\Jam2016</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -23,6 +23,11 @@
     <ClCompile Include="src\Algothirm\Euler.cpp" />
     <ClCompile Include="src\Algothirm\ford-fulkerson.cpp" />
     <ClCompile Include="src\Algothirm\hamiltonian.cpp" />
+    <ClCompile Include="src\Jam2016\Problem2_1.cpp" />
+    <ClCompile Include="src\Jam2016\Problem2_2.cpp" />
+    <ClCompile Include="src\Jam2016\Problem2_3.cpp" />
+    <ClCompile Include="src\Jam2016\Problem2_4.cpp" />
+    <ClCompile Include="src\Jam2016\Problem2_5.cpp" />
     <ClCompile Include="src\Jam2017\Problem1_1.cpp" />
     <ClCompile Include="src\Jam2017\Problem1_2.cpp" />
     <ClCompile Include="src\Jam2017\Problem1_3.cpp" />

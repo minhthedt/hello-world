@@ -8,6 +8,8 @@ using namespace std;
 /*
 [2018.08.18] created 
 https://cachhoc.net/2013/10/13/thuat-toan-tim-duong-di-ngan-nhat-dijkstra-floyd/
+[2019.06.02] added
+https://www.geeksforgeeks.org/dijkstras-algorithm-for-adjacency-list-representation-greedy-algo-8/
 */
 
 namespace Algothirm

@@ -79,7 +79,8 @@ int main(int argn, char* argv[])
     //cout << result << endl;
 
     //Jam2016::Problem2_1();
-    Jam2016::Problem2_2();
+    //Jam2016::Problem2_2();
+    Jam2016::Problem2_3();
 
     //Jam2017::Problem2_2();
     //Jam2017::Problem2_4();
