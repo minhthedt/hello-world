@@ -1,6 +1,6 @@
 #pragma once
 #include <sys/stat.h>
-//#include <dirent.h>
+#include <dirent.h>
 #include <sys/types.h>
 #include <iostream>
 #include <string>
@@ -31,12 +31,12 @@ namespace MMath
     public:
         double a,b;//y = ax + b;
         Point A,B;
-        Line(const Point& _A, const Point& _B):A(_A),B(_B)
+        Line(const Point& AA, const Point& BB):A(AA),B(BB)
         {
-            double d = A.x - B.x;
+            double d = AA.x - BB.x;
             if(d == 0.0) d = 0.00001;
-            a = (A.y - B.y)/d;
-            b = A.y  - a * A.x;
+            a = (AA.y - BB.y)/d;
+            b = AA.y  - a * AA.x;
         }
 
         bool isBelongLine(const Point& p) const
