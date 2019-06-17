@@ -9,13 +9,14 @@ using namespace std;
 //[2019.02.06] the.vu: lời giải chưa tối ưu chỉ pass set1,set2, Fail set3
 namespace Jam2016
 {
-#define UINT8 unsigned char
-#define INT16 short int
-#define UINT32 unsigned int
-#define INT32  int
-#define INT64 signed long long
-#define UINT64 unsigned long long
-#define _INFINITY_ UINT32(-1)
+    #define UINT8 unsigned char
+    #define INT16 short int
+    #define UINT32 unsigned int
+    #define INT32  int
+    #define INT64 signed long long
+    #define UINT64 unsigned long long
+    #define _INFINITY_  static_cast<UINT32>(-1)
+
     //Giá của 1 điểm là khoảng cách từ điểm đó đến gốc
     //p la diem duoc kiem tra
     //G la ma tran ke
@@ -36,7 +37,7 @@ namespace Jam2016
         for (int i = 0; i < N; i++)
         {
             //printf(" visited[%d]=%d G[%d][%d] = %d S[%d] = %d\n", i, visited[i], p, i, G[p][i], i, S[i]);
-            //check đỉnh chưa được xét    
+            //check đỉnh chưa được xét
             if (!visited[i])
             {
                 //check các đỉnh liền kề với p
@@ -54,7 +55,7 @@ namespace Jam2016
                         prev[i] = p;
                     }
                 }
-               
+
                 //tìm điểm có Giá nhỏ nhất chưa được xét
                 if (min > S[i])
                 {
@@ -69,11 +70,10 @@ namespace Jam2016
     }
 
 
-
     std::vector<int> Run_Problem2_3_TestCase(UINT32 a, UINT32 b,UINT32** G,UINT32 N)
     {
         std::vector<int> result;
-        UINT32* S = new UINT32[N];       
+        UINT32* S = new UINT32[N];
         INT32* prev = new INT32[N];
         bool* visited = new bool[N];
         //S[i] la khoang cach tu diem i toi goc
@@ -106,7 +106,7 @@ namespace Jam2016
             {
                 if (G[i][j] > 0)//i và j nối nhau
                 {
-                    if (S[i] + S1[j] + G[i][j] == shortestPath)// i,j thuộc short path                                              
+                    if (S[i] + S1[j] + G[i][j] == shortestPath)// i,j thuộc short path
                     {
                         if (S[i] < shortestPath * 0.5 &&  S1[j] < shortestPath * 0.5)
                         {
@@ -184,10 +184,10 @@ namespace Jam2016
                     cin >> b;
                     //printf("%d %d\n",a,b);
                     std::vector<int> temp = Run_Problem2_3_TestCase(a - 1, b - 1, G, N);
-                    out.insert(std::end(out), std::begin(temp), std::end(temp));                                    
+                    out.insert(std::end(out), std::begin(temp), std::end(temp));
                 }
 
-                
+
                 for(int g =0; g < N;g++)
                 {
                     delete[] G[g];
