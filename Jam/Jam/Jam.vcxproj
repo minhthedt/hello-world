@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Algothirm\BFS.cpp" />
+    <ClCompile Include="src\Algothirm\bipartite-matching.cpp" />
+    <ClCompile Include="src\Algothirm\DFS.cpp" />
     <ClCompile Include="src\Algothirm\dijkstra.cpp" />
     <ClCompile Include="src\Algothirm\Euler.cpp" />
     <ClCompile Include="src\Algothirm\ford-fulkerson.cpp" />

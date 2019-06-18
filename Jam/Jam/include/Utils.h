@@ -1,6 +1,8 @@
 #pragma once
 #include <sys/stat.h>
+#ifdef __CYGWIN__
 #include <dirent.h>
+#endif
 #include <sys/types.h>
 #include <iostream>
 #include <string>

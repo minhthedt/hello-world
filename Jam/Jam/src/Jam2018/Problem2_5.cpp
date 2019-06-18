@@ -9,7 +9,9 @@
 #include <chrono>
 #include <string>
 #include <array>
+#ifdef __CYGWIN__
 #include <dirent.h>
+#endif
 #include <limits>
 
 using namespace std;
@@ -49,6 +51,9 @@ namespace Jam2018
 
         void GetFilePaths(const std::string&  path,std::vector<std::string>& output,std::vector<std::string> ext = std::vector<std::string>())
         {
+#ifdef __CYGWIN__
+
+
            struct dirent *entry;
            DIR *dir = opendir(path.c_str());
 
@@ -98,6 +103,10 @@ namespace Jam2018
 
                }
            }
+#else
+            //need to take time to implement this function without using <dirent.h>
+            printf("ERROR: GetFilePaths(...) is not supported ***\n");
+#endif
         };
 
     namespace Bruteforce_Fail

@@ -138,6 +138,15 @@
     <ClCompile Include="src\Jam2016\Problem2_5.cpp">
       <Filter>src\Jam2016</Filter>
     </ClCompile>
+    <ClCompile Include="src\Algothirm\bipartite-matching.cpp">
+      <Filter>src\Algothirm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Algothirm\BFS.cpp">
+      <Filter>src\Algothirm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Algothirm\DFS.cpp">
+      <Filter>src\Algothirm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Common.h">
