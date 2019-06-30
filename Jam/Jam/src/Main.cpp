@@ -11,6 +11,12 @@ namespace Jam2019
     extern void Problem1_4();
     extern void Problem1_5();
     extern void Problem1_6();
+    extern void Problem2_1();
+    extern void Problem2_2();
+    extern void Problem2_3();
+    extern void Problem2_4();
+    extern void Problem2_5();
+    extern void Problem2_6();
 };
 namespace Jam2018
 {
@@ -52,6 +58,7 @@ namespace Algothirm
     extern void Test_FordFulkerson();
     extern void Test_MaximumBipartiteMatching();
     extern void Test_Hamilton_Cycle();
+    extern void Test_HopcroftKarp();
 }
 
 #define uint64 unsigned long long
@@ -80,7 +87,7 @@ int main(int argn, char* argv[])
 
     //Jam2016::Problem2_1();
     //Jam2016::Problem2_2();
-    Jam2016::Problem2_3();
+    //Jam2016::Problem2_3();
 
     //Jam2017::Problem2_2();
     //Jam2017::Problem2_4();
@@ -103,10 +110,18 @@ int main(int argn, char* argv[])
     //Jam2019::Problem1_5();
     //Jam2019::Problem1_6();
 
+    //Jam2019::Problem2_1();
+    //Jam2019::Problem2_2();
+    //Jam2019::Problem2_3();
+    //Jam2019::Problem2_4();
+    //Jam2019::Problem2_5();
+    Jam2019::Problem2_6();
+
     //Algothirm::Test_Dijkstra();
     //Algothirm::Test_Euler();
     //Algothirm::Test_FordFulkerson();
     //Algothirm::Test_Hamilton_Cycle();
+    //Algothirm::Test_HopcroftKarp();
     getchar();
     while (true)
     {

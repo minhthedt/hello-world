@@ -147,6 +147,27 @@
     <ClCompile Include="src\Algothirm\DFS.cpp">
       <Filter>src\Algothirm</Filter>
     </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem2_1.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem2_2.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem2_3.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem2_4.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem2_5.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2019\Problem2_6.cpp">
+      <Filter>src\Jam2019</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Algothirm\Hopcroft-Karp.cpp">
+      <Filter>src\Algothirm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Common.h">
