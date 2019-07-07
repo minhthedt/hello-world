@@ -111,11 +111,11 @@ int main(int argn, char* argv[])
     //Jam2019::Problem1_6();
 
     //Jam2019::Problem2_1();
-    //Jam2019::Problem2_2();
+    Jam2019::Problem2_2();
     //Jam2019::Problem2_3();
     //Jam2019::Problem2_4();
     //Jam2019::Problem2_5();
-    Jam2019::Problem2_6();
+    //Jam2019::Problem2_6();
 
     //Algothirm::Test_Dijkstra();
     //Algothirm::Test_Euler();

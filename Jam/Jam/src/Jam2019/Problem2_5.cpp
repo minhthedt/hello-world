@@ -256,6 +256,6 @@ namespace Jam2019
 
     void Problem2_5()
     {
-        Run_Problem2_5("D:\\Training\\github\\hello-world\\reference\\Exam\\2019\\round2\\problem5\\input001.txt");
+        Run_Problem2_5("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\problem5\\input001.txt");
     }
 }

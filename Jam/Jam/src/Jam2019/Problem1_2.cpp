@@ -113,7 +113,7 @@ namespace Jam2019
     void Problem1_2()
     {
         auto begin = chrono::high_resolution_clock::now();
-        Run_Problem1_2("D:\\Training\\github\\hello-world\\reference\\Exam\\2019\\round1\\problem2\\input001.txt");
+        Run_Problem1_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round1\\problem2\\input001.txt");
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();

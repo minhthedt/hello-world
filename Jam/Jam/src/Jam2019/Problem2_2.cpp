@@ -31,77 +31,64 @@ namespace Jam2019
     }
 
     
-    void Run_Problem2_2_Recusive(const std::vector<UINT32>& arr,const UINT32 n, UINT32 root,UINT32 deep, UINT32& sum, UINT32& total, INT32* trace, const INT32 trace_deep)
+  
+
+
+    void Run_Problem2_2_TestCase(const std::vector<INT64>& arr, UINT32 n)
     {
-        trace[deep] = root;
-        if (deep == 0)
+        UINT64 m = 0;//sum of all n elements
+        for (int i = 1; i <= n; i++) m += arr[i];
+        //from 0 -> sum have sum + 1 element
+        //L[i,j] là số tập con của dãy 1..i, có tổng là j
+        UINT64** L = new UINT64*[n +1];
+        for (int i = 0; i <= n; i++)
         {
-            if (checkValid(sum))
+            L[i] = new UINT64[m + 1];
+            memset(L[i],0,sizeof(UINT64)*(m+1));
+            L[i][0] = 1;
+        }
+        UINT64* ptr1 = L[1];
+        UINT64* ptr2 = L[2];
+        UINT64* ptr3 = L[3];
+        UINT64* ptr4 = L[4];
+        UINT64* ptr = L[n];
+        //tính L[i,j] với i{1->n}; j{1 -> m}
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 1; j <= m; j++)
             {
-                std::vector<UINT32> ret;
-                ret.resize(trace_deep+1);
+                //L[i][j] = L[i - 1][i - arr[j]] + L[i - 1][j];
+                INT64 L1 = 0;
+                INT64 L2 = 0;
 
-                for (int i = trace_deep; i >=0 ;i--)
+                INT64 x = j - arr[i];
+                INT64 y = i - 1;
+                
+                if (x < 0) L1 = 0;
+                else L1 = L[i - 1][ j - arr[i]];
+
+                if (i - 1 == 0 && j > 0) L2 = 0;
+                else L2 = L[i - 1][j];
+
+                if (arr[i] == arr[i - 1])
                 {
-                    ret[i] = arr[trace[i]];
-                    //printf("%d ", arr[trace[i]]);
+                    L[i][j] = L1 > L2 ? L1 : L2;
                 }
-                //printf("\n");
-
-                bool existed = false;
-                for (int j = 0; j < trace_vec.size(); j++)
+                else
                 {
-                    int size = trace_deep + 1;
-                    void* vec1 = trace_vec[j].data();
-                    void* vec2 = ret.data();
-                    if (memcmp(vec1, vec2,sizeof(UINT32)*size) == 0)
-                    {
-                        existed = true; 
-                        break;
-                    }
-                }
-
-                if (!existed)
-                {
-                    trace_vec.push_back(ret);
-                    total++;
+                    L[i][j] = L1 + L2;
                 }
             }
-            return;
         }
-
        
-        deep--;
-        for (int i = root + 1; i < n - deep ; i++)
+
+        UINT64 total = 0;
+        for (int i = 1; i <= m; i++)
         {
-            sum += arr[i];
-            Run_Problem2_2_Recusive(arr, n, i, deep, sum,total,trace, trace_deep);
-            sum -= arr[i];
+            if (checkValid(i)) total += ptr[i];
         }
- 
-    }
-
-
-    void Run_Problem2_2_TestCase(const std::vector<UINT32>& arr, UINT32 n)
-    {
-        //deep is size of subsequence 
-        UINT32 total = 0;
-        INT32* trace = new INT32[n];
-        for (int i = 0; i < n; i++) trace[i] = -1;
-        for (UINT32 deep = 0; deep < n; deep++)
-        {           
-            trace_vec.clear();
-            for (UINT32 root = 0; root < n - deep; root++)
-            {
-                UINT32 sum = arr[root];
-                INT32 trace_deep = deep;
-               
-                Run_Problem2_2_Recusive(arr,n, root,deep, sum, total,trace, trace_deep);
-            }
-        }
-
-        delete[] trace;
-        cout << total << std::endl;
+        if (arr[1] == 0) total *= 2;
+        cout << total << "\n";
     }
 
 
@@ -112,7 +99,7 @@ namespace Jam2019
         {
             UINT32 T; //number of testcase (1 ≤ T ≤ 10)
             UINT32 n; //size of one-demensional array 1 ≤ n ≤ 60
-            std::vector<UINT32> arr;//vector contain n element
+            std::vector<INT64> arr;//vector contain n element
 
             cin >> T;
             //printf("%d\n",T);
@@ -120,8 +107,9 @@ namespace Jam2019
             {
                 cin >> n;
                 //printf("%d\n", n);
-                arr.resize(n);
-                for (int j = 0; j < n; j++)
+                arr.resize(n+1);
+                arr[0] = 0;
+                for (int j = 1; j <= n; j++)
                 {
                     cin >> arr[j];
                     //printf("%d ", arr[j]);
@@ -129,7 +117,7 @@ namespace Jam2019
                 //printf("\n");
 
                 //sort
-                std::sort(arr.begin(), arr.end(), [](const UINT32 a, const UINT32 b) -> bool
+                std::sort(arr.begin()+1, arr.end(), [](const UINT32 a, const UINT32 b) -> bool
                 {
                     return a < b ? true : false;
                 }
@@ -144,6 +132,6 @@ namespace Jam2019
 
     void Problem2_2()
     {
-        Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Exam\\2019\\round2\\problem2\\input001.txt");
+        Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_B\\subtask2\\P5-data-001.in");
     }
 }

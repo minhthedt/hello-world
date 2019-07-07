@@ -132,7 +132,7 @@ namespace Jam2017
     {
         auto begin = chrono::high_resolution_clock::now();
 
-        Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Exam\\2017\\sample\\Round2_Problem2_Set1\\002.in");
+        Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2017\\sample\\Round2_Problem2_Set1\\002.in");
 
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;

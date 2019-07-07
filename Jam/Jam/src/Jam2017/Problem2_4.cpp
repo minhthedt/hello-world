@@ -190,7 +190,7 @@ namespace Jam2017
         //Run_Problem2_4(DATA_PROBLEM_2018_2_401);
         //Run_Problem2_4(DATA_PROBLEM_2018_2_410);
         //Run_Problem2_4(DATA_PROBLEM_2018_2_411);
-        Run_Problem2_4("D:\\Training\\github\\hello-world\\reference\\Exam\\2017\\sample\\Round2_Problem4_set1\\input006.txt");
+        Run_Problem2_4("D:\\Training\\github\\hello-world\\reference\\Sample\\2017\\sample\\Round2_Problem4_set1\\input006.txt");
         //Run_Problem2_4(DATA_PROBLEM_2018_2_413);
 
     }

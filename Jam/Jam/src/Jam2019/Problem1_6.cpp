@@ -317,8 +317,8 @@ struct Handler
     void Problem1_6()
     {
         auto begin = chrono::high_resolution_clock::now();
-        Run_Problem1_6("D:\\Training\\github\\hello-world\\reference\\Exam\\2019\\round1\\F\\subtask2\\P6-data-020.in");
-        //Run_Problem1_6("D:\\Training\\github\\hello-world\\reference\\Exam\\2019\\round1\\problem6\\input001.txt");
+        Run_Problem1_6("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round1\\F\\subtask2\\P6-data-020.in");
+        //Run_Problem1_6("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round1\\problem6\\input001.txt");
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
