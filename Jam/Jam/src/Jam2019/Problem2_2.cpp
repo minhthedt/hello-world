@@ -4,7 +4,7 @@
 #include <map>
 #include <vector>
 using namespace std;
-
+//https://vnoi.info/wiki/algo/dp/basic-problems
 namespace Jam2019
 {
 #define UINT8 unsigned char
@@ -14,7 +14,6 @@ namespace Jam2019
 #define INT64 long long int
 #define UINT64 unsigned long long 
 
-    std::vector<std::vector<UINT32>> trace_vec;
 
     bool checkValid(UINT32 num)
     {
@@ -30,10 +29,6 @@ namespace Jam2019
         return false;
     }
 
-    
-  
-
-
     void Run_Problem2_2_TestCase(const std::vector<INT64>& arr, UINT32 n, UINT32 num_zero)
     {
         UINT64 m = 0;//sum of all n elements
@@ -47,58 +42,62 @@ namespace Jam2019
             memset(L[i],0,sizeof(UINT64)*(m+1));
             L[i][0] = 1;
         }
-        UINT64* ptr1 = L[1];
-        UINT64* ptr2 = L[2];
-        UINT64* ptr3 = L[3];
-        UINT64* ptr4 = L[4];
-        UINT64* ptr = L[n];
+        
         //tính L[i,j] với i{1->n}; j{1 -> m}
         for (int i = 1; i <= n; i++)
         {
             for (int j = 1; j <= m; j++)
             {
-                //L[i][j] = L[i - 1][j - arr[j]] + L[i - 1][j];
-                //số lượng dãy con tạo bởi miền 1 -> i -1 có tổng là j - arr[i]; 
-                //thêm phần tử arr[i] vào mỗi dãy con này để được dãy con mới thuộc L[i][j]
-                INT64 L1 = 0;
-                //số dãy con tạo bởi miền 1 -> i -1 có tổng là j,
-                //những dãy con này đều thuộc L[i][j]
-                INT64 L2 = 0;
-                //Số lượng dãy con tạo bới miền 1 -> i -1 có tổng là j
-                //arr[i] trùng với 1 phần tử của dãy con (tồn tại 1 <= x <= i-1 và arr[x] = arr[i];
-                INT64 L3 = 0;
-
-                INT64 x = j - arr[i];
-                INT64 y = i - 1;
-                
-                if (x < 0) L1 = 0;
-                else L1 = L[i - 1][ j - arr[i]];
-
-                if (i - 1 == 0 && j > 0) L2 = 0;
-                else L2 = L[i - 1][j];
-
-                //duyet qua cac phan tu truoc do co value == arr[i]
-                
-                if (arr[i - 1] == arr[i])
+                //Chuyển về bài toán quy hoạch động 
+                //L[i][j] = số dãy con khác nhau có tổng là j tạo bởi tập phần tử miền 1 -> i
+                //vì dãy ban đầu được xắp xếp tăng dần => các phần tử giống nhau sẽ đặt liền nhau
+                //tim k sao cho arr[i-k] == arr[i-k+1] và arr[i-k] > arr[i-k-1]
+                //=>trong khoảng 1 -> i, có k+1 phần tử có giá trị == arr[i]
+                //L[i][j] sẽ bằng tổng của
+                //L[i-k-1][j-arr[i]*0] số dãy con có không chứa phần tử nào có giá trị bằng arr[i]
+                //L[i-k-1][j-arr[i]*1] số dãy con chứa 1 phần tử có giá trị bằng arr[i]
+                //L[i-k-1][j-arr[i]*2] số dãy con chứa 2 phần tử có giá trị bằng arr[i]
+                //...
+                //L[i-k-1][j-arr[i]*(k+1)] số dãy con chứa k+1 phần tử có giá trị bằng arr[i]
+                INT64 k = 0;
+                INT64 temp = i;
+                while (temp - 1 >= 1 && arr[temp] == arr[temp - 1])
                 {
-                    L[i][j] = L2 > L1 ? L2 : L1;
+                    temp--;
+                    k++;
                 }
-                else
+
+                for (int p = 0; p <= k+1; p++)
                 {
-                    L[i][j] = L1 + L2;
+                    if (i - k - 1 > 0)
+                    {
+                        if (j - arr[i] * p >= 0)
+                        {
+                            L[i][j] += L[i - k - 1][j - arr[i] * p];
+                        }
+                    }
+                    else  if (i - k - 1 == 0 && j - arr[i] * p == 0)
+                    {
+                        L[i][j] += L[i - k - 1][j - arr[i] * p];
+                    }
                 }
-                
             }
         }
        
-
         UINT64 total = 0;
         for (int i = 1; i <= m; i++)
         {
-            if (checkValid(i)) total += ptr[i];
+            if (checkValid(i)) total += L[n][i];
         }
         total *= (num_zero + 1);
         cout << total << "\n";
+
+        for (int i = 0; i < n + 1; i++)
+        {
+            delete[] L[i];
+        }
+
+        delete[] L;
     }
 
 
@@ -149,7 +148,8 @@ namespace Jam2019
 
     void Problem2_2()
     {
-        Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_B\\subtask2\\P5-data-002.in");
+        Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_B\\subtask2\\P5-data-010.in");
+        //Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_B\\subtask2\\P5-data-002.in");
         //Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\problem2\\input001.txt");
     }
 }
