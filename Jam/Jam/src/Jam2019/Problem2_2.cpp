@@ -34,7 +34,7 @@ namespace Jam2019
   
 
 
-    void Run_Problem2_2_TestCase(const std::vector<INT64>& arr, UINT32 n)
+    void Run_Problem2_2_TestCase(const std::vector<INT64>& arr, UINT32 n, UINT32 num_zero)
     {
         UINT64 m = 0;//sum of all n elements
         for (int i = 1; i <= n; i++) m += arr[i];
@@ -57,9 +57,16 @@ namespace Jam2019
         {
             for (int j = 1; j <= m; j++)
             {
-                //L[i][j] = L[i - 1][i - arr[j]] + L[i - 1][j];
+                //L[i][j] = L[i - 1][j - arr[j]] + L[i - 1][j];
+                //số lượng dãy con tạo bởi miền 1 -> i -1 có tổng là j - arr[i]; 
+                //thêm phần tử arr[i] vào mỗi dãy con này để được dãy con mới thuộc L[i][j]
                 INT64 L1 = 0;
+                //số dãy con tạo bởi miền 1 -> i -1 có tổng là j,
+                //những dãy con này đều thuộc L[i][j]
                 INT64 L2 = 0;
+                //Số lượng dãy con tạo bới miền 1 -> i -1 có tổng là j
+                //arr[i] trùng với 1 phần tử của dãy con (tồn tại 1 <= x <= i-1 và arr[x] = arr[i];
+                INT64 L3 = 0;
 
                 INT64 x = j - arr[i];
                 INT64 y = i - 1;
@@ -70,14 +77,17 @@ namespace Jam2019
                 if (i - 1 == 0 && j > 0) L2 = 0;
                 else L2 = L[i - 1][j];
 
-                if (arr[i] == arr[i - 1])
+                //duyet qua cac phan tu truoc do co value == arr[i]
+                
+                if (arr[i - 1] == arr[i])
                 {
-                    L[i][j] = L1 > L2 ? L1 : L2;
+                    L[i][j] = L2 > L1 ? L2 : L1;
                 }
                 else
                 {
                     L[i][j] = L1 + L2;
                 }
+                
             }
         }
        
@@ -87,7 +97,7 @@ namespace Jam2019
         {
             if (checkValid(i)) total += ptr[i];
         }
-        if (arr[1] == 0) total *= 2;
+        total *= (num_zero + 1);
         cout << total << "\n";
     }
 
@@ -123,7 +133,14 @@ namespace Jam2019
                 }
                 );
 
-                Run_Problem2_2_TestCase(arr,n);
+                int num_zero = 0;
+                while (arr[1] == 0)
+                {
+                    num_zero++;
+                    arr.erase(arr.begin() + 1);
+                }
+
+                Run_Problem2_2_TestCase(arr,n - num_zero, num_zero);
             }
 
             fclose(fi);
@@ -132,6 +149,7 @@ namespace Jam2019
 
     void Problem2_2()
     {
-        Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_B\\subtask2\\P5-data-001.in");
+        Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_B\\subtask2\\P5-data-002.in");
+        //Run_Problem2_2("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\problem2\\input001.txt");
     }
 }
