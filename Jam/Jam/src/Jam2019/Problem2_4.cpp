@@ -3,6 +3,7 @@
 #include <queue>
 #include <map>
 #include <vector>
+#include<chrono>
 using namespace std;
 //https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/practice-problems/algorithm/sort-the-sequence-d77d8f67/editorial/
 //Bài toán khá đơn giản, số tam giác có cạnh màu giống nhau = tổng số tam giác - tổng số tam giác có cạnh màu khác nhau
@@ -76,6 +77,11 @@ namespace Jam2019
 
     void Problem2_4()
     {
+        auto begin = chrono::high_resolution_clock::now();
         Run_Problem2_4("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_D\\subtask2\\P2-data-007.in");
+        auto end = chrono::high_resolution_clock::now();
+        auto dur = end - begin;
+        auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        cout << "\n\n" << ms << " ms" << endl;//4172 ms
     }
 }

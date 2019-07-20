@@ -1,11 +1,18 @@
-#include "Common.h"
+﻿#include "Common.h"
 #include <iostream>
 #include <queue>
 #include <map>
 #include <vector>
 #include<list> 
+#include<chrono>
 using namespace std;
-//https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/practice-problems/algorithm/sort-the-sequence-d77d8f67/description/
+//Complexity : Building TreeMap O(N log N) + Sorting Cabs O(M log M) + Finding passengers O(M log N) = O(M log M + (M + N) log N)
+//Lời giải của bàn toán khá đơn giản, tuy nhiên tôi ko thực sự hình dung rõ về tính đúng đắn
+//Step1: tạo ra các pair gổm (distance x,số riders), lưu các pair vào BST-Balance cho dễ dàng tìm kiếm sau này
+//Step2: Xắp xếp drivers vào 1 mảng theo thứ tự tăng dần cảu endpoint, nếu enpoint bằng nhau thì xếp theo giảm dần của startpoint
+//Các dirvers được xắp xếp như trên được định nghĩa tương đương với khả năng tìm thấy khách tăng dần
+//Step3: duyệt mảng drivers trên, với mỗi driver tìm riders có distance x lớn hơn và gần nhất với driver.startpoint
+//nếu x > driver.endpoint => quyết định matching cặp này => remove rider khỏi tree
 namespace Jam2019
 {
 #define UINT8 unsigned char
@@ -15,189 +22,11 @@ namespace Jam2019
 #define INT64 long long int
 #define UINT64 unsigned long long 
 
-
-    // C++ implementation of Hopcroft Karp algorithm for 
-    // maximum matching 
-#define NIL 0 
-#define INF INT_MAX 
-
-    // A class to represent Bipartite graph for Hopcroft 
-    // Karp implementation 
-    class BipGraph
+    struct Driver
     {
-        // m and n are number of vertices on left 
-        // and right sides of Bipartite Graph 
-        int m, n;
-
-        // adj[u] stores adjacents of left side 
-        // vertex 'u'. The value of u ranges from 1 to m. 
-        // 0 is used for dummy vertex 
-        list<int> *adj;
-
-        // These are basically pointers to arrays needed 
-        // for hopcroftKarp() 
-        int *pairU, *pairV, *dist;
-
-    public:
-        BipGraph(int m, int n); // Constructor 
-        void addEdge(int u, int v); // To add edge 
-
-                                    // Returns true if there is an augmenting path 
-        bool bfs();
-
-        // Adds augmenting path if there is one beginning 
-        // with u 
-        bool dfs(int u);
-
-        // Returns size of maximum matcing 
-        int hopcroftKarp();
+        int y, z;
+        Driver(int y, int z) :y(y), z(z) {};
     };
-
-    // Returns size of maximum matching 
-    int BipGraph::hopcroftKarp()
-    {
-        // pairU[u] stores pair of u in matching where u 
-        // is a vertex on left side of Bipartite Graph. 
-        // If u doesn't have any pair, then pairU[u] is NIL 
-        pairU = new int[m + 1];
-
-        // pairV[v] stores pair of v in matching. If v 
-        // doesn't have any pair, then pairU[v] is NIL 
-        pairV = new int[n + 1];
-
-        // dist[u] stores distance of left side vertices 
-        // dist[u] is one more than dist[u'] if u is next 
-        // to u'in augmenting path 
-        dist = new int[m + 1];
-
-        // Initialize NIL as pair of all vertices 
-        for (int u = 0; u<m + 1; u++)
-            pairU[u] = NIL;
-        for (int v = 0; v<n + 1; v++)
-            pairV[v] = NIL;
-
-        // Initialize result 
-        int result = 0;
-
-        // Keep updating the result while there is an 
-        // augmenting path. 
-        while (bfs())
-        {
-            // Find a free vertex 
-            for (int u = 1; u <= m; u++)
-
-                // If current vertex is free and there is 
-                // an augmenting path from current vertex 
-                if (pairU[u] == NIL && dfs(u))
-                    result++;
-        }
-        return result;
-    }
-
-    // Returns true if there is an augmenting path, else returns 
-    // false 
-    bool BipGraph::bfs()
-    {
-        queue<int> Q; //an integer queue 
-
-                      // First layer of vertices (set distance as 0) 
-        for (int u = 1; u <= m; u++)
-        {
-            // If this is a free vertex, add it to queue 
-            if (pairU[u] == NIL)
-            {
-                // u is not matched 
-                dist[u] = 0;
-                Q.push(u);
-            }
-
-            // Else set distance as infinite so that this vertex 
-            // is considered next time 
-            else dist[u] = INF;
-        }
-
-        // Initialize distance to NIL as infinite 
-        dist[NIL] = INF;
-
-        // Q is going to contain vertices of left side only. 
-        while (!Q.empty())
-        {
-            // Dequeue a vertex 
-            int u = Q.front();
-            Q.pop();
-
-            // If this node is not NIL and can provide a shorter path to NIL 
-            if (dist[u] < dist[NIL])
-            {
-                // Get all adjacent vertices of the dequeued vertex u 
-                list<int>::iterator i;
-                for (i = adj[u].begin(); i != adj[u].end(); ++i)
-                {
-                    int v = *i;
-
-                    // If pair of v is not considered so far 
-                    // (v, pairV[V]) is not yet explored edge. 
-                    if (dist[pairV[v]] == INF)
-                    {
-                        // Consider the pair and add it to queue 
-                        dist[pairV[v]] = dist[u] + 1;
-                        Q.push(pairV[v]);
-                    }
-                }
-            }
-        }
-
-        // If we could come back to NIL using alternating path of distinct 
-        // vertices then there is an augmenting path 
-        return (dist[NIL] != INF);
-    }
-
-    // Returns true if there is an augmenting path beginning with free vertex u 
-    bool BipGraph::dfs(int u)
-    {
-        if (u != NIL)
-        {
-            list<int>::iterator i;
-            for (i = adj[u].begin(); i != adj[u].end(); ++i)
-            {
-
-                // Adjacent to u 
-                int v = *i;
-                // Follow the distances set by BFS 
-                if (dist[pairV[v]] == dist[u] + 1)
-                {
-                    // If dfs for pair of v also returns 
-                    // true 
-                    if (dfs(pairV[v]) == true)
-                    {
-                        pairV[v] = u;
-                        pairU[u] = v;
-                        return true;
-                    }
-                }
-
-            }
-
-            // If there is no augmenting path beginning with u. 
-            dist[u] = INF;
-            return false;
-        }
-        return true;
-    }
-
-    // Constructor 
-    BipGraph::BipGraph(int m, int n)
-    {
-        this->m = m;
-        this->n = n;
-        adj = new list<int>[m + 1];
-    }
-
-    // To add edge from u to v and v to u 
-    void BipGraph::addEdge(int u, int v)
-    {
-        adj[u].push_back(v); // Add u to v�fs list. 
-    }
 
     void Run_Problem2_5(const char* inputPath)
     {
@@ -209,23 +38,36 @@ namespace Jam2019
         UINT32 x; //expected distance from rider
         UINT32 y, z; //expected distance of driver from y -> z
 
-        UINT32* arrX;
+
+        auto comp = [](const UINT32& key1, const UINT32& key2) { return key1 < key2; };
+
         if (fi)
         {
             cin >> T;
             //printf("%d\n",T);
+
             for (int i = 0; i < T; i++)
             {
+                std::vector<Driver*> drivers;
+                std::map<UINT32, UINT32, decltype(comp)> riders(comp);
+
                 cin >> N;
                 cin >> M;
-                BipGraph g(N, M);
+
                 //printf("%d %d\n", N,M);
-                arrX = new UINT32[N];
 
                 for (int j = 0; j < N; j++)
                 {
                     cin >> x;
-                    arrX[j] = x;
+                    auto it = riders.find(x);
+                    if (it == riders.end())
+                    {
+                        riders[x] = 1;
+                    }
+                    else
+                    {
+                        it->second++;
+                    }
                     //printf("%d ",x);
                 }
                 //printf("\n");
@@ -235,27 +77,67 @@ namespace Jam2019
                     cin >> y;
                     cin >> z;
                     //printf("%d %d\n", y,z);
-                    for (int k = 0; k < N; k++)
+                    Driver* driver = new Driver(y, z);
+                    drivers.push_back(driver);
+                }
+
+                //sort
+                std::sort(drivers.begin(), drivers.end(), [](Driver* a, Driver* b)->bool {
+                    if (a->z < b->z)
                     {
-                        if (arrX[k] >= y && arrX[k] <= z)
+                        return true;
+                    }
+                    else if (a->z == b->z)
+                    {
+                        if (a->y > b->y) return true;
+                    }
+                    return false;
+                }
+                );
+
+                UINT32 matching = 0;
+
+                for (int j = 0; j < M; j++)
+                {
+                    Driver* driver = drivers[j];
+                    auto nearest = riders.lower_bound(driver->y);
+                    if (nearest != riders.end())
+                    {
+                        UINT32 distance = nearest->first;
+                        if (distance <= driver->z)
                         {
-                            g.addEdge(k+1, j+1);
+                            matching++;
+                            nearest->second--;
+                            if (nearest->second == 0)
+                            {
+                                riders.erase(nearest);
+                            }
                         }
                     }
                 }
-                
-                UINT32 ret = g.hopcroftKarp();
-                cout << ret << "\n";
 
-                delete[] arrX;
+                for (int j = 0; j < M; j++)
+                {
+                    delete  drivers[j];
+                }
+
+
+                cout << matching << "\n";
 
             }
+
             fclose(fi);
         }
     }
 
     void Problem2_5()
     {
-        Run_Problem2_5("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\problem5\\input001.txt");
+        auto begin = chrono::high_resolution_clock::now();
+        Run_Problem2_5("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_E\\subtask2\\P3-data-007.in");
+        //Run_Problem2_5("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_E\\subtask1\\P3-data-001.in");
+        auto end = chrono::high_resolution_clock::now();
+        auto dur = end - begin;
+        auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        cout << "\n\n" << ms << " ms" << endl;//3249 ms
     }
 }
