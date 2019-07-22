@@ -3,8 +3,11 @@
 #include <queue>
 #include <map>
 #include <vector>
-#include<list> 
+#include<list>
 #include<chrono>
+#include <algorithm>
+#include <set>
+#include <numeric>      // std::iota
 using namespace std;
 //Complexity : Building TreeMap O(N log N) + Sorting Cabs O(M log M) + Finding passengers O(M log N) = O(M log M + (M + N) log N)
 //Lời giải của bàn toán khá đơn giản, tuy nhiên tôi ko thực sự hình dung rõ về tính đúng đắn
@@ -20,8 +23,9 @@ namespace Jam2019
 #define UINT32 unsigned int
 #define INT32  int
 #define INT64 long long int
-#define UINT64 unsigned long long 
+#define UINT64 unsigned long long
 
+#if 1 //FAIL solution: take 12 s
     struct Driver
     {
         int y, z;
@@ -48,8 +52,10 @@ namespace Jam2019
 
             for (int i = 0; i < T; i++)
             {
-                std::vector<Driver*> drivers;
-                std::map<UINT32, UINT32, decltype(comp)> riders(comp);
+
+                //std::map<UINT32, UINT32, decltype(comp)> riders(comp); //?????????
+                std::map<UINT32, UINT32> riders;
+
 
                 cin >> N;
                 cin >> M;
@@ -72,13 +78,13 @@ namespace Jam2019
                 }
                 //printf("\n");
 
+                std::vector<Driver*> drivers(M,nullptr);
                 for (int j = 0; j < M; j++)
                 {
                     cin >> y;
                     cin >> z;
                     //printf("%d %d\n", y,z);
-                    Driver* driver = new Driver(y, z);
-                    drivers.push_back(driver);
+                    drivers[j]  = new Driver(y, z);
                 }
 
                 //sort
@@ -129,6 +135,52 @@ namespace Jam2019
             fclose(fi);
         }
     }
+#else //good solution take 2.8 s
+    int match(int n, int m, vector<int> &x, vector<int> &y, vector<int> &z) {
+            multiset<int> ms(x.begin(), x.end());
+            vector<int> idx(m);
+            iota(idx.begin(), idx.end(), 0);//Store increasing sequence
+            sort(idx.begin(), idx.end(), [&](int i, int j) {
+                    if (z[i] != z[j])
+                            return z[i] < z[j];
+                    return y[i] < y[j];
+            });
+            int ans = 0;
+            //O(NlogN)
+            for (auto i : idx) {
+                    auto it = ms.lower_bound(y[i]);
+                    if (it == ms.end() || *it > z[i])
+                            continue;
+                    ++ans;
+                    ms.erase(it);
+            }
+            return ans;
+    }
+
+    void Run_Problem2_5(const char* inputPath)
+    {
+        FILE* fi = freopen(inputPath, "r", stdin);
+        if(fi)
+        {
+            cout.sync_with_stdio(false);
+            cin.tie(nullptr);
+            int nTests;
+            cin >> nTests;
+            while (nTests--) {
+                    int n, m;
+                    cin >> n >> m;
+                    vector<int> x(n);
+                    for (int i = 0; i < n; ++i)
+                            cin >> x[i];
+                    vector<int> y(m), z(m);
+                    for (int i = 0; i < m; ++i)
+                            cin >> y[i] >> z[i];
+                    cout << match(n, m, x, y, z) << '\n';
+            }
+        }
+
+    }
+#endif
 
     void Problem2_5()
     {
