@@ -16,7 +16,9 @@ namespace Jam2019
 
 #define MAX_M 10000
 #define MAX_K 1000000
-
+//ý tưởng là backtrace tìm xem ký tự cuối matching với ký tự nào của chuỗi ban đầu
+//Hiệu quả vơi việc tìm ký tự thứ i
+//không hiệu quả khi tìm cả 1 chuỗi ký tự => chỉ giải quyết đc subtask 1
     UINT8 getInvert(UINT8 ch)
     {
         if (ch == '0') return '1';
