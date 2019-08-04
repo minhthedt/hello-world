@@ -3,8 +3,10 @@
 #include <queue>
 #include <map>
 #include <vector>
+#include <array>
+#include <chrono>
 using namespace std;
-
+//[2019.08.04] Chưa thực sự hiểu rõ lời giải bài toán
 namespace Jam2019
 {
 #define UINT8 unsigned char
@@ -17,67 +19,85 @@ namespace Jam2019
 #define MAX_M 10000
 #define MAX_K 1000000
 
-    UINT8 getInvert(UINT8 ch)
-    {
-        if (ch == '0') return '1';
-        if (ch == '1') return '0';
-        printf("Exception\n");
+    std::string bitString;
+    constexpr int MAX_NUM = 1'048'576;
+    constexpr int ROOT = 1;
+    constexpr int MAX_QUERIES = 10'000;
+    int N, M, K;
+
+    std::array<int, MAX_NUM> sources;
+    std::array<int, MAX_NUM * 2> segmentTree;
+    std::array<int, MAX_QUERIES> begins;
+    std::array<int, MAX_QUERIES> ends;
+
+    // build binary segment tree
+    void buildTree(int node, int left, int right) {
+        segmentTree[node] = right - left + 1;
+        if (left == right) {
+            return;
+        }
+        int mid = left + (right - left) / 2;
+        buildTree(node * 2, left, mid); // left subtree
+        buildTree(node * 2 + 1, mid + 1, right); // right subtree
+    }
+    int searchFromTree(int node, int left, int right, int key) {
+        if (segmentTree[node] < key) {
+            return right + 1;
+        }
+        if (left == right) {
+            return right;
+        }
+        int mid = left + (right - left) / 2;
+        if (segmentTree[node * 2] >= key) {
+            return searchFromTree(node * 2, left, mid, key);
+        }
+        else {
+            return searchFromTree(node * 2 + 1, mid + 1, right, key - segmentTree[node * 2]);
+        }
+    }
+    int removeFromTree(int node, int left, int right, int key) {
+        if (segmentTree[node] < key) {
+            return right + 1;
+        }
+        segmentTree[node]--;
+        if (left == right) {
+            return right;
+        }
+        int mid = left + (right - left) / 2;
+        if (segmentTree[node * 2] >= key) {
+            return removeFromTree(node * 2, left, mid, key);
+        }
+        else {
+            return removeFromTree(node * 2 + 1, mid + 1, right, key - segmentTree[node * 2]);
+        }
+    }
+    void solve() {
+        sources.fill(0);
+        buildTree(ROOT, 1, K);
+        for (int i = M - 1; i >= 0; i--) {
+            int length = ends[i] - begins[i] + 1;
+            for (int curr = begins[i], j = 1; j <= length && ends[i] < segmentTree[ROOT]; j++, curr++) {
+                int source = removeFromTree(ROOT, 1, K, ends[i] + 1);
+                if (source > K) {
+                    break;
+                }
+                sources[source] = searchFromTree(ROOT, 1, K, curr);
+            }
+        }
+        int idx = 0;
+        std::string result;
+        for (int i = 0; i < K; i++) {
+            int source = sources[i + 1] - 1;
+            if (source >= 0) {
+                result += result[source] == '0' ? '1' : '0';
+            }
+            else {
+                result += bitString[idx++];
+            }
+        }
+        std::cout << result << '\n';
     }
 
-    UINT8 getValueByIndex(UINT64 idex, UINT32 op_id, UINT32* arr_x, UINT32* arr_y, UINT64* arr_n,UINT8* str, UINT32 k, bool invert)
-    {
-        if (op_id == -1)
-        {
-            //return value or initial string
-            if (invert == false)
-            {
-                return str[idex];
-            }
-            else
-            {
-                return getInvert(str[idex]);
-            }
-            
-        }
-        //backtrace of operation
-        UINT32 x = arr_x[op_id];
-        UINT32 y = arr_y[op_id];
-
-        //0->x-1
-        //x->y
-        //y+1 -> y+1 + (y-x)
-        //y+1 + (y-x) + 1 -> arr_n[op_id] - 1 + (y-x) + 1;
-        UINT64 p[8];
-        p[0] = 0;
-        p[1] = y;
-
-        p[2] = y + 1;
-        p[3] = y + 1 + (y - x);
-
-        p[4] = y + 1 + (y - x) + 1;
-        p[5] = arr_n[op_id] - 1 + (y - x) + 1;
-
-        if (p[0] <= idex && idex <= p[1])
-        {
-            idex = idex;
-            return getValueByIndex(idex, op_id - 1,arr_x,arr_y,arr_n,str, k, invert);
-        }
-
-        if (p[2] <= idex && idex <= p[3])
-        {
-            idex = idex - (y-x + 1);
-            return getValueByIndex(idex, op_id - 1, arr_x, arr_y, arr_n, str, k, !invert);
-        }
-
-        if (p[4] <= idex && idex <= p[5])
-        {
-            idex = idex - (y - x + 1);
-            return getValueByIndex(idex, op_id - 1, arr_x, arr_y, arr_n, str, k, invert);
-        }
-
-        printf("input error\n");
-        return -1;
-    };
 
     void Run_Problem2_6(const char* inputPath)
     {
@@ -96,90 +116,19 @@ namespace Jam2019
 
         if (fi)
         {
-            cin >> T;
-            //printf("%d\n",T);
-            for (int i = 0; i < T; i++)
-            {
-                cin >> n;
-                cin >> m;
-                cin >> k;
-                //printf("%d %d %d\n", n, m, k);
-
-                memset(str, 0, MAX_K + 1);
-                cin >> str;
-                //printf("%s\n", str);
-
-                UINT32 length = n;
-                for (int j = 0; j < m; j++)
-                {
-                    cin >> x;
-                    cin >> y;
-                    //printf("%d %d\n",x,y);
-                    UINT64 p[8];
-                    p[0] = 0;
-                    p[1] = y;
-
-                    p[2] = y + 1;
-                    p[3] = y + 1 + (y - x);
-
-                    p[4] = y + 1 + (y - x) + 1;
-                    p[5] = length - 1 + (y - x) + 1;
-
-                    x--;//appropriate with array
-                    y--;//appropriate with array
-                    if (y < k)
-                    {                       
-                        //0 -> x-1
-                        //x -> y
-                        //y+1 -> y+1 + (y-x)
-                        //y+1 + (y-x) + 1 -> length-1 + (y-x) + 1
-
-                        if (k >= p[2] && k <= p[3])
-                        {
-                            int delta = k - (y + 1);
-                            for (int i = x; i < x + delta; i++)
-                            {
-                                int index = i + (y - x) + 1;
-                                str[index] = getInvert(str[i]);
-                            }
-                        }
-
-                        if (k >= p[4] && k <= p[5])
-                        {
-                            for (int i = length - 1; i >= y + 1; i--)
-                            {
-                                int index = i + (y - x) + 1;
-                                if (index < k)
-                                    str[index] = str[i];
-                            }
-                        }
-
-                        for (int i = length - 1; i >= y + 1; i--)
-                        {
-                            int index = i + (y - x) + 1;
-                            if (index < k)
-                                str[index] = str[i];
-                        }
-
-                        for (int i = x; i <= y; i++)
-                        {
-                            int index = i + (y - x) + 1;
-                            str[index] = getInvert(str[i]);
-                        }
-                        //printf("result = %s\n", str);
-                        length += y - x + 1;
-                        if (length > k) length = k;
-                    }
-                    else
-                    {
-                        // y > MILLION will don't affect to output so don't check
-                    }
+            std::ios_base::sync_with_stdio(false);
+            cin.tie(nullptr);
+            std::cout.tie(nullptr);
+            int TC = 1;
+            cin >> TC;
+            for (int i = 0; i < TC; i++) {
+                cin >> N >> M >> K;
+                cin >> bitString;
+                for (int j = 0; j < M; j++) {
+                    cin >> begins[j] >> ends[j];
                 }
-
-                cout << str << "\n";
-
+                solve();
             }
-
 
             fclose(fi);
         }
@@ -189,6 +138,11 @@ namespace Jam2019
 
     void Problem2_6()
     {
-        Run_Problem2_6("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\problem6\\input001.txt");
+        auto begin = chrono::high_resolution_clock::now();
+        Run_Problem2_6("D:\\Training\\github\\hello-world\\reference\\Sample\\2019\\round2\\2nd_F\\subtask2\\P6-data-big-001.in");
+        auto end = chrono::high_resolution_clock::now();
+        auto dur = end - begin;
+        auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        cout << "\n\n" << ms << " ms" << endl;//3249 ms
     }
 }

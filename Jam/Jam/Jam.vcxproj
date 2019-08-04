@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Algothirm\BFS.cpp" />
+    <ClCompile Include="src\Algothirm\BinarySearchTree.cpp" />
     <ClCompile Include="src\Algothirm\bipartite-matching.cpp" />
     <ClCompile Include="src\Algothirm\DFS.cpp" />
     <ClCompile Include="src\Algothirm\dijkstra.cpp" />
@@ -27,6 +28,7 @@
     <ClCompile Include="src\Algothirm\ford-fulkerson.cpp" />
     <ClCompile Include="src\Algothirm\hamiltonian.cpp" />
     <ClCompile Include="src\Algothirm\Hopcroft-Karp.cpp" />
+    <ClCompile Include="src\Algothirm\SegmentTree.cpp" />
     <ClCompile Include="src\Jam2016\Problem2_1.cpp" />
     <ClCompile Include="src\Jam2016\Problem2_2.cpp" />
     <ClCompile Include="src\Jam2016\Problem2_3.cpp" />

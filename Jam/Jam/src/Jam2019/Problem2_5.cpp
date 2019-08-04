@@ -54,6 +54,8 @@ namespace Jam2019
             {
 
                 //std::map<UINT32, UINT32, decltype(comp)> riders(comp); //?????????
+                //[WARNING] dùng std::map thay cho mutilset nhưng không thành công
+                //cần tỉm hiểu vì sao
                 std::map<UINT32, UINT32> riders;
 
 

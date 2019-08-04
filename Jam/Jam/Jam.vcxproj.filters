@@ -168,6 +168,12 @@
     <ClCompile Include="src\Algothirm\Hopcroft-Karp.cpp">
       <Filter>src\Algothirm</Filter>
     </ClCompile>
+    <ClCompile Include="src\Algothirm\BinarySearchTree.cpp">
+      <Filter>src\Algothirm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Algothirm\SegmentTree.cpp">
+      <Filter>src\Algothirm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Common.h">

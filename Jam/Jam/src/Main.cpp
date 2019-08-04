@@ -59,6 +59,7 @@ namespace Algothirm
     extern void Test_MaximumBipartiteMatching();
     extern void Test_Hamilton_Cycle();
     extern void Test_HopcroftKarp();
+    extern void Test_SegmentTrees();
 }
 
 #define uint64 unsigned long long
@@ -114,14 +115,15 @@ int main(int argn, char* argv[])
     //Jam2019::Problem2_2();
     //Jam2019::Problem2_3();
     //Jam2019::Problem2_4();
-    Jam2019::Problem2_5();
-    //Jam2019::Problem2_6();
+    //Jam2019::Problem2_5();
+    Jam2019::Problem2_6();
 
     //Algothirm::Test_Dijkstra();
     //Algothirm::Test_Euler();
     //Algothirm::Test_FordFulkerson();
     //Algothirm::Test_Hamilton_Cycle();
     //Algothirm::Test_HopcroftKarp();
+    //Algothirm::Test_SegmentTrees();
     getchar();
     while (true)
     {
