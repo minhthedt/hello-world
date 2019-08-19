@@ -3,6 +3,7 @@
 #include <queue>
 #include <map>
 #include <vector>
+#include <algorithm>
 using namespace std;
 //https://vnoi.info/wiki/algo/dp/basic-problems
 namespace Jam2019
@@ -12,7 +13,7 @@ namespace Jam2019
 #define UINT32 unsigned int
 #define INT32  int
 #define INT64 long long int
-#define UINT64 unsigned long long 
+#define UINT64 unsigned long long
 
 
     bool checkValid(UINT32 num)
@@ -42,13 +43,13 @@ namespace Jam2019
             memset(L[i],0,sizeof(UINT64)*(m+1));
             L[i][0] = 1;
         }
-        
+
         //tính L[i,j] với i{1->n}; j{1 -> m}
         for (int i = 1; i <= n; i++)
         {
             for (int j = 1; j <= m; j++)
             {
-                //Chuyển về bài toán quy hoạch động 
+                //Chuyển về bài toán quy hoạch động
                 //L[i][j] = số dãy con khác nhau có tổng là j tạo bởi tập phần tử miền 1 -> i
                 //vì dãy ban đầu được xắp xếp tăng dần => các phần tử giống nhau sẽ đặt liền nhau
                 //tim k sao cho arr[i-k] == arr[i-k+1] và arr[i-k] > arr[i-k-1]
@@ -83,7 +84,7 @@ namespace Jam2019
                 }
             }
         }
-       
+
         UINT64 total = 0;
         for (int i = 1; i <= m; i++)
         {

@@ -44,6 +44,11 @@ namespace Jam2017
 
 namespace Jam2016
 {
+    extern void Problem1_1();
+    extern void Problem1_2();
+    extern void Problem1_3();
+    extern void Problem1_4();
+    extern void Problem1_5();
     extern void Problem2_1();
     extern void Problem2_2();
     extern void Problem2_3();
@@ -86,6 +91,8 @@ int main(int argn, char* argv[])
    // uint64 result = Fn(10);
     //cout << result << endl;
 
+    //Jam2016::Problem1_1();
+    Jam2016::Problem1_2();
     //Jam2016::Problem2_1();
     //Jam2016::Problem2_2();
     //Jam2016::Problem2_3();
@@ -116,7 +123,7 @@ int main(int argn, char* argv[])
     //Jam2019::Problem2_3();
     //Jam2019::Problem2_4();
     //Jam2019::Problem2_5();
-    Jam2019::Problem2_6();
+    //Jam2019::Problem2_6();
 
     //Algothirm::Test_Dijkstra();
     //Algothirm::Test_Euler();
