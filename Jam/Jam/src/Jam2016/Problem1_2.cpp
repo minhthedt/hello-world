@@ -5,7 +5,8 @@
 #include <chrono>
 #include <math.h>
 using namespace std;
-//Only subtask 1
+//Done subtask 1
+//FAIL subtask 2
 namespace Jam2016
 {
 #define UINT8 unsigned char
