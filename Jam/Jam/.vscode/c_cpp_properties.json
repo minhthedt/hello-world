@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Jam Win64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:\\Training\\github\\hello-world\\Jam\\Jam\\include\\**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/Mingw-w64/mingw64/bin/g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

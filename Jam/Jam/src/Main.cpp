@@ -93,7 +93,8 @@ int main(int argn, char* argv[])
 
     //Jam2016::Problem1_1();
     //Jam2016::Problem1_2();
-    Jam2016::Problem1_3();
+    //Jam2016::Problem1_3();
+    Jam2016::Problem1_4();
     //Jam2016::Problem2_1();
     //Jam2016::Problem2_2();
     //Jam2016::Problem2_3();
