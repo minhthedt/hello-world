@@ -25,7 +25,8 @@ namespace Jam2016
         priority_queue <pair<int, int>> pq;
         pq.push(make_pair(0, src));
         while (!pq.empty()) {
-            int cost = -pq.top().first;
+            //int cost = -pq.top().first;//?????????? không hiểu vì sao lời giải lại thêm dấu -
+            int cost = pq.top().first;
             int here = pq.top().second;
             pq.pop();
             if (length[here] < cost) continue;
@@ -34,7 +35,8 @@ namespace Jam2016
                 int nextDist = cost + i.second;
                 if (length[there] > nextDist) {
                     length[there] = nextDist;
-                    pq.push(make_pair(-nextDist, there));
+                    //pq.push(make_pair(-nextDist, there));//???????? không hiểu vì sao lời giải lại thêm dấu -
+                    pq.push(make_pair(nextDist, there));
                 }
             }
         }
@@ -130,7 +132,7 @@ namespace Jam2016
     void Problem1_4()
     {
         auto begin = chrono::high_resolution_clock::now();
-        Run_Problem1_4("D:\\Training\\github\\hello-world\\reference\\Sample\\2016\\round1\\Problem4_set4\\input001.txt");
+        Run_Problem1_4("D:\\Training\\github\\hello-world\\reference\\Sample\\2016\\round1\\Problem4_set3\\input001.txt");
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
