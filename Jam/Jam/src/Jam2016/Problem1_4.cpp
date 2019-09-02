@@ -132,7 +132,7 @@ namespace Jam2016
     void Problem1_4()
     {
         auto begin = chrono::high_resolution_clock::now();
-        Run_Problem1_4("D:\\Training\\github\\hello-world\\reference\\Sample\\2016\\round1\\Problem4_set3\\input001.txt");
+        Run_Problem1_4("D:\\Training\\github\\hello-world\\reference\\Sample\\2016\\round1\\Problem4_set4\\input001.txt");
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
