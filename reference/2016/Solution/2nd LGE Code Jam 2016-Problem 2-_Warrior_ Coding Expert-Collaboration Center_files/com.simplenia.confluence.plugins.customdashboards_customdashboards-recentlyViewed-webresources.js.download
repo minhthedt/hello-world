@@ -1,0 +1,6 @@
+WRMCB=function(e){var c=console;if(c&&c.log&&c.error){c.log('Error running batched script.');c.error(e);}}
+;
+try {
+/* module-key = 'com.simplenia.confluence.plugins.customdashboards:customdashboards-recentlyViewed-webresources', location = 'scripts/recently-viewed-link-injector.js' */
+var containerLoadTimeout=10000;var containerLoadCheckIntervals=250;AJS.toInit(function(b){var c=function(e){var d=b(".search-container-component");if(d.size()===0&&e<containerLoadTimeout){setTimeout(function(){c(e+containerLoadCheckIntervals)},500)}else{b("#search-filter-input").focusout(a);a()}};var a=function(){var d=b("#search-panel-recent-page-link");if(d.size()>0&&!d.attr("handlerAdded")){d.attr("handlerAdded",true);d.click(function(f){b("#view-user-history-link").click();f.preventDefault()})}};b("#quick-search-query").focus(function(){c(0)});b("#quick-search-query").click(function(){c(0)})});
+}catch(e){WRMCB(e)};

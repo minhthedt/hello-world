@@ -1,0 +1,62 @@
+WRMCB=function(e){var c=console;if(c&&c.log&&c.error){c.log('Error running batched script.');c.error(e);}}
+;
+try {
+/* module-key = 'com.simplenia.confluence.plugins.customdashboards:customdashboards-recentlyworkedondialog-webresources', location = 'templates/recently-worked-on.soy' */
+// This file was automatically generated from recently-worked-on.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace RWO.Templates.
+ */
+
+if (typeof RWO == 'undefined') { var RWO = {}; }
+if (typeof RWO.Templates == 'undefined') { RWO.Templates = {}; }
+
+
+RWO.Templates.body = function(opt_data, opt_ignored) {
+  return '<div id="recently-worked-on" class="aui-group"><div class="aui-item"><div class="top"><div class="filter"><form class="aui"><input class="filter-input text" type="text" placeholder="' + soy.$$escapeHtmlAttribute('Filter') + '"></form></div></div><div class="pages"></div></div></div>';
+};
+if (goog.DEBUG) {
+  RWO.Templates.body.soyTemplateName = 'RWO.Templates.body';
+}
+
+
+RWO.Templates.pageCollection = function(opt_data, opt_ignored) {
+  return '<div class="groups"></div><div class="empty"></div>';
+};
+if (goog.DEBUG) {
+  RWO.Templates.pageCollection.soyTemplateName = 'RWO.Templates.pageCollection';
+}
+
+
+RWO.Templates.pageGroup = function(opt_data, opt_ignored) {
+  return '<h3>' + soy.$$escapeHtml(opt_data.title) + '</h3><ul/>';
+};
+if (goog.DEBUG) {
+  RWO.Templates.pageGroup.soyTemplateName = 'RWO.Templates.pageGroup';
+}
+
+
+RWO.Templates.pageItem = function(opt_data, opt_ignored) {
+  return '<div class="page-row"><div class="page-icon"><a href=' + soy.$$escapeHtmlAttributeNospace(soy.$$filterNormalizeUri(opt_data.href)) + ' class="icon icon-' + soy.$$escapeHtmlAttribute(opt_data.type) + ' aui-icon content-type-' + soy.$$escapeHtmlAttribute(opt_data.type) + '"></a></div><div class="page-title"><a class="ellipsis" href=' + soy.$$escapeHtmlAttributeNospace(soy.$$filterNormalizeUri(opt_data.href)) + '>' + soy.$$escapeHtml(opt_data.title) + ' - ' + soy.$$escapeHtml(opt_data.space) + '</a></div>' + ((opt_data.draft) ? '<div class="draft-icon"><span class="aui-lozenge aui-lozenge-default">UNPUBLISHED CHANGES</span></div>' : '') + '</div>';
+};
+if (goog.DEBUG) {
+  RWO.Templates.pageItem.soyTemplateName = 'RWO.Templates.pageItem';
+}
+
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.simplenia.confluence.plugins.customdashboards:customdashboards-recentlyworkedondialog-webresources', location = 'scripts/recently-worked-on-dialog.js' */
+var RWO=RWO||{};AJS.toInit(function(a){a("#user-recently-worked-on").click(function(f){f.preventDefault();var c=new AJS.Dialog({width:600,height:500,id:"recently-worked-on-dialog",closeOnOutsideClick:true});var d=a(RWO.Templates.body());c.addHeader("Recently worked on");c.addPanel("SinglePanel",d);c.addLink("Close",function(e){e.hide()});var h=new RWO.PageCollection();var b=new RWO.PageCollectionView({collection:h});d.find(".pages").html(b.render().el);c.gotoPanel(0);c.show();var g=a("#recently-worked-on-dialog").spin("large");h.fetch({success:function(){g.spinStop();var i=_.extend({},Backbone.Events);var j=new RWO.PageNavigator(b.$el,d.parent(),i);var e=new RY.FilterView({collection:h,el:d.find(".filter"),navigationEvents:i}).render();e.search()}})})});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.simplenia.confluence.plugins.customdashboards:customdashboards-recentlyworkedondialog-webresources', location = 'scripts/recently-worked-on-page.js' */
+var RWO=RWO||{};RWO.PageView=Backbone.View.extend({tagName:"li",className:"rwo-page",template:RWO.Templates.pageItem,initialize:function(){_.bindAll(this,"hide","show","render")},hide:function(){this.$el.hide().removeClass("shown")},show:function(){this.$el.show().addClass("shown")},render:function(){this.$el.html(this.template(this.model.toJSON()));return this}});RWO.PageGroupView=Backbone.View.extend({className:"group",template:RWO.Templates.pageGroup,initialize:function(){_.bindAll(this,"hide","hideAll","show","showBorder","showPages","add","render");this.title=this.options.title;this.modelViews={}},hide:function(){this.$el.hide()},hideAll:function(){this.$el.removeClass("border").hide();_.invoke(_.values(this.modelViews),"hide")},show:function(){this.$el.show()},showBorder:function(){this.$el.addClass("border")},showPages:function(a){var c=this;var b=false;_.each(a,function(e){var d=c.modelViews[e.cid];if(d){b=true;d.show()}});if(b){this.show()}return b},add:function(b){var a=new RWO.PageView({model:b});this.modelViews[b.cid]=a;this.$list.append(a.render().el)},render:function(){this.$el.html(this.template({title:this.title}));this.$list=this.$("ul");return this}});RWO.PageNavigator=function(a,e,c){var g=null;function f(){return a.find("li.shown")}function b(i){pageItems=f();var h=pageItems.index(pageItems.filter(".highlight"));if(g){g.removeClass("highlight")}i+=h;if(i<0){i=pageItems.length-1}if(i>=pageItems.length){i=0}g=pageItems.eq(i);g.addClass("highlight")}function d(){if(!g.length){return}var k=e;var l=k.children();var j=k.height();var i=g.outerHeight(true);var h=g.position().top;if(h<0){if(f().index(g)===0){k.scrollTop(0);return}k.scrollTop(g.offset().top-l.offset().top)}else{if(h>j){k.scrollTop(g.offset().top-l.offset().top-j+i)}}}c.on("select",function(){if(g&&g.is(":visible")){var h=g.find(".page-title a").attr("href");window.location=h}},this);c.on("previous",function(){b(-1);d()},this);c.on("next",function(){b(1);d()},this)};RWO.PageCollectionView=Backbone.View.extend({template:RWO.Templates.pageCollection,initialize:function(){_.bindAll(this,"checkEmpty","filter","_groupForPage","addOne","showEmptyMessage","clearEmptyMessage","addAll","render");this.modelViews={};this.collection.on("reset",this.addAll,this);this.collection.on("add",this.addOne,this);this.collection.on("filter",this.filter,this)},checkEmpty:function(a,e){var c=this.collection.isEmpty();var b=a.length===0;if(c||b){var d;if(c){d="You haven\u0027t created or edited anything yet, but when you do, we\u0027ll drop it here so it\u0027s easy to pick up where you left off."}else{d="We can\u0027t find anything for"+" '"+e+"'"}this.showEmptyMessage(d)}else{this.clearEmptyMessage()}},filter:function(b,d){d=d||"";this.checkEmpty(b,d);var a=[this.$today,this.$yesterday,this.$lastSevenDays,this.$lastThirtyDays,this.$older];_.invoke(a,"hideAll");var c=[];_.each(a,function(f){var e=f.showPages(b);if(e){c.push(f)}});if(c.length>1){c.pop();_.invoke(c,"showBorder")}},_groupForPage:function(a){if(a.get("daysSinceLastContributed")===0){return this.$today}else{if(a.get("daysSinceLastContributed")===1){return this.$yesterday}else{if(a.get("daysSinceLastContributed")<=7){return this.$lastSevenDays}else{if(a.get("daysSinceLastContributed")<=30){return this.$lastThirtyDays}else{return this.$older}}}}},addOne:function(a){var b=this._groupForPage(a);b.add(a)},showEmptyMessage:function(a){this.$(".empty").html(AJS.$("<p>").html(a))},clearEmptyMessage:function(){this.$(".empty").html("")},addAll:function(){this.collection.each(this.addOne)},render:function(){this.$el.html(this.template());this.$today=new RWO.PageGroupView({title:"Today"});this.$yesterday=new RWO.PageGroupView({title:"Yesterday"});this.$lastSevenDays=new RWO.PageGroupView({title:"In the last week"});this.$lastThirtyDays=new RWO.PageGroupView({title:"In the last month"});this.$older=new RWO.PageGroupView({title:"More than a month ago"});var a=this.$(".groups");a.append(this.$today.render().el);a.append(this.$yesterday.render().el);a.append(this.$lastSevenDays.render().el);a.append(this.$lastThirtyDays.render().el);a.append(this.$older.render().el);_.invoke([this.$today,this.$yesterday,this.$lastSevenDays,this.$lastThirtyDays,this.$older],"hideAll");return this}});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.simplenia.confluence.plugins.customdashboards:customdashboards-recentlyworkedondialog-webresources', location = 'scripts/recently-worked-on-page-model.js' */
+var RWO=RWO||{};(function(){var a;if(typeof ConfluenceMobile!="undefined"){a=ConfluenceMobile.AppData.get("confluence-context-path")}else{a=AJS.contextPath()}RWO.Page=Backbone.Model.extend({parse:function b(e,g){var i=e.metadata.currentuser.hasOwnProperty("lastcontributed")?e.metadata.currentuser.lastcontributed.when:e.metadata.currentuser.lastmodified.version.when;var d=new Date(i);var h=d.getTime();var f=e.status==="draft"?a+e._links.edit:a+e._links.webui;var c=e&&e.metadata&&e.metadata.currentuser&&e.metadata.currentuser.lastcontributed&&(e.metadata.currentuser.lastcontributed.status==="unpublished"||e.metadata.currentuser.lastcontributed.status==="draft");_.extend(e,{space:e.container.name,url:f,href:f,date:i,timestamp:h,daysSinceLastContributed:RY.util.daysSince(h),updated:i,draft:c});return e}});RWO.PageCollection=Backbone.Collection.extend({parse:function(c){if(_.isObject(c.results)){return c.results}else{return c}},model:RWO.Page,url:a+"/rest/api/content/search?expand=container,metadata.currentuser.lastcontributed,metadata.currentuser.lastmodified&cqlcontext=%7B%22contentStatuses%22:%5B%22current%22,%22draft%22%5D%7D&cql=type%20in%20(page,blogpost)%20and%20id%20in%20recentlyModifiedPagesAndBlogPostsByUser(currentUser(),%200,%2020)",search:function(d){var c;if(this._queryLength(d)===0){c=this.models}else{var e=d.match(/[^\s-]+/g);c=this.filter(function(g){var f=(g.get("title")+g.get("space")).toLowerCase();return _.all(e,function(h){return f.indexOf(h.toLowerCase())!==-1})})}this.trigger("filter",c,d);return c},_queryLength:function(c){if(!String.prototype.trim){return AJS.$.trim(c).length}return c.trim().length},comparator:function(c){return -(c.get("timestamp"))}})})();
+}catch(e){WRMCB(e)};
