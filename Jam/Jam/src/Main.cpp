@@ -67,6 +67,18 @@ namespace Algothirm
     extern void Test_SegmentTrees();
 }
 
+namespace LeetCode
+{
+    extern void Main();
+}
+
+namespace Final2018
+{
+    extern void Run_problem1();
+    extern void Run_problem2();
+    extern void Run_problem3();
+    extern void Run_problem4();
+}
 #define uint64 unsigned long long
 uint64 Fn(uint64 n)
 {
@@ -94,7 +106,7 @@ int main(int argn, char* argv[])
     //Jam2016::Problem1_1();
     //Jam2016::Problem1_2();
     //Jam2016::Problem1_3();
-    Jam2016::Problem1_4();
+    //Jam2016::Problem1_4();
     //Jam2016::Problem2_1();
     //Jam2016::Problem2_2();
     //Jam2016::Problem2_3();
@@ -133,6 +145,13 @@ int main(int argn, char* argv[])
     //Algothirm::Test_Hamilton_Cycle();
     //Algothirm::Test_HopcroftKarp();
     //Algothirm::Test_SegmentTrees();
+
+    //Final2018::Run_problem1();
+    //Final2018::Run_problem2();
+    //Final2018::Run_problem3();
+    Final2018::Run_problem4();
+
+    LeetCode::Main();
     getchar();
     while (true)
     {

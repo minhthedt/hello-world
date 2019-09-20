@@ -28,6 +28,12 @@
     <Filter Include="src\Jam2016">
       <UniqueIdentifier>{07038e65-4118-438c-a74c-4e6aeff53a86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\LeetCode">
+      <UniqueIdentifier>{d352ee9a-e208-4804-8740-761386acfe9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Final">
+      <UniqueIdentifier>{714b17e2-f239-489e-baad-7eb296aaa177}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jam2018\Problem1_1.cpp">
@@ -173,6 +179,27 @@
     </ClCompile>
     <ClCompile Include="src\Algothirm\SegmentTree.cpp">
       <Filter>src\Algothirm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem1_1.cpp">
+      <Filter>src\Jam2016</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem1_2.cpp">
+      <Filter>src\Jam2016</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem1_3.cpp">
+      <Filter>src\Jam2016</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem1_4.cpp">
+      <Filter>src\Jam2016</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jam2016\Problem1_5.cpp">
+      <Filter>src\Jam2016</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LeetCode\Test.cpp">
+      <Filter>src\LeetCode</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Final\Final2018.cpp">
+      <Filter>src\Final</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
