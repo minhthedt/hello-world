@@ -1,4 +1,4 @@
-#include "Common.h"
+﻿#include "Common.h"
 #include <iostream>
 #include <queue>
 #include <map>
@@ -10,7 +10,13 @@ using namespace std;
 
 namespace Final2018
 {
-    
+#define UINT8 unsigned char
+#define INT16 short int
+#define UINT32 unsigned int
+#define INT32  int
+#define INT64 signed long long
+#define UINT64 unsigned long long
+
     void problem1(const char* inputPath)
     {
         FILE* fi = freopen(inputPath, "r", stdin);
@@ -285,7 +291,7 @@ namespace Final2018
             int pre_student_group = 0;
             int cur_student_group = 0;
             int cur_student = 0;
-            printf("size = %d\n",map.size());
+            //printf("size = %d\n",map.size());
             for (auto it = map.begin(); it != map.end(); it++)
             {
                 //printf("%d - %d\n", it->second.first, it->second.second);
@@ -345,4 +351,123 @@ namespace Final2018
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
         cout << "\n\n" << ms << " ms" << endl;//2 ms
     }
+
+
+    void problem5(const char* inputPath)
+    {
+        FILE* fi = freopen(inputPath, "r", stdin);
+        if (fi)
+        {
+
+        }
+        else
+        {
+            printf("FAIL open %s\n", inputPath);
+        }
+    }
+
+    void Run_problem5()
+    {
+        auto begin = chrono::high_resolution_clock::now();
+        problem5("D:\\Training\\github\\hello-world\\reference\\Sample\\\Final\\2018\\E\\P5-data-029-4.in");
+        auto end = chrono::high_resolution_clock::now();
+        auto dur = end - begin;
+        auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        cout << "\n\n" << ms << " ms" << endl;//2 ms
+    }
+
+    void problem6(const char* inputPath)
+    {
+        const UINT32 MODULO = 1000000007;
+        FILE* fi = freopen(inputPath, "r", stdin);
+        if (fi)
+        {
+            UINT64 R, C, K;
+            UINT64 ret = 1;
+            UINT64 max_tile = 0;
+            //1 ≤ R ≤ 1 000 000 ; 2 ≤ C ≤ 1; 000; 000; 000 ,  0 ≤ K ≤ 1; 000.  
+            int r, c;
+            cin >> R >> C >> K;
+            //printf("%d %d %d\n",R,C,K);
+            std::map<int, std::vector<int>> data;
+            for (int i = 0; i < K; i++)
+            {
+                cin >> r >> c;
+                //printf("%d %d\n",r,c);
+                data[r].push_back(c);
+            }
+
+            for (auto it = data.begin(); it != data.end(); it++)
+            {
+                std::vector<int>& val= it->second;
+                std::sort(val.begin(), val.end(), [](int a, int b)->bool
+                {
+                    return a < b;
+                });
+
+                int num = val.size();
+                //from val[0] -> val[num]
+                for (int j = 1; j < num; j++)
+                {
+                    int space = val[j] - val[j - 1] - 1;
+                    if (space % 2 != 0)
+                    {
+                        ret *= (space / 2 + 1);
+                        ret %= MODULO;
+                    }
+                    max_tile += space / 2;
+                }
+
+                //from  1 - > val[0]
+                {
+                    int space = val[0] - 1;
+                    if (space % 2 != 0)
+                    {
+                        ret *= (space / 2 + 1);
+                        ret %= MODULO;
+                    }
+                    max_tile += space / 2;
+                }
+
+                //from val[num-1] -> C;
+                {
+                    int space = C - val[num - 1];
+                    if (space % 2 != 0)
+                    {
+                        ret *= (space / 2 + 1);
+                        ret %= MODULO;
+                    }
+                    max_tile += space / 2;
+                }
+               
+            }
+
+            //count all row which is empty
+            int emptyrow = R - data.size();
+            max_tile += emptyrow * (C / 2);
+            if (C % 2 == 1)
+            {
+                ret *= (C / 2 + 1);
+                ret %= MODULO;
+            }
+
+
+            printf("%lld %lld \n", max_tile,ret);
+        }
+        else
+        {
+            printf("FAIL open %s\n", inputPath);
+        }
+    }
+
+    void Run_problem6()
+    {
+        auto begin = chrono::high_resolution_clock::now();
+        problem6("D:\\Training\\github\\hello-world\\reference\\Sample\\\Final\\2018\\F\\P6-data-030-8.in");
+        auto end = chrono::high_resolution_clock::now();
+        auto dur = end - begin;
+        auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        cout << "\n\n" << ms << " ms" << endl;//2 ms
+    }
+
 }

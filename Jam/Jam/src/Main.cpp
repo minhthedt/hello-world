@@ -78,6 +78,8 @@ namespace Final2018
     extern void Run_problem2();
     extern void Run_problem3();
     extern void Run_problem4();
+    extern void Run_problem5();
+    extern void Run_problem6();
 }
 #define uint64 unsigned long long
 uint64 Fn(uint64 n)
@@ -149,7 +151,9 @@ int main(int argn, char* argv[])
     //Final2018::Run_problem1();
     //Final2018::Run_problem2();
     //Final2018::Run_problem3();
-    Final2018::Run_problem4();
+    //Final2018::Run_problem4();
+    //Final2018::Run_problem5()
+    Final2018::Run_problem6();
 
     LeetCode::Main();
     getchar();
