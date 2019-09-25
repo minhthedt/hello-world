@@ -16,6 +16,7 @@ namespace Final2018
 #define INT32  int
 #define INT64 signed long long
 #define UINT64 unsigned long long
+#define MODULO  1000000007
 
     void problem1(const char* inputPath)
     {
@@ -206,7 +207,7 @@ namespace Final2018
     void Run_problem2()
     {
         auto begin = chrono::high_resolution_clock::now();
-        problem2("D:\\Training\\github\\hello-world\\reference\\Sample\\\Final\\2018\\B\\data-99.in");
+        problem2("D:\\Training\\github\\hello-world\\reference\\Sample\\\Final\\2018\\B\\cf-12.in");
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
@@ -221,23 +222,43 @@ namespace Final2018
 
         if (fi)
         {
-            cin >> N;
-            printf("%d\n",N);
-            int* sticks = new int[N];
-            set<int> set;
+            cin >> N;//1 <= N <= 10000; 2 <= Ai <= 100000
+            //printf("%d\n",N);
+            std::vector<int> A(N,0);
             for (int i = 0; i < N; i++)
             {
-                cin >> sticks[i];
-                printf("%d ", sticks[i]);
-                if (set.find(sticks[i]) != set.end())
+                cin >> A[i];
+                //printf("%d ", A[i]);
+            }
+
+            std::sort(A.begin(), A.end(), [](int a, int b) -> bool
+            {
+                return a > b;
+            });
+
+            UINT64 previous = 0;
+            int i;
+            UINT64 total_area = 0;
+            for (i = 0; i < N; i++)
+            {
+                if (i + 1 < N && abs(A[i] - A[i + 1]) <= 1)
                 {
-                    set.insert(sticks[i]);
+                    UINT64 current = min(A[i], A[i + 1]);
+                    if (previous > 0)
+                    {
+                        total_area += current * previous;
+                        previous = 0;
+                        
+                    }
+                    else
+                    {
+                        previous = current;
+                    }
+                    i = i + 1;
                 }
             }
 
-            
-
-
+            printf("\ntotal = %llu\n", total_area);
         }
         else
         {
@@ -248,7 +269,7 @@ namespace Final2018
     void Run_problem3()
     {
         auto begin = chrono::high_resolution_clock::now();
-        problem3("D:\\Training\\github\\hello-world\\reference\\Sample\\\Final\\2018\\C\\cf-1.in");
+        problem3("D:\\Training\\github\\hello-world\\reference\\Sample\\\Final\\2018\\C\\data-1.in");
         auto end = chrono::high_resolution_clock::now();
         auto dur = end - begin;
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
@@ -329,9 +350,6 @@ namespace Final2018
                     pre_student_group = cur_student_group;
                 }
 
-               
-                
-
             }
             if (pre_student != 0) group++;
             printf("%d \n", group);
@@ -378,7 +396,7 @@ namespace Final2018
 
     void problem6(const char* inputPath)
     {
-        const UINT32 MODULO = 1000000007;
+        
         FILE* fi = freopen(inputPath, "r", stdin);
         if (fi)
         {
@@ -470,4 +488,77 @@ namespace Final2018
         cout << "\n\n" << ms << " ms" << endl;//2 ms
     }
 
+    void problem7(const char* inputPath)
+    {
+        FILE* fi = freopen(inputPath, "r", stdin);
+        if (fi)
+        {
+            //2 <= N <= 1000
+            //1 <= M <= N*(N-1)/2
+            //1 <= K <= 100
+            int M, N, K;
+            int x, y;
+            int** graph;
+            cin >> N >> M >> K;
+            printf("%d %d %d\n", N,M,K);
+            graph = new int*[N];
+            for (int i = 0; i < N; i++)
+            {
+                graph[i] = new int[N];
+                memset(graph[i],0,N*sizeof(int));
+            }
+
+            for (int i = 1; i <= M; i++)
+            {
+                cin >> x >> y;
+                printf("%d %d\n",x,y);
+                graph[x - 1][y - 1] = i;
+                graph[y - 1][x - 1] = i;
+                printf("graph[%d][%d] = %d\n", x-1, y-1,i);
+            }
+
+            //BFS de check full connected
+            queue<int> q;
+            q.push(0);
+            bool* visited = new bool[N];
+            memset(visited, 0, N);
+            visited[0] = true;
+            while (!q.empty()) {
+                //time lien ke voi dinh 0
+                int t = q.front();
+                q.pop();
+                
+                for (int i = 0; i < N; i++)
+                {
+                    if (!visited[i] && graph[t][i] > 0)
+                    {
+                        visited[i] = true;
+                        q.push(i);
+                    }
+                }
+            }
+
+            for (int i = 0; i < N; i++)
+            {
+                if (visited[i] == false)
+                {
+                    printf("not connected !\n");
+                }
+            }
+        }
+        else
+        {
+            printf("FAIL open %s\n", inputPath);
+        }
+    }
+
+    void Run_problem7()
+    {
+        auto begin = chrono::high_resolution_clock::now();
+        problem7("D:\\Training\\github\\hello-world\\reference\\Sample\\\Final\\2018\\G\\P7-data-001-00.in");
+        auto end = chrono::high_resolution_clock::now();
+        auto dur = end - begin;
+        auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+        cout << "\n\n" << ms << " ms" << endl;//2 ms
+    }
 }
