@@ -17,19 +17,67 @@ JNIEXPORT void JNICALL Java_HelloJNI_sayHello
 
 /*
  * Class:     HelloJNI
- * Method:    sayHelloStr
+ * Method:    testJNIPrimitive
+ * Signature: (ZBCSIJFD)D
+ */
+JNIEXPORT jdouble JNICALL Java_HelloJNI_testJNIPrimitive
+  (JNIEnv *, jobject, jboolean, jbyte, jchar, jshort, jint, jlong, jfloat, jdouble);
+
+/*
+ * Class:     HelloJNI
+ * Method:    testJNIArrayPrimitive
+ * Signature: ([I)[D
+ */
+JNIEXPORT jdoubleArray JNICALL Java_HelloJNI_testJNIArrayPrimitive
+  (JNIEnv *, jobject, jintArray);
+
+/*
+ * Class:     HelloJNI
+ * Method:    testJNIString
  * Signature: (Ljava/lang/String;)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_HelloJNI_sayHelloStr
+JNIEXPORT jstring JNICALL Java_HelloJNI_testJNIString
   (JNIEnv *, jobject, jstring);
 
 /*
  * Class:     HelloJNI
- * Method:    sumAndAverage
- * Signature: ([I)[D
+ * Method:    testModifyInstanceVariable
+ * Signature: ()V
  */
-JNIEXPORT jdoubleArray JNICALL Java_HelloJNI_sumAndAverage
-  (JNIEnv *, jobject, jintArray);
+JNIEXPORT void JNICALL Java_HelloJNI_testModifyInstanceVariable
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     HelloJNI
+ * Method:    testCallbackMethod
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_HelloJNI_testCallbackMethod
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     HelloJNI
+ * Method:    testCreateObject
+ * Signature: (I)Ljava/lang/Integer;
+ */
+JNIEXPORT jobject JNICALL Java_HelloJNI_testCreateObject
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     HelloJNI
+ * Method:    testCreateArrayObject
+ * Signature: ()[Ljava/lang/Double;
+ */
+JNIEXPORT jobjectArray JNICALL Java_HelloJNI_testCreateArrayObject
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     HelloJNI
+ * Method:    testLocalReference
+ * Signature: ()Ljava/lang/Integer;
+ */
+JNIEXPORT jobject JNICALL Java_HelloJNI_testLocalReference
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }
