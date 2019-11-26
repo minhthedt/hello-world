@@ -51,7 +51,7 @@ public class HelloJNI {  // Save as HelloJNI.java
       HelloJNI test = new HelloJNI();
       //1.
       //System.out.println("1. sayHello");
-      //test.sayHello();  // Create an instance and invoke the native method
+      test.sayHello();  // Create an instance and invoke the native method
       //1.1.2
       //test.runTestJNIPrimitive();
       //test.runTestJNIArrayPrimitive();
@@ -60,9 +60,9 @@ public class HelloJNI {  // Save as HelloJNI.java
       //test.testCallbackMethod();
       //test.runTestCreateObject();
       //test.runTestCreateArrayObject();
-      test.runTestLocalReference1();
-      System.out.println("In Java, runTestLocalReference2");
-      test.runTestLocalReference2();
+      //test.runTestLocalReference1();
+      //System.out.println("In Java, runTestLocalReference2");
+      //test.runTestLocalReference2();
 
    }
    
