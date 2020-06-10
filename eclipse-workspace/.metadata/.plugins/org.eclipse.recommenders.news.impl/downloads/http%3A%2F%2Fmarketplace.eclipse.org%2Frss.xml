@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="http://marketplace.eclipse.org/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <channel>
+    <title>Eclipse Plugins, Bundles and Products - Eclipse Marketplace</title>
+    <link>http://marketplace.eclipse.org/</link>
+    <description></description>
+    <language>en</language>
+     <atom:link href="http://marketplace.eclipse.org/rss.xml" rel="self" type="application/rss+xml" />
+      <item>
+    <title>impulse 2</title>
+    <link>http://marketplace.eclipse.org/content/impulse-2</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/impulse2_80.png&quot; width=&quot;80&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2020-06-10 06:21&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22toem%20GmbH%22&quot;&gt;toem GmbH&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2020-03-18 05:39&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/thaberm7n/listings&quot; title=&quot;Thomas  Haber&quot;&gt;Thomas  Haber&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;&lt;strong&gt;impulse&lt;/strong&gt; is a powerful visualization and analysis workbench which helps engineers to comfortably understand and debug complex semiconductor and multi-core software systems.&lt;/p&gt;
+&lt;p&gt;All &lt;em&gt;impulse&lt;/em&gt; components are fully integrated into the Eclipse framework (Windows, Linux and OSX/Mac) and can be combined with a growing set of emerging Eclipse technologies and extensions (IoT, language IDEs, reports, CM, etc.).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/resources/installation&quot; rel=&quot;nofollow&quot;&gt;Install impulse 2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;Log&amp;amp;Trace extension &lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The extension combines a number of universal readers for target logging and tracing. The &lt;strong&gt;CSV&lt;/strong&gt; Data and Log Reader is a configurable reader for all typical kinds of CSV (Comma-Separated Values) formats. The &lt;strong&gt;Pattern&lt;/strong&gt; Log Reader can read line based logs that contain multiple line patterns. The &lt;strong&gt;XML&lt;/strong&gt;,&lt;strong&gt;YAML&lt;/strong&gt; and &lt;strong&gt;JSON&lt;/strong&gt; Log Readers are configurable log readers for all typical markup language based log formats and comes with pre-defined Log4J configurations.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/products/impulse-log-trace&quot; rel=&quot;nofollow&quot;&gt;impulse Log&amp;amp;Trace &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/resources/all-documents/253-u016-application-logging-with-impulse&quot; rel=&quot;nofollow&quot;&gt;Application Logging with impulse &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/resources/all-documents/123-logging-and-tracing-1-basic-pattern-logs&quot; rel=&quot;nofollow&quot;&gt;Logging and Tracing 1 - Basic pattern logs&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;Embedded extension &lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;This extension contains a serial line (RS232) adapter, CDT memory adapter, Serial Wire Viewer (SWV) reader and the SystemView reader.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/products/impulse-embedded&quot; rel=&quot;nofollow&quot;&gt;impulse EMBEDDED&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;CANbus extension &lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The CANBus extension enables the reading and writing of messages from several CAN bus adapters as well as the extraction and tracing of message contents such as bits, integer and text.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/products/impulse-canbus&quot; rel=&quot;nofollow&quot;&gt;impulse CANbus&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;VP extension &lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The VP extension comprises the TAB reader (Analogue Tabular Format) used in SystemC AMS systems and the SCV reader for the textual SystemC TLM-2 transaction database.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/products/impulse-vp&quot; rel=&quot;nofollow&quot;&gt;impulse VP&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;HDL extension &lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;This extension supports a variety of HDL-related file formats for reading, viewing and analysing simulation output. FSDB (Verdi tools/ Synopsys), FST (Fast Signal Trace), and WLF (ModelSim tools/ Mentor Graphics) are supported by native extensions (FSDB and WLF require third-party libraries).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/products/impulse-hdl&quot; rel=&quot;nofollow&quot;&gt;impulse HDL&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;YAKINDU extension &lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;This extension enables the simulation and visualization of YAKINDU state chart models. It helps users to create a state machine model (simulation with reference data) and to execute and trace the created state machine.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/products/impulse-yakindu&quot; rel=&quot;nofollow&quot;&gt;impulse YAKINDU&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/resources/all-documents/256-how-to-simulate-state-charts&quot; rel=&quot;nofollow&quot;&gt;Going YAKINDU 1 - How to simulate state charts &lt;/a&gt;&lt;/p&gt;
+
+
+&lt;h2&gt;Attach - View - Analyse&lt;/h2&gt;
+&lt;p&gt;Read and combine multiple signal sources (traces, logs, waveforms, databases, etc.) from local resources or external networks, serial interfaces, data acquisition units and debug adapters.&lt;/p&gt;
+&lt;p&gt;Easy-to-use visualization elements enable the design of informative views.&lt;br /&gt;
+Use a variety of diagram types to display signals based on multiple domains (time and frequency etc.) or utilize charts to display statistical information.&lt;/p&gt;
+&lt;p&gt;A wide range of signal calculation tools make it possible to combine, compare and extract signal information.&lt;br /&gt;
+Combine signals using mathematical operations, generate references, implement protocol parsers, compare logs, extract statistical informations or search for conflicts automatically.&lt;/p&gt;
+&lt;h2&gt;Extend or Integrate&lt;/h2&gt;
+&lt;p&gt;Open extension mechanisms offer various possibilities for adapting &lt;em&gt;impulse&lt;/em&gt; to particular user requirements.&lt;br /&gt;
+You can define your own data formats, implement acquisition interfaces, create your own specific diagrams, carry out special data analysis or integrate a 3D chart engine.&lt;/p&gt;
+&lt;p&gt;Integration with external products (e.g., a customized IDE) allows seamless visualization of data, faster market access and fascinating possibilities for your customers.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://toem.de/index.php/pricing/pricing-options&quot; rel=&quot;nofollow&quot;&gt;Licensing: Questions and Answers&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Wed, 18 Mar 2020 09:39:58 +0000</pubDate>
+ <dc:creator>thaberm7n</dc:creator>
+ <guid isPermaLink="false">5028151 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/impulse-2#comments</comments>
+  </item>
+  <item>
+    <title>DBeaver EE</title>
+    <link>http://marketplace.eclipse.org/content/dbeaver-ee</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/Enterprise_icon.png&quot; width=&quot;80&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Mon, 2020-06-08 10:48&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22DBeaver%20Corp%22&quot;&gt;DBeaver Corp&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sat, 2017-11-18 13:47&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/sriderdp1/listings&quot; title=&quot;Serge Rider&quot;&gt;Serge Rider&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;DBeaver Enterprise Edition.&lt;/p&gt;
+&lt;p&gt;Includes all features of DBeaver Community plus:&lt;br /&gt;
+- NoSQL/BigData databases (MongoDB, DynamoDB, Bigtable, Cassandra, Couchbase, Redis, InfluxDB, Hive)&lt;br /&gt;
+- Advanced features for SQL Server, Oracle, Natezza and PostgreSQL&lt;br /&gt;
+- Advanced extensions (office integration, SVG export, SSHJ)&lt;br /&gt;
+- Visual Query Builder&lt;br /&gt;
+- Visual SQL execution plan analysis&lt;br /&gt;
+- Database schema compare / migrate&lt;br /&gt;
+- Mock data generator&lt;br /&gt;
+- Advanced tasks management&lt;br /&gt;
+- Task scheduler&lt;br /&gt;
+- Advanced dashboards&lt;br /&gt;
+- Persistent SQL history management&lt;br /&gt;
+- Kerberos and Active Directory authentication (PostgreSQL, MariaDB, Oracle, Presto)&lt;br /&gt;
+- Proxy configuration/auto-detection&lt;br /&gt;
+- Secured passwords storage&lt;br /&gt;
+- Git integration&lt;br /&gt;
+- 3rd-party JDBC drivers&lt;br /&gt;
+- Online customer support&lt;/p&gt;
+&lt;p&gt;Standalone version available on &lt;a href=&quot;https://dbeaver.com/download&quot; rel=&quot;nofollow&quot;&gt;https://dbeaver.com/download&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Sat, 18 Nov 2017 18:47:50 +0000</pubDate>
+ <dc:creator>sriderdp1</dc:creator>
+ <guid isPermaLink="false">3775863 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/dbeaver-ee#comments</comments>
+  </item>
+  <item>
+    <title>pgCodeKeeper</title>
+    <link>http://marketplace.eclipse.org/content/pgcodekeeper</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/app_icon128_1.png&quot; width=&quot;80&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Mon, 2020-06-08 09:42&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Technology%2C%20LLC%22&quot;&gt;Technology, LLC&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Fri, 2018-05-04 06:16&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/mgaliev0jc/listings&quot; title=&quot;pgCodeKeeper Team&quot;&gt;pgCodeKeeper Team&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;A tool for easier PostgreSQL and SQL Server development.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Comparing database code is very easy now. Compare live DB instances, pg_dump output, as well as pgCodeKeeper projects.&lt;/li&gt;
+&lt;li&gt;Generate migration scripts via a user-friendly interface. You can use both live DB instances and DB dumps as initial data. You can also compare pgCodeKeeper projects — useful when working with versions control systems.&lt;/li&gt;
+&lt;li&gt;pgCodeKeeper is an Eclipse IDE plug-in. The DB code is saved as an Eclipse project, and the project can be tracked under any of the versions control systems supported by Eclipse — Git, SVN, Mercurial, CVS and many others.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;More info on &lt;a href=&quot;https://pgcodekeeper.org&quot; rel=&quot;nofollow&quot;&gt;https://pgcodekeeper.org&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Fri, 04 May 2018 10:16:27 +0000</pubDate>
+ <dc:creator>mgaliev0jc</dc:creator>
+ <guid isPermaLink="false">4065142 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/pgcodekeeper#comments</comments>
+  </item>
+  <item>
+    <title>Faktor-IPS</title>
+    <link>http://marketplace.eclipse.org/content/faktor-ips</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/fips_eclipse_marketplace.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Mon, 2020-06-08 05:16&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Faktor%20Zehn%20GmbH%22&quot;&gt;Faktor Zehn GmbH&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Thu, 2007-02-08 09:59&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/jortmann/listings&quot; title=&quot;Jan Ortmann&quot;&gt;Jan Ortmann&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;Faktor-IPS is a MDSD tool for the insurance industry. It provides a domain language to model insurance contracts and products. Based on Eclipse it provides an integration platform for both developers and business analysts. Business analysts can define new insurance products in a special product definition perspective. Faktor-IPS can be used as product system for SAP FS-PM. As a MDSD tool, it offers a thight integration between model and (generated) sourcecode. You can jump directly from the model to all generated sourcecode elements. It also allows to refactor the model and the sourcecode, generated or not, in one single step. Documentation is available in German and English.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Thu, 08 Feb 2007 14:59:29 +0000</pubDate>
+ <dc:creator>jortmann</dc:creator>
+ <guid isPermaLink="false">391 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/faktor-ips#comments</comments>
+  </item>
+  <item>
+    <title>JHipster IDE</title>
+    <link>http://marketplace.eclipse.org/content/jhipster-ide</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/JHLogo1.jpg&quot; width=&quot;65&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sun, 2020-06-07 14:51&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22JHipster%20%28Open%20Source%20Community%29%22&quot;&gt;JHipster (Open Source Community)&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sat, 2016-11-26 14:43&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/scolameoakt/listings&quot; title=&quot;Serano Colameo&quot;&gt;Serano Colameo&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;&lt;strong&gt;JHipster IDE&lt;/strong&gt; provides editing support of JHipster Domain Language (JDL) files for pupular IDEs and editors such as Eclipse and Visual Studio Code. &lt;/p&gt;
+&lt;p&gt;The following features are available:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Syntax Coloring&lt;/li&gt;
+&lt;li&gt;Error Checking&lt;/li&gt;
+&lt;li&gt;Auto-Completion&lt;/li&gt;
+&lt;li&gt;Formatting&lt;/li&gt;
+&lt;li&gt;Hover Information&lt;/li&gt;
+&lt;li&gt;Mark Occurences&lt;/li&gt;
+&lt;li&gt;Go To Declaration&lt;/li&gt;
+&lt;li&gt;Rename Refactoring&lt;/li&gt;
+&lt;li&gt;Toggle Comments&lt;/li&gt;
+&lt;li&gt;Outline / Structure View&lt;/li&gt;
+&lt;li&gt;Quick Fix Proposals&lt;/li&gt;
+&lt;li&gt;Find References&lt;/li&gt;
+&lt;li&gt;Folding&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Furthermore, JHipster IDE generates automatically an UML diagram of the JDL file and provides an integration with the Eclipse terminal shell to call JHipster&#039;s Yeoman generator.&lt;/p&gt;
+&lt;p&gt;Another nice feature is Xdocker which allows to edit, build and run Docker files and images generated by JHipster directly from the IDE.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I suggest to download a fresh Eclipse Java Distribution before install JHipster IDE.&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Sat, 26 Nov 2016 19:43:19 +0000</pubDate>
+ <dc:creator>scolameoakt</dc:creator>
+ <guid isPermaLink="false">3184658 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/jhipster-ide#comments</comments>
+  </item>
+  <item>
+    <title>ContextQuickie</title>
+    <link>http://marketplace.eclipse.org/content/contextquickie</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/default_images/default_2.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sun, 2020-06-07 13:35&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22ContextQuickie%22&quot;&gt;ContextQuickie&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sun, 2015-11-01 03:49&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/cquickie/listings&quot; title=&quot;Context Quickie&quot;&gt;Context Quickie&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;An eclipse add-on which extends the context menu for accessing various windows tools like Beynod Compare, Tortoise SVN or Tortoise Git.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Sun, 01 Nov 2015 08:49:47 +0000</pubDate>
+ <dc:creator>cquickie</dc:creator>
+ <guid isPermaLink="false">2589579 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/contextquickie#comments</comments>
+  </item>
+  <item>
+    <title>Groovy Development Tools</title>
+    <link>http://marketplace.eclipse.org/content/groovy-development-tools</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/groovy-logo-medium.png&quot; width=&quot;110&quot; height=&quot;55&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sun, 2020-06-07 10:27&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Pivotal%22&quot;&gt;Pivotal&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2012-07-04 13:05&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/aclement/listings&quot; title=&quot;Andrew Clement&quot;&gt;Andrew Clement&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;The Groovy Development Tools (GDT) provides Eclipse and Maven (m2e) support for the &lt;a href=&quot;http://groovy-lang.org&quot; rel=&quot;nofollow&quot;&gt;Apache Groovy&lt;/a&gt; programming language. GDT adds full-featured IDE support including editors, wizards, content assist, debugging, refactoring and searching.&lt;/p&gt;
+&lt;p&gt;The GDT requires the &lt;a href=&quot;https://marketplace.eclipse.org/content/eclipse-java-development-tools-0&quot; rel=&quot;nofollow&quot;&gt;Eclipse Java Development Tools&lt;/a&gt; (JDT) as it builds upon Java/JVM support, including Java interoperability (bi-directional dependencies via joint compilation). If your Eclipse flavor does not include JDT, you must install it first.&lt;/p&gt;
+&lt;p&gt;GDT does not provide any direct support for &lt;a href=&quot;http://grails.org&quot; rel=&quot;nofollow&quot;&gt;Grails&lt;/a&gt;. If you want Grails tooling, then please consider &lt;a href=&quot;https://marketplace.eclipse.org/content/groovygrails-tool-suite-ggts-eclipse&quot; rel=&quot;nofollow&quot;&gt;Groovy-Grails Tools Suite&lt;/a&gt; or &lt;a href=&quot;https://github.com/spring-projects/grails-ide&quot; rel=&quot;nofollow&quot;&gt;spring-projects/grails-ide&lt;/a&gt; for your Grails projects.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Wed, 04 Jul 2012 17:05:41 +0000</pubDate>
+ <dc:creator>aclement</dc:creator>
+ <guid isPermaLink="false">321859 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/groovy-development-tools#comments</comments>
+  </item>
+  <item>
+    <title>Plugin Dependencies Explorer</title>
+    <link>http://marketplace.eclipse.org/content/plugin-dependencies-explorer</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/default_images/default_2.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sat, 2020-06-06 16:36&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Andrey%20Loskutov%22&quot;&gt;Andrey Loskutov&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sun, 2015-11-29 06:41&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/aloskutov/listings&quot; title=&quot;Andrey Loskutov&quot;&gt;Andrey Loskutov&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;Plugin provides both command line and Eclipse UI for static package, plugin and feature dependencies analysis (the dependencies are read from MANIFEST.MF and feature.xml files).&lt;/p&gt;
+&lt;p&gt;The project is started as student work from Oliver Broesamle.&lt;/p&gt;
+&lt;p&gt;Project page: &lt;a href=&quot;https://github.com/iloveeclipse/plugindependencies&quot; rel=&quot;nofollow&quot;&gt;https://github.com/iloveeclipse/plugindependencies&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The main goals for the command line:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Fast &amp;amp; lightweight&lt;/li&gt;
+&lt;li&gt;No 3rd party dependencies&lt;/li&gt;
+&lt;li&gt;Can be used during build &amp;amp; deploy process&lt;/li&gt;
+&lt;li&gt;Can analyse package &amp;amp; feature dependencies&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;The main goals for UI:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Fast &amp;amp; lightweight&lt;/li&gt;
+&lt;li&gt;Useful for analysis of huge target platforms&lt;/li&gt;
+&lt;li&gt;Easy navigation&lt;/li&gt;
+&lt;li&gt;Easy discovery of platform issues&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;More details and screenshots are available at &lt;a href=&quot;https://github.com/iloveeclipse/plugindependencies/wiki&quot; rel=&quot;nofollow&quot;&gt;https://github.com/iloveeclipse/plugindependencies/wiki&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Sun, 29 Nov 2015 11:41:36 +0000</pubDate>
+ <dc:creator>aloskutov</dc:creator>
+ <guid isPermaLink="false">2626367 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/plugin-dependencies-explorer#comments</comments>
+  </item>
+  <item>
+    <title>Data Hierarchy</title>
+    <link>http://marketplace.eclipse.org/content/data-hierarchy</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/data_hierarchy_med.gif&quot; width=&quot;64&quot; height=&quot;64&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sat, 2020-06-06 16:32&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Andrey%20Loskutov%22&quot;&gt;Andrey Loskutov&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Thu, 2009-05-07 10:06&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/aloskutov/listings&quot; title=&quot;Andrey Loskutov&quot;&gt;Andrey Loskutov&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;The question I very often have is: which objects (recursively) are loaded in memory if a particular object is created?&lt;/p&gt;
+&lt;p&gt;If you know the Call Hierarchy plugin, you will find the Data Hierarchy very similar. It searches selected Java classes for declared fields, and starting with the found &quot;Data&quot; it recursively looks for fields which are declared on found classes (&quot;Hierarchy&quot;). At the end you can see kind of &quot;Data Hierarchy&quot; tree.&lt;/p&gt;
+&lt;p&gt;Please note, that the plugin can not detect reflection based data, data inside non-generic collections, data which is stored as &quot;Object&quot; etc.&lt;/p&gt;
+&lt;p&gt;This is a very rough estimation of the real data hierarchy, but works perfectly for a quick walk over the data structures/dependencies for code reviews. Note: for a full and precise analysis you have to use profiler!&lt;/p&gt;
+&lt;p&gt;Additionally plugin allows to restrict the search for static fields only.&lt;/p&gt;
+&lt;p&gt;Support development of the plugin!&lt;/p&gt;
+   
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;My other plugins on EPIC:&lt;/p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot;&gt; &lt;/a&gt;&lt;a rel=&quot;nofollow&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Thu, 07 May 2009 14:06:57 +0000</pubDate>
+ <dc:creator>aloskutov</dc:creator>
+ <guid isPermaLink="false">928 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/data-hierarchy#comments</comments>
+  </item>
+  <item>
+    <title>JDepend4Eclipse</title>
+    <link>http://marketplace.eclipse.org/content/jdepend4eclipse</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img typeof=&quot;foaf:Image&quot; class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/jdepend_med_1.gif&quot; width=&quot;64&quot; height=&quot;64&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sat, 2020-06-06 16:29&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Andrey%20Loskutov%22&quot;&gt;Andrey Loskutov&lt;/a&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2004-02-18 20:10&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/aloskutov/listings&quot; title=&quot;Andrey Loskutov&quot;&gt;Andrey Loskutov&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;JDepend4Eclipse plugin for Eclipse is a wrapper for running JDepend from within Eclipse.&lt;/p&gt;
+&lt;p&gt;
+- What is JDepend? (from &lt;a href=&quot;http://www.clarkware.com&quot; rel=&quot;nofollow&quot;&gt;www.clarkware.com&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;JDepend traverses a set of Java class and source file directories and generates design quality metrics for each Java package. JDepend allows you to automatically measure the quality of a design in terms of its extensibility, reusability, and maintainability to effectively manage and control package dependencies. Package dependency cycles are reported along with the hierarchical paths of packages participating in package dependency cycles. &lt;/p&gt;
+&lt;p&gt;The tool helps greatly by refactoring old &amp;amp; huge source code repositories with cyclic package dependencies between packages.&lt;br /&gt;
+ &lt;/p&gt;
+&lt;p&gt;Support development of the plugin!&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+   
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;My other plugins on EPIC:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://marketplace.eclipse.org/content/anyedit-tools&quot; rel=&quot;nofollow&quot;&gt;AnyEdit Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://marketplace.eclipse.org/content/bytecode-outline&quot; rel=&quot;nofollow&quot;&gt;Bytecode Outline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://marketplace.eclipse.org/content/extended-vs-presentation&quot; rel=&quot;nofollow&quot;&gt;Extended VS Presentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://marketplace.eclipse.org/content/filesync&quot; rel=&quot;nofollow&quot;&gt;FileSync&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://marketplace.eclipse.org/content/data-hierarchy&quot; rel=&quot;nofollow&quot;&gt;Data Hierarchy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marketplace.eclipse.org/content/plugin-dependencies-explorer&quot; rel=&quot;nofollow&quot;&gt;Plug-In Dependencies Explorer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Thu, 19 Feb 2004 01:10:32 +0000</pubDate>
+ <dc:creator>aloskutov</dc:creator>
+ <guid isPermaLink="false">88 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/jdepend4eclipse#comments</comments>
+  </item>
+  </channel>
+</rss>

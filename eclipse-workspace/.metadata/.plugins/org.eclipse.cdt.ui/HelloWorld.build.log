@@ -1,0 +1,19 @@
+08:30:33 **** Incremental Build of configuration Debug for project HelloWorld ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\heap_min.o" "..\\src\\heap_min.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\heap_sort.o" "..\\src\\heap_sort.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\merge_sort.o" "..\\src\\merge_sort.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\quick_sort.o" "..\\src\\quick_sort.cpp" 
+g++ -o HelloWorld.exe "src\\Example1.o" "src\\Example2.o" "src\\Example3.o" "src\\HelloWorld.o" "src\\heap_min.o" "src\\heap_sort.o" "src\\merge_sort.o" "src\\quick_sort.o" 
+/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: src\heap_min.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/heap_min.cpp:143: multiple definition of `main'; src\HelloWorld.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/HelloWorld.cpp:17: first defined here
+/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: src\heap_sort.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/heap_sort.cpp:59: multiple definition of `main'; src\HelloWorld.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/HelloWorld.cpp:17: first defined here
+/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: src\merge_sort.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/merge_sort.cpp:81: multiple definition of `main'; src\HelloWorld.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/HelloWorld.cpp:17: first defined here
+/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: src\quick_sort.o: in function `swap(int&, int&)':
+/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/quick_sort.cpp:5: multiple definition of `swap(int&, int&)'; src\merge_sort.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/merge_sort.cpp:5: first defined here
+/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: src\quick_sort.o: in function `display(int*, int)':
+/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/quick_sort.cpp:36: multiple definition of `display(int*, int)'; src\merge_sort.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/merge_sort.cpp:11: first defined here
+/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: src\quick_sort.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/quick_sort.cpp:44: multiple definition of `main'; src\HelloWorld.o:/cygdrive/d/Training/eclipse-workspace/HelloWorld/Debug/..\src/HelloWorld.cpp:17: first defined here
+collect2: error: ld returned 1 exit status
+
+08:30:37 Build Finished (took 4s.795ms)
+

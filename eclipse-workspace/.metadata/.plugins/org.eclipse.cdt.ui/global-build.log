@@ -1,0 +1,211 @@
+20:46:37 **** Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/LG_CompetencyCPP.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LG_CompetencyCPP.d" -MT"src/LG_CompetencyCPP.o" -o "src/LG_CompetencyCPP.o" "../src/LG_CompetencyCPP.cpp"
+../src/LG_CompetencyCPP.cpp:10:10: fatal error: stdio: No such file or directory
+   10 | #include <stdio>
+      |          ^~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:20: src/LG_CompetencyCPP.o] Error 1
+
+20:46:37 Build Finished (took 324ms)
+
+20:46:52 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/LG_CompetencyCPP.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LG_CompetencyCPP.d" -MT"src/LG_CompetencyCPP.o" -o "src/LG_CompetencyCPP.o" "../src/LG_CompetencyCPP.cpp"
+../src/LG_CompetencyCPP.cpp:11:10: fatal error: pthread: No such file or directory
+   11 | #include <pthread>
+      |          ^~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:20: src/LG_CompetencyCPP.o] Error 1
+
+20:46:52 Build Finished (took 281ms)
+
+20:47:00 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/LG_CompetencyCPP.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LG_CompetencyCPP.d" -MT"src/LG_CompetencyCPP.o" -o "src/LG_CompetencyCPP.o" "../src/LG_CompetencyCPP.cpp"
+Finished building: ../src/LG_CompetencyCPP.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+21:01:10 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.o" -o "src/Example1.o" "../src/Example1.cpp"
+../src/Example1.cpp:4:10: fatal error: LabelPrinter.h: No such file or directory
+    4 | #include "LabelPrinter.h"
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:23: src/Example1.o] Error 1
+21:02:04 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.o" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:4:
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:34:3: warning: "/*" within comment [-Wcomment]
+   34 |   /**
+      |    
+In file included from ../src/Example1.cpp:4:
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:53:25: error: expected ')' before ';' token
+   53 |   LabelPrinter(Input&amp;inputDevice) : input_(inputDevice) {}
+      |               ~         ^
+      |                         )
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:53:26: error: 'inputDevice' does not name a type
+   53 |   LabelPrinter(Input&amp;inputDevice) : input_(inputDevice) {}
+      |                          ^~~~~~~~~~~
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:91:5: error: 'input_' does not name a type; did you mean 'Input'?
+   91 |     input_;
+      |     ^~~~~~
+      |     Input
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:95:4: error: expected ';' after class definition
+   95 |   }
+      |    ^
+      |    ;
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void Input::LabelPrinter::processInput()':
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:60:17: error: 'input_' was not declared in this scope; did you mean 'Input'?
+   60 |      char key = input_.getKeyInput();
+      |                 ^~~~~~
+      |                 Input
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:71:11: error: 'KEY_BACKSPACE' was not declared in this scope
+   71 |      case KEY_BACKSPACE:
+      |           ^~~~~~~~~~~~~
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:72:34: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   72 |       for (int i = cursorPos_; i = strlen(displayBuffer_);
+      |                                ~~^~~~~~~~~~~~~~~~~~~~~~~~
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:78:46: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   78 |       for (int i = strlen(displayBuffer_); i = cursorPos_;
+      |                                            ~~^~~~~~~~~~~~
+D:\Training\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:86:41: error: cannot call member function 'void Input::writeLcd(char*, int)' without object
+   86 |      writeLcd(displayBuffer_, cursorPos_);
+      |                                         ^
+../src/Example1.cpp: At global scope:
+../src/Example1.cpp:14:23: error: 'MAX_KEY_LIMIT' was not declared in this scope
+   14 | char sampleInput_keys[MAX_KEY_LIMIT + 1] = { 10,'A','B',KEY_LEFT,'X',KEY_RIGHT,KEY_BACKSPACE,KEY_RIGHT,KEY_LEFT,KEY_LEFT,KEY_BACKSPACE };
+      |                       ^~~~~~~~~~~~~
+../src/Example1.cpp:14:80: error: 'KEY_BACKSPACE' was not declared in this scope
+   14 | char sampleInput_keys[MAX_KEY_LIMIT + 1] = { 10,'A','B',KEY_LEFT,'X',KEY_RIGHT,KEY_BACKSPACE,KEY_RIGHT,KEY_LEFT,KEY_LEFT,KEY_BACKSPACE };
+      |                                                                                ^~~~~~~~~~~~~
+../src/Example1.cpp:14:122: error: 'KEY_BACKSPACE' was not declared in this scope
+   14 | char sampleInput_keys[MAX_KEY_LIMIT + 1] = { 10,'A','B',KEY_LEFT,'X',KEY_RIGHT,KEY_BACKSPACE,KEY_RIGHT,KEY_LEFT,KEY_LEFT,KEY_BACKSPACE };
+      |                                                                                                                          ^~~~~~~~~~~~~
+../src/Example1.cpp:17:20: error: 'MAX_KEY_LIMIT' was not declared in this scope
+   17 | char test_1_1_keys[MAX_KEY_LIMIT + 1] = { 0, };
+      |                    ^~~~~~~~~~~~~
+../src/Example1.cpp:20:20: error: 'MAX_KEY_LIMIT' was not declared in this scope
+   20 | char test_1_2_keys[MAX_KEY_LIMIT + 1] = { 0, };
+      |                    ^~~~~~~~~~~~~
+../src/Example1.cpp:23:20: error: 'MAX_KEY_LIMIT' was not declared in this scope
+   23 | char test_1_3_keys[MAX_KEY_LIMIT + 1] = { 0, };
+      |                    ^~~~~~~~~~~~~
+../src/Example1.cpp:58:21: error: invalid use of template-name 'std::vector' without an argument list
+   58 | using KeySequence = std::vector&lt;char&gt;;
+      |                     ^~~
+../src/Example1.cpp:58:21: note: class template argument deduction is only available with '-std=c++17' or '-std=gnu++17'
+In file included from /usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include/c++/vector:67,
+                 from ../src/Example1.cpp:3:
+/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include/c++/bits/stl_vector.h:386:11: note: 'template<class _Tp, class _Alloc> class std::vector' declared here
+  386 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+../src/Example1.cpp:58:41: error: 'gt' declared as reference but not initialized
+   58 | using KeySequence = std::vector&lt;char&gt;;
+      |                                         ^~
+../src/Example1.cpp:63:23: error: 'KeySequence' does not name a type
+   63 | void test_2_new(const KeySequence&amp; inputKeys, const std::string&amp; expected)
+      |                       ^~~~~~~~~~~
+../src/Example1.cpp:63:38: error: expected ')' before ';' token
+   63 | void test_2_new(const KeySequence&amp; inputKeys, const std::string&amp; expected)
+      |                ~                     ^
+      |                                      )
+../src/Example1.cpp:63:40: error: 'inputKeys' does not name a type
+   63 | void test_2_new(const KeySequence&amp; inputKeys, const std::string&amp; expected)
+      |                                        ^~~~~~~~~
+../src/Example1.cpp:63:74: error: 'expected' does not name a type
+   63 | void test_2_new(const KeySequence&amp; inputKeys, const std::string&amp; expected)
+      |                                                                          ^~~~~~~~
+../src/Example1.cpp:85:28: error: 'MAX_KEY_LIMIT' was not declared in this scope
+   85 | typedef char InputSequence[MAX_KEY_LIMIT];
+      |                            ^~~~~~~~~~~~~
+../src/Example1.cpp:90:2: error: 'InputSequence' does not name a type
+   90 |  InputSequence inputKeys[10];
+      |  ^~~~~~~~~~~~~
+../src/Example1.cpp:101:1: error: too many initializers for 'ExceptionalCases'
+  101 | };
+      | ^
+../src/Example1.cpp:131:27: error: expected ')' before ';' token
+  131 |  LabelPrinterExt(Input&amp; inputDevice) : input_(inputDevice) {}
+      |                 ~         ^
+      |                           )
+../src/Example1.cpp:131:29: error: 'inputDevice' does not name a type
+  131 |  LabelPrinterExt(Input&amp; inputDevice) : input_(inputDevice) {}
+      |                             ^~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:139:21: error: 'class Input' has no member named 'getKeyInput'
+  139 |   char key = input_.getKeyInput();
+      |                     ^~~~~~~~~~~
+../src/Example1.cpp:151:8: error: 'KEY_BACKSPACE' was not declared in this scope
+  151 |   case KEY_BACKSPACE:
+      |        ^~~~~~~~~~~~~
+../src/Example1.cpp:152:32: error: 'lt' was not declared in this scope; did you mean 'gt'?
+  152 |    for (int i = cursorPos_; i &lt;= strlen(displayBuffer_); ++i)
+      |                                ^~
+      |                                gt
+../src/Example1.cpp:152:35: error: expected primary-expression before '=' token
+  152 |    for (int i = cursorPos_; i &lt;= strlen(displayBuffer_); ++i)
+      |                                   ^
+../src/Example1.cpp:152:59: error: expected ')' before ';' token
+  152 |    for (int i = cursorPos_; i &lt;= strlen(displayBuffer_); ++i)
+      |        ~                                                  ^
+      |                                                           )
+../src/Example1.cpp:152:4: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+  152 |    for (int i = cursorPos_; i &lt;= strlen(displayBuffer_); ++i)
+      |    ^~~
+../src/Example1.cpp:152:61: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'for'
+  152 |    for (int i = cursorPos_; i &lt;= strlen(displayBuffer_); ++i)
+      |                                                             ^~
+../src/Example1.cpp:152:63: error: 'i' was not declared in this scope
+  152 |    for (int i = cursorPos_; i &lt;= strlen(displayBuffer_); ++i)
+      |                                                               ^
+../src/Example1.cpp:157:47: error: expected primary-expression before '=' token
+  157 |    for (int i = strlen(displayBuffer_); i &gt;= cursorPos_; --i)
+      |                                               ^
+../src/Example1.cpp:157:59: error: expected ')' before ';' token
+  157 |    for (int i = strlen(displayBuffer_); i &gt;= cursorPos_; --i)
+      |        ~                                                  ^
+      |                                                           )
+../src/Example1.cpp:157:4: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+  157 |    for (int i = strlen(displayBuffer_); i &gt;= cursorPos_; --i)
+      |    ^~~
+../src/Example1.cpp:157:61: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'for'
+  157 |    for (int i = strlen(displayBuffer_); i &gt;= cursorPos_; --i)
+      |                                                             ^~
+../src/Example1.cpp: In function 'int main()':
+../src/Example1.cpp:181:46: error: 'sampleInput_keys' was not declared in this scope
+  181 |  printTestInputResult("Sample Input", "", 0, sampleInput_keys);
+      |                                              ^~~~~~~~~~~~~~~~
+../src/Example1.cpp:181:2: error: 'printTestInputResult' was not declared in this scope
+  181 |  printTestInputResult("Sample Input", "", 0, sampleInput_keys);
+      |  ^~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:183:48: error: 'test_1_1_keys' was not declared in this scope
+  183 |  printTestInputResult("Test_1_1 Input", "", 0, test_1_1_keys);
+      |                                                ^~~~~~~~~~~~~
+../src/Example1.cpp:184:52: error: 'test_1_2_keys' was not declared in this scope
+  184 |  printTestInputResult("Test_1_2 Input", "ABCD", 2, test_1_2_keys);
+      |                                                    ^~~~~~~~~~~~~
+../src/Example1.cpp:185:53: error: 'test_1_3_keys' was not declared in this scope
+  185 |  printTestInputResult("Test_1_3 Input", "POWER", 3, test_1_3_keys);
+      |                                                     ^~~~~~~~~~~~~
+make: *** [src/subdir.mk:23: src/Example1.o] Error 1
+22:24:37 **** Clean-only build of configuration Debug for project LG_CompetencyCPP ****
+make clean 
+rm -rf ./src/Example1.o ./src/LG_CompetencyCPP.o ./src/Example1.d ./src/LG_CompetencyCPP.d  LG_CompetencyCPP.exe
+ 

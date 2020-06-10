@@ -1,0 +1,102 @@
+/*
+ * LabelPrinter.h
+ *
+ *  Created on: Jun 10, 2020
+ *      Author: Ki Thuat 88
+ */
+
+#ifndef INCLUDE_LABELPRINTER_H_
+#define INCLUDE_LABELPRINTER_H_
+/*
+ Constant to use when defining the input key.
+ */
+#define KEY_LEFT    '1'
+#define KEY_RIGHT   '2'
+#define KEY_DELETE  '3'
+#define KEY_BACKSPACE '4'
+#define MAX_KEY_LIMIT 10
+// The test target is implemented as the comment below.
+// If necessary, write the test input and test code referring to the comments below.
+// NOTE: The code to be tested is already included in the build, do not use it by releasing the comments below.
+
+/**
+ * Input class
+ * Device interface to get the contents of the keys input
+ */
+class Input {
+public:
+	/**
+	 * Device interface to get the contents of the keys input
+	 * @return Each time the key value input is called, one is returned
+	 *
+	 virtual char getKeyInput() = 0;
+	 };
+
+
+	 /**
+	 * Interface for displaying cursors and characters on the LCD
+	 *
+	 *@param buffer The buffer location with the characters to output. 15 characters are read from the specified address and displayed on the LCD (It is necessary to guarantee the validity of the buffer)
+	 * @param cursurPosition Where to Display Cursors. If it is 0, it is displayed at the leftmost, and if it is 15, it is displayed at the rightmost border. If it is -1, the cursor is not displayed on the LCD.
+	 */
+	void writeLcd(char* buffer, int cursurPosition);
+
+	/**
+	 * LabelPrinter class
+	 * Control label printer (Test target)
+	 *
+	 */
+
+};
+
+class LabelPrinter {
+	public:
+		/**
+		 * Initialize the module that controls the label printer
+		 * It includes logic that initializes the initial LCD or input state.
+		 */
+		LabelPrinter(Input&amp;inputDevice) : input_(inputDevice) {}
+
+				/**
+				 * It processes the input of the label printer editor under test and outputs the result to the LCD.
+				 *
+				 */
+				void processInput() {
+					char key = input_.getKeyInput();
+
+					switch (key) {
+					case KEY_LEFT:
+						--cursorPos_;
+						break;
+					case KEY_RIGHT:
+						if (!isalpha(displayBuffer_[cursorPos_]))
+							break;
+						++cursorPos_;
+						break;
+					case KEY_BACKSPACE:
+						for (int i = cursorPos_; i = strlen(displayBuffer_);
+								++i)
+							displayBuffer_[i - 1] = displayBuffer_[i];
+						--cursorPos_;
+						break;
+					default:
+						for (int i = strlen(displayBuffer_); i = cursorPos_;
+								--i)
+							displayBuffer_[i + 1] = displayBuffer_[i];
+						displayBuffer_[cursorPos_] = key;
+						++cursorPos_;
+						break;
+					}
+
+					writeLcd(displayBuffer_, cursorPos_);
+				}
+
+			private:
+				Input&amp;
+				input_;
+				char displayBuffer_[16] = { 0, };
+				int cursorPos_ = 0;
+};
+
+
+#endif /* INCLUDE_LABELPRINTER_H_ */
