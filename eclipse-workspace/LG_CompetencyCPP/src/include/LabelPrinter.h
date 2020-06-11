@@ -16,7 +16,7 @@
 #define KEY_RIGHT   '2'
 #define KEY_DELETE  '3'
 #define KEY_BACKSPACE '4'
-#define MAX_KEY_LIMIT 10
+#define MAX_KEY_LIMIT 100
 // The test target is implemented as the comment below.
 // If necessary, write the test input and test code referring to the comments below.
 // NOTE: The code to be tested is already included in the build, do not use it by releasing the comments below.
@@ -73,24 +73,23 @@ public:
 			++cursorPos_;
 			break;
 		case KEY_BACKSPACE:
-			for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+			for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
 				displayBuffer_[i - 1] = displayBuffer_[i];
 			--cursorPos_;
 			break;
 		default:
-			for (int i = strlen(displayBuffer_); i = cursorPos_; --i)
+			for (int i = strlen(displayBuffer_); i >= cursorPos_; --i)
 				displayBuffer_[i + 1] = displayBuffer_[i];
 			displayBuffer_[cursorPos_] = key;
 			++cursorPos_;
 			break;
 		}
 
-		writeLcd(displayBuffer_, cursorPos_);
+		//writeLcd(displayBuffer_, cursorPos_);
 	}
 
 	private:
 		Input& input_;
-		input_;
 		char displayBuffer_[16] = { 0, };
 		int cursorPos_ = 0;
 };

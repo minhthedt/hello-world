@@ -1,6 +1,7 @@
 #include <cstring>
 #include <locale>
 #include <vector>
+#include <assert.h>
 #include "LabelPrinter.h"
 
 
@@ -14,13 +15,13 @@
 char sampleInput_keys[MAX_KEY_LIMIT + 1] = { 10,'A','B',KEY_LEFT,'X',KEY_RIGHT,KEY_BACKSPACE,KEY_RIGHT,KEY_LEFT,KEY_LEFT,KEY_BACKSPACE };
 
 //TODO: (Problem 1-1) - Final result : ABCDEF
-char test_1_1_keys[MAX_KEY_LIMIT + 1] = { 0, };
+char test_1_1_keys[MAX_KEY_LIMIT + 1] = { 'A','B','C','D','E','F',KEY_RIGHT,KEY_BACKSPACE,'F',KEY_RIGHT,KEY_RIGHT };
 
 //TODO: (Problem 1-2) - Initial state : ABCD, cursor position : Between B and C, Final result : PABDOEL
-char test_1_2_keys[MAX_KEY_LIMIT + 1] = { 0, };
+char test_1_2_keys[MAX_KEY_LIMIT + 1] = { KEY_LEFT,KEY_LEFT,'P',KEY_RIGHT,KEY_RIGHT,KEY_RIGHT,KEY_RIGHT,KEY_BACKSPACE,KEY_BACKSPACE,'D','O','E','L' };
 
 //TODO: (Problem 1-3) - Initial state : POWER, cursor position : Between W and E, Final result : OOEOL , final cursor position : Between the third character 'E' and the fourth character 'O'
-char test_1_3_keys[MAX_KEY_LIMIT + 1] = { 0, };
+char test_1_3_keys[MAX_KEY_LIMIT + 1] = { KEY_BACKSPACE,KEY_BACKSPACE,KEY_BACKSPACE,KEY_RIGHT,KEY_RIGHT,KEY_BACKSPACE,KEY_BACKSPACE,'O','O','E','O','L',KEY_LEFT,KEY_LEFT };
 
 
 /* [Problem 2. What to write] */
@@ -130,6 +131,27 @@ public:
 	 */
 	LabelPrinterExt(Input& inputDevice) : input_(inputDevice) {}
 
+	bool checkValidKey(char key){
+		switch(key){
+		case KEY_LEFT :
+			printf("\n%s","press: KEY_LEFT: ");
+			break;
+		case KEY_RIGHT :
+			printf("\n%s","press: KEY_RIGHT: ");
+			break;
+		case KEY_DELETE :
+			printf("\n%s","press: KEY_DELETE: ");
+			break;
+		case KEY_BACKSPACE :
+			printf("\n%s","press: KEY_BACKSPACE: ");
+			break;
+		default:
+			printf("\npress: %c: ",key);
+			break;
+		}
+		return true;
+	}
+
 	 /**
 	 * It processes the input of the label printer editor under test and outputs the result to the LCD.
 	 * Called whenever a key is input.
@@ -137,6 +159,9 @@ public:
 	void processInput()
 	{
 		char key = input_.getKeyInput();
+		if(!checkValidKey(key)){
+			return;
+		}
 
 		switch (key)
 		{
@@ -149,12 +174,17 @@ public:
 			++cursorPos_;
 			break;
 		case KEY_BACKSPACE:
-			for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+			for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
 				displayBuffer_[i - 1] = displayBuffer_[i];
 			--cursorPos_;
 			break;
+		case KEY_DELETE:
+			for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+				displayBuffer_[i] = displayBuffer_[i+1];
+			--cursorPos_;
+			break;
 		default:
-			for (int i = strlen(displayBuffer_); i = cursorPos_; --i)
+			for (int i = strlen(displayBuffer_); i >= cursorPos_; --i)
 				displayBuffer_[i + 1] = displayBuffer_[i];
 			displayBuffer_[cursorPos_] = key;
 			++cursorPos_;
@@ -167,25 +197,83 @@ public:
 
 	}
 
+	void setCursorPos(int curPos){
+		cursorPos_ = curPos;
+	}
+
+	void setBuffer(const char* buffer){
+		memcpy(displayBuffer_,buffer,strlen(buffer));
+	}
+
+	void printDisplayBuffer(){
+		//printf("%s","\nprintDisplayBuffer");
+		int length = strlen(displayBuffer_);
+		for(int i =0; i < cursorPos_;i++){
+			printf("%c",displayBuffer_[i]);
+		}
+		printf("%c",'|');
+		for(int i = cursorPos_;i < length;i++){
+			printf("%c",displayBuffer_[i]);
+		}
+
+	}
+
 private:
 	Input& input_;
 	char displayBuffer_[100] = { 0, };
 	int cursorPos_ = 0;
 };
 
+class InputEx : public Input {
+	char* mKeys;
+	int mKeysLength;
+	int mCurrentPos;
+public:
+	InputEx(char* keys): mCurrentPos(0){
+		mKeysLength = strlen(keys);
+		mKeys = keys;
+	}
+
+	char getKeyInput(){
+		if(mCurrentPos >= mKeysLength){
+			printf("don't have key");
+			assert(false);
+		}
+		char key = mKeys[mCurrentPos];
+		mCurrentPos++;
+		return key;
+	}
+
+	void writeLcd(char* buffer, int cursurPosition){
+		printf("%c",buffer[cursurPosition]);
+	}
+};
+
+
+void printTestInputResult(const char* testcase, const char* buffer, int pos, char* keys){
+	InputEx input(keys);
+	LabelPrinterExt printer(input);
+	printer.setCursorPos(pos);
+	printer.setBuffer(buffer);
+	for(int i =0; i < strlen(keys);i++){
+		printer.processInput();
+		printer.printDisplayBuffer();
+	}
+}
 
 // If there is code that you want to execute for reference, you can write it in main () below to use it.
 // The code of the main function is not related to scoring.
 int main()
 {
-	printTestInputResult("Sample Input", "", 0, sampleInput_keys);
+	printf("hello world");
+	//printTestInputResult("Sample Input", "", 0, sampleInput_keys);
 
-	printTestInputResult("Test_1_1 Input", "", 0, test_1_1_keys);
-	printTestInputResult("Test_1_2 Input", "ABCD", 2, test_1_2_keys);
+	//printTestInputResult("Test_1_1 Input", "", 0, test_1_1_keys);
+	//printTestInputResult("Test_1_2 Input", "ABCD", 2, test_1_2_keys);
 	printTestInputResult("Test_1_3 Input", "POWER", 3, test_1_3_keys);
 
-	test_2_1();
-	test_2_2();
+	//test_2_1();
+	//test_2_2();
 
 	return 0;
 }

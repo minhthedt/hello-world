@@ -209,3 +209,1045 @@ make: *** [src/subdir.mk:23: src/Example1.o] Error 1
 make clean 
 rm -rf ./src/Example1.o ./src/LG_CompetencyCPP.o ./src/Example1.d ./src/LG_CompetencyCPP.d  LG_CompetencyCPP.exe
  
+13:49:54 **** Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:93:3: error: 'input_' does not name a type; did you mean 'Input'?
+   93 |   input_;
+      |   ^~~~~~
+      |   Input
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   76 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:81:43: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   81 |    for (int i = strlen(displayBuffer_); i = cursorPos_; --i)
+      |                                         ~~^~~~~~~~~~~~
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:88:3: error: 'writeLcd' was not declared in this scope
+   88 |   writeLcd(displayBuffer_, cursorPos_);
+      |   ^~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In constructor 'InputEx::InputEx(const char*)':
+../src/Example1.cpp:196:11: error: invalid conversion from 'const char*' to 'char*' [-fpermissive]
+  196 |   mKeys = keys;
+      |           ^~~~
+      |           |
+      |           const char*
+make: *** [src/subdir.mk:23: src/Example1.o] Error 1
+13:51:39 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In constructor 'InputEx::InputEx(const char*)':
+../src/Example1.cpp:196:11: error: invalid conversion from 'const char*' to 'char*' [-fpermissive]
+  196 |   mKeys = keys;
+      |           ^~~~
+      |           |
+      |           const char*
+make: *** [src/subdir.mk:23: src/Example1.o] Error 1
+13:52:07 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building file: ../src/LG_CompetencyCPP.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LG_CompetencyCPP.d" -MT"src/LG_CompetencyCPP.d" -o "src/LG_CompetencyCPP.o" "../src/LG_CompetencyCPP.cpp"
+Finished building: ../src/LG_CompetencyCPP.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: ./src/LG_CompetencyCPP.o:/cygdrive/d/Training/hello-world/eclipse-workspace/LG_CompetencyCPP/Debug/../src/LG_CompetencyCPP.cpp:14: multiple definition of `main'; ./src/Example1.o:/cygdrive/d/Training/hello-world/eclipse-workspace/LG_CompetencyCPP/Debug/../src/Example1.cpp:226: first defined here
+collect2: error: ld returned 1 exit status
+make: *** [makefile:47: LG_CompetencyCPP.exe] Error 1
+13:52:47 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/LG_CompetencyCPP.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LG_CompetencyCPP.d" -MT"src/LG_CompetencyCPP.d" -o "src/LG_CompetencyCPP.o" "../src/LG_CompetencyCPP.cpp"
+Finished building: ../src/LG_CompetencyCPP.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+13:52:54 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+13:53:16 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+13:53:30 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+13:54:01 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+13:55:00 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+13:55:39 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+13:57:17 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+13:58:55 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:05:04 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:06:14 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+14:07:17 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:09:23 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:15:07 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:16:57 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:17:21 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:33:03 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+14:36:34 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:36:43 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:40:10 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+14:40:18 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+14:41:36 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:42:04 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:42:43 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+14:43:57 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:44:38 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+14:50:24 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:50:50 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:51:10 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:153:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  153 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+14:55:58 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:173:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  173 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+15:00:12 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  174 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+15:03:33 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  174 |    for (int i = cursorPos_; i = strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+15:04:49 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+15:25:45 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  174 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+15:46:14 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  174 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:179:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  179 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+15:46:50 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  174 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:179:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  179 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+15:48:45 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+15:51:13 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+15:53:39 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+15:53:57 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+15:57:34 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  174 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:179:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  179 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+15:58:37 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  174 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:179:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  179 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+15:59:05 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  174 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:179:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  179 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+16:12:55 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  174 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:179:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  179 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+16:13:23 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  174 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:179:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  179 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+16:18:03 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:174:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  174 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:179:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  179 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+16:25:13 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:178:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  178 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:183:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  183 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+16:29:33 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+16:50:22 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:178:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  178 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:183:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  183 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In function 'void printTestInputResult(const char*, const char*, int, char*)':
+../src/Example1.cpp:259:18: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  259 |  for(int i =0; i < strlen(keys);i++){
+      |                ~~^~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+16:50:51 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+make: Nothing to be done for 'all'.
+17:08:34 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:178:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  178 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:183:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  183 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+17:08:56 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:178:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  178 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:183:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  183 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+17:15:12 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:178:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  178 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:183:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  183 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+17:17:04 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:178:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  178 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:183:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  183 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+17:17:54 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:177:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  177 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:182:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  182 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+17:18:20 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:177:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  177 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:182:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  182 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In function 'void printTestInputResult(const char*, const char*, int, char*)':
+../src/Example1.cpp:258:18: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  258 |  for(int i =0; i < strlen(keys);i++){
+      |                ~~^~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+17:19:24 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:177:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  177 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:182:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  182 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In function 'void printTestInputResult(const char*, const char*, int, char*)':
+../src/Example1.cpp:258:18: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  258 |  for(int i =0; i < strlen(keys);i++){
+      |                ~~^~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+17:31:10 **** Incremental Build of configuration Debug for project LG_CompetencyCPP ****
+make all 
+Building file: ../src/Example1.cpp
+Invoking: Cygwin C++ Compiler
+g++ -I"D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Example1.d" -MT"src/Example1.d" -o "src/Example1.o" "../src/Example1.cpp"
+In file included from ../src/Example1.cpp:5:
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h: In member function 'void LabelPrinter::processInput()':
+D:\Training\hello-world\eclipse-workspace\LG_CompetencyCPP\src\include/LabelPrinter.h:76:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+   76 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In member function 'void LabelPrinterExt::processInput()':
+../src/Example1.cpp:177:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  177 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp:182:31: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  182 |    for (int i = cursorPos_; i <= strlen(displayBuffer_); ++i)
+      |                             ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Example1.cpp: In function 'void printTestInputResult(const char*, const char*, int, char*)':
+../src/Example1.cpp:258:18: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long unsigned int'} [-Wsign-compare]
+  258 |  for(int i =0; i < strlen(keys);i++){
+      |                ~~^~~~~~~~~~~~~~
+Finished building: ../src/Example1.cpp
+ 
+Building target: LG_CompetencyCPP.exe
+Invoking: Cygwin C++ Linker
+g++  -o "LG_CompetencyCPP.exe" ./src/Example1.o ./src/LG_CompetencyCPP.o   
+Finished building target: LG_CompetencyCPP.exe
+ 
+17:45:56 **** Clean-only build of configuration Debug for project LG_CompetencyCPP ****
+make clean 
+rm -rf ./src/Example1.o ./src/LG_CompetencyCPP.o ./src/Example1.d ./src/LG_CompetencyCPP.d  LG_CompetencyCPP.exe
+ 
+17:46:35 **** Clean-only build of configuration Debug for project LG_CompetencyCPP ****
+make clean 
+rm -rf ./src/Example1.o ./src/LG_CompetencyCPP.o ./src/Example1.d ./src/LG_CompetencyCPP.d  LG_CompetencyCPP.exe
+ 
